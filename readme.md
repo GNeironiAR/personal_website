@@ -56,4 +56,4 @@ To customize this website for your own use:
 
 ## License
 
-Copyright (c) 2024 [Your Name]
+Copyright (c) 2024 GNeironiAR
