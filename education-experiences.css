@@ -1,0 +1,151 @@
+#timeline {
+    width: 80%;
+    height: 40vh;
+    min-height: 150px;
+    background-color: transparent;
+}
+.vis-timeline {
+    border: none;
+    font-family: 'Montserrat', sans-serif;
+}
+.vis-panel {
+    background-color: transparent !important;
+}
+.vis-labelset .vis-label {
+    color: #ffffff !important;
+}
+.vis-time-axis .vis-text {
+    color: #ffffff !important;
+}
+.vis-item {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.802);
+    color: #ffffff;
+}
+.vis-item.vis-dot {
+    border-width: 4px;
+    border-radius: 4px;
+}
+.vis-item .vis-item-content {
+    padding: 5px;
+}
+.vis-time-axis .vis-grid.vis-minor {
+    border-color: rgba(255, 255, 255, 0.857);
+}
+.vis-time-axis .vis-grid.vis-major {
+    border-color: rgba(255, 255, 255, 0.802);
+}
+.vis-timeline {
+    overflow: visible;
+}
+.vis-text {
+    font-size: 10px;
+    color: #ffffff;
+}
+
+/* Estilos para el tooltip personalizado */
+.vis-tooltip {
+    background-color: rgba(0, 0, 0, 0.7);
+    border: none;
+    box-shadow: none;
+    padding: 0;
+}
+
+.custom-tooltip {
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    border-radius: 8px;
+    color: #ffffff;
+    padding: 15px;
+    max-width: 250px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    font-family: 'Montserrat', sans-serif;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    opacity: 0;
+    transform: translateX(-10px);
+    pointer-events: none;
+}
+
+.custom-tooltip.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.custom-tooltip h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 12px;
+    color: #f0f0f0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 5px;
+}
+
+.custom-tooltip p {
+    margin: 5px 0;
+    font-size: 10px;
+    line-height: 1.4;
+    color: #d1a1ff;
+}
+
+.custom-tooltip ul {
+    margin: 5px 0;
+    padding-left: 20px;
+}
+
+.custom-tooltip li {
+    margin-bottom: 3px;
+    font-size: 10px;
+    color: #cccccc;
+}
+
+.custom-tooltip strong {
+    color: #d1a1ff;
+}
+
+/* Ajustes para los elementos de la línea de tiempo */
+.vis-item.vis-range {
+    background-color: rgb(205, 155, 212);
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.vis-item.vis-point {
+    background-color: #97B0F8;
+    border-color: #3349A6;
+}
+
+/* Estilos actualizados para la leyenda personalizada */
+.custom-legend {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    font-family: 'Montserrat', sans-serif;
+    color: #ffffff;
+}
+
+.custom-legend .legend-item {
+    display: flex;
+    align-items: center;
+    margin: 0 10px;
+}
+
+.custom-legend .legend-color {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+    border-radius: 3px;
+}
+
+.custom-legend .work-experience .legend-color {
+    background-color: rgb(205, 155, 212);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.custom-legend .education .legend-color {
+    background-color: #97B0F8;
+    border: 1px solid #3349A6;
+}
+
+.custom-legend .legend-item span {
+    font-size: 12px;
+}
