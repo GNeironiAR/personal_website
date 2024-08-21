@@ -7,7 +7,7 @@ html, body {
 
 body {
   font-family: 'Montserrat', sans-serif;
-  background: linear-gradient(to bottom right, #000000, #800080);
+  background: linear-gradient(to bottom right, #001ec2, #f0f);
   color: #ffffff;
   overflow-y: auto;
 }
