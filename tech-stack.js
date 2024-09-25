@@ -1,14 +1,15 @@
-// Datos para cada gráfico
-const sqlData = {
+const databaseData = {
     nodes: [
         { id: "Databases", group: 1 },
-        { id: "SQL", group: 1 },
-        { id: "NoSQL", group: 1 },
-        { id: "PostgreSQL", group: 1 },
-        { id: "MySQL", group: 1 },
-        { id: "SQLite", group: 1 },
-        { id: "Oracle", group: 1 },
-        { id: "RDS", group: 1 }
+        { id: "SQL", group: 2 },
+        { id: "NoSQL", group: 3 },
+        { id: "PostgreSQL", group: 2 },
+        { id: "MySQL", group: 2 },
+        { id: "SQLite", group: 2 },
+        { id: "Oracle", group: 2 },
+        { id: "SQL Server", group: 2 },
+        { id: "MongoDB", group: 3 },
+        { id: "Amazon RDS", group: 4 }
     ],
     links: [
         { source: "Databases", target: "SQL", value: 1 },
@@ -17,66 +18,133 @@ const sqlData = {
         { source: "SQL", target: "MySQL", value: 1 },
         { source: "SQL", target: "SQLite", value: 1 },
         { source: "SQL", target: "Oracle", value: 1 },
-        { source: "Databases", target: "RDS", value: 1 }
+        { source: "SQL", target: "SQL Server", value: 1 },
+        { source: "NoSQL", target: "MongoDB", value: 1 },
+        { source: "Databases", target: "Amazon RDS", value: 1 }
+    ]
+};
+
+const cloudData = {
+    nodes: [
+        { id: "Cloud Platforms", group: 1 },
+        { id: "AWS", group: 2 },
+        { id: "Azure", group: 3 },
+        { id: "Amazon QuickSight", group: 2 },
+        { id: "Amazon Athena", group: 2 },
+        { id: "Amazon EMR", group: 2 },
+        { id: "AWS Glue", group: 2 },
+        { id: "Amazon Kinesis", group: 2 },
+        { id: "Azure Data Factory", group: 3 },
+        { id: "Azure Databricks", group: 3 },
+        { id: "Microsoft Fabric", group: 3 }
+    ],
+    links: [
+        { source: "Cloud Platforms", target: "AWS", value: 1 },
+        { source: "Cloud Platforms", target: "Azure", value: 1 },
+        { source: "AWS", target: "Amazon QuickSight", value: 1 },
+        { source: "AWS", target: "Amazon Athena", value: 1 },
+        { source: "AWS", target: "Amazon EMR", value: 1 },
+        { source: "AWS", target: "AWS Glue", value: 1 },
+        { source: "AWS", target: "Amazon Kinesis", value: 1 },
+        { source: "Azure", target: "Azure Data Factory", value: 1 },
+        { source: "Azure", target: "Azure Databricks", value: 1 },
+        { source: "Azure", target: "Microsoft Fabric", value: 1 }
     ]
 };
 
 const toolsData = {
     nodes: [
         { id: "Tools", group: 1 },
-        { id: "AWS", group: 2 },
+        { id: "Version Control", group: 2 },
+        { id: "Project Management", group: 3 },
+        { id: "Data Visualization", group: 4 },
+        { id: "Integration", group: 5 },
         { id: "Docker", group: 2 },
         { id: "Git", group: 2 },
         { id: "Jira", group: 3 },
-        { id: "Draw.io", group: 3 },
         { id: "MS Project", group: 3 },
-        { id: "Azure", group: 2 },  
-        { id: "Trello", group: 3 },  
-        { id: "ClickUp", group: 3 },  
-        { id: "Figma", group: 3 }  
+        { id: "Trello", group: 3 },
+        { id: "ClickUp", group: 3 },
+        { id: "Draw.io", group: 3 },
+        { id: "Figma", group: 3 },
+        { id: "Power BI", group: 4 },
+        { id: "Tableau", group: 4 },
+        { id: "Pentaho", group: 4 },
+        { id: "Google Data Studio", group: 4 },
+        { id: "MIRTH Connect", group: 5 },
+        { id: "Mule", group: 5 },
+        { id: "HL7/FHIR", group: 5 }
     ],
     links: [
-        { source: "Tools", target: "Docker", value: 1 },
-        { source: "Tools", target: "Git", value: 1 },
-        { source: "Tools", target: "Jira", value: 1 },
-        { source: "Tools", target: "Draw.io", value: 1 },
-        { source: "Tools", target: "MS Project", value: 1 },
-        { source: "Tools", target: "AWS", value: 1 },
-        { source: "Tools", target: "Azure", value: 1 },  
-        { source: "Tools", target: "Trello", value: 1 }, 
-        { source: "Tools", target: "ClickUp", value: 1 },  
-        { source: "Tools", target: "Figma", value: 1 } 
+        { source: "Tools", target: "Version Control", value: 1 },
+        { source: "Tools", target: "Project Management", value: 1 },
+        { source: "Tools", target: "Data Visualization", value: 1 },
+        { source: "Tools", target: "Integration", value: 1 },
+        { source: "Version Control", target: "Docker", value: 1 },
+        { source: "Version Control", target: "Git", value: 1 },
+        { source: "Project Management", target: "Jira", value: 1 },
+        { source: "Project Management", target: "MS Project", value: 1 },
+        { source: "Project Management", target: "Trello", value: 1 },
+        { source: "Project Management", target: "ClickUp", value: 1 },
+        { source: "Project Management", target: "Draw.io", value: 1 },
+        { source: "Project Management", target: "Figma", value: 1 },
+        { source: "Data Visualization", target: "Power BI", value: 1 },
+        { source: "Data Visualization", target: "Tableau", value: 1 },
+        { source: "Data Visualization", target: "Pentaho", value: 1 },
+        { source: "Data Visualization", target: "Google Data Studio", value: 1 },
+        { source: "Integration", target: "MIRTH Connect", value: 1 },
+        { source: "Integration", target: "Mule", value: 1 },
+        { source: "Integration", target: "HL7/FHIR", value: 1 }
     ]
 };
 
-const pythonDataData = {
+const programmingData = {
     nodes: [
         { id: "Programming", group: 1 },
-        { id: "Python", group: 1 },
-        { id: "Data Analysis", group: 2 },
-        { id: "Django", group: 3 },
-        { id: "Power BI", group: 2 },
-        { id: "Tableau", group: 2 },
-        { id: "Pentaho", group: 2 },
-        { id: "Pandas", group: 2 },
-        { id: "NumPy", group: 2 },
-        { id: "Scikit-learn", group: 2 },
-        { id: "Matplotlib", group: 2 }
+        { id: "Languages", group: 2 },
+        { id: "Data Analysis", group: 3 },
+        { id: "Machine Learning", group: 4 },
+        { id: "Big Data", group: 5 },
+        { id: "Python", group: 2 },
+        { id: "R", group: 2 },
+        { id: "VB.NET", group: 2 },
+        { id: "Scala", group: 2 },
+        { id: "Django", group: 2 },
+        { id: "Pandas", group: 3 },
+        { id: "NumPy", group: 3 },
+        { id: "Matplotlib", group: 3 },
+        { id: "Scikit-learn", group: 4 },
+        { id: "Keras", group: 4 },
+        { id: "PyTorch", group: 4 },
+        { id: "TensorFlow", group: 4 },
+        { id: "XGBoost", group: 4 },
+        { id: "LightGBM", group: 4 },
+        { id: "Apache Spark", group: 5 },
+        { id: "PySpark", group: 5 },
+        { id: "Pentaho Data Integration", group: 5 }
     ],
     links: [
-        { source: "Programming", target: "Python", value: 1 },
-        { source: "Python", target: "Django", value: 1 },
-        { source: "Data Analysis", target: "Power BI", value: 1 },
-        { source: "Data Analysis", target: "Tableau", value: 1 },
-        { source: "Data Analysis", target: "Pentaho", value: 1 },
-        { source: "Python", target: "Pandas", value: 1 },
-        { source: "Python", target: "NumPy", value: 1 },
-        { source: "Python", target: "Scikit-learn", value: 1 },
-        { source: "Python", target: "Matplotlib", value: 1 },
+        { source: "Programming", target: "Languages", value: 1 },
+        { source: "Programming", target: "Data Analysis", value: 1 },
+        { source: "Programming", target: "Machine Learning", value: 1 },
+        { source: "Programming", target: "Big Data", value: 1 },
+        { source: "Languages", target: "Python", value: 1 },
+        { source: "Languages", target: "R", value: 1 },
+        { source: "Languages", target: "VB.NET", value: 1 },
+        { source: "Languages", target: "Scala", value: 1 },
+        { source: "Languages", target: "Django", value: 1 },
         { source: "Data Analysis", target: "Pandas", value: 1 },
         { source: "Data Analysis", target: "NumPy", value: 1 },
-        { source: "Data Analysis", target: "Scikit-learn", value: 1 },
-        { source: "Data Analysis", target: "Matplotlib", value: 1 }
+        { source: "Data Analysis", target: "Matplotlib", value: 1 },
+        { source: "Machine Learning", target: "Scikit-learn", value: 1 },
+        { source: "Machine Learning", target: "Keras", value: 1 },
+        { source: "Machine Learning", target: "PyTorch", value: 1 },
+        { source: "Machine Learning", target: "TensorFlow", value: 1 },
+        { source: "Machine Learning", target: "XGBoost", value: 1 },
+        { source: "Machine Learning", target: "LightGBM", value: 1 },
+        { source: "Big Data", target: "Apache Spark", value: 1 },
+        { source: "Big Data", target: "PySpark", value: 1 },
+        { source: "Big Data", target: "Pentaho Data Integration", value: 1 }
     ]
 };
 
@@ -98,15 +166,17 @@ function createGraph(containerId, data) {
         .attr("width", "100%")
         .attr("height", "100%")
         .attr("viewBox", `0 0 ${width} ${height}`)
-        .style("background-color", "rgba(0,0,0,0.1)"); // Fondo ligeramente visible para depuración
+        .style("background-color", "rgba(0,0,0,0.1)");
 
     const color = d3.scaleOrdinal(d3.schemeCategory10);
 
     const simulation = d3.forceSimulation(data.nodes)
-        .force("link", d3.forceLink(data.links).id(d => d.id).distance(50))
-        .force("charge", d3.forceManyBody().strength(-200))
+        .force("link", d3.forceLink(data.links).id(d => d.id).distance(30)) // Reducida la distancia de los enlaces
+        .force("charge", d3.forceManyBody().strength(-50)) // Reducida la fuerza de repulsión
         .force("center", d3.forceCenter(width / 2, height / 2))
-        .force("collision", d3.forceCollide().radius(30));
+        .force("collision", d3.forceCollide().radius(30)) // Reducido el radio de colisión
+        .force("x", d3.forceX(width / 2).strength(0.1)) // Fuerza adicional para mantener los nodos centrados horizontalmente
+        .force("y", d3.forceY(height / 2).strength(0.1)); // Fuerza adicional para mantener los nodos centrados verticalmente
 
     const link = svg.append("g")
         .attr("class", "links")
@@ -115,7 +185,7 @@ function createGraph(containerId, data) {
         .enter().append("line")
         .attr("stroke", "#999")
         .attr("stroke-opacity", 0.6)
-        .attr("stroke-width", 2);
+        .attr("stroke-width", 1); // Reducido el ancho de las líneas
 
     const node = svg.append("g")
         .attr("class", "nodes")
@@ -124,17 +194,17 @@ function createGraph(containerId, data) {
         .enter().append("g");
 
     node.append("circle")
-        .attr("r", 10) // Tamaño aumentado para mejor visibilidad
+        .attr("r", 5) // Reducido el tamaño de los círculos
         .attr("fill", d => color(d.group))
         .attr("stroke", "#fff")
-        .attr("stroke-width", 2);
+        .attr("stroke-width", 1.5);
 
     node.append("text")
-        .attr("dx", 12)
+        .attr("dx", 8)
         .attr("dy", ".35em")
         .text(d => d.id)
         .attr("fill", "#fff")
-        .style("font-size", "8px");
+        .style("font-size", "10px"); // Reducido el tamaño de la fuente
 
     node.append("title")
         .text(d => d.id);
@@ -148,13 +218,13 @@ function createGraph(containerId, data) {
 
     function ticked() {
         link
-            .attr("x1", d => d.source.x)
-            .attr("y1", d => d.source.y)
-            .attr("x2", d => d.target.x)
-            .attr("y2", d => d.target.y);
+            .attr("x1", d => Math.max(0, Math.min(width, d.source.x)))
+            .attr("y1", d => Math.max(0, Math.min(height, d.source.y)))
+            .attr("x2", d => Math.max(0, Math.min(width, d.target.x)))
+            .attr("y2", d => Math.max(0, Math.min(height, d.target.y)));
 
         node
-            .attr("transform", d => `translate(${d.x},${d.y})`);
+            .attr("transform", d => `translate(${Math.max(0, Math.min(width, d.x))},${Math.max(0, Math.min(height, d.y))})`);
     }
 
     function drag(simulation) {
@@ -186,7 +256,8 @@ function createGraph(containerId, data) {
     console.log(`Graph for ${containerId} created`);
 }
 
-// Crear los tres gráficos
-createGraph('sql-graph', sqlData);
+// Crear los cuatro gráficos
+createGraph('database-graph', databaseData);
+createGraph('cloud-graph', cloudData);
 createGraph('tools-graph', toolsData);
-createGraph('python-data-graph', pythonDataData);
+createGraph('programming-graph', programmingData);
