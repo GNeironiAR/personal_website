@@ -2,35 +2,13 @@ document.addEventListener('DOMContentLoaded', function() {
     const currentYear = new Date().getFullYear();
     const currentDate = new Date().toISOString().split('T')[0];
 
-    // Función para crear el contenido del tooltip
-    function createTooltipContent(item) {
-        if (item.group === 5) {
-            // Para los estudios, mostrar solo el año y el curso
-            return `
-                <h3>${item.title.split(': ')[1]}</h3>
-                <p><strong>Year:</strong> ${item.title.split(': ')[0]}</p>
-            `;
-        } else {
-            // Para las experiencias laborales, mantener el formato actual
-            return `
-                <h3>${item.content}</h3>
-                <p><strong>Period:</strong> ${item.start} - ${item.end || 'Present'}</p>
-                <p><strong>Position:</strong> ${item.title}</p>
-                ${item.technologies ? `<p><strong>Technologies:</strong> ${item.technologies}</p>` : ''}
-                ${item.achievements ? `<p><strong>Achievements:</strong></p><ul>${item.achievements.map(achievement => `<li>${achievement}</li>`).join('')}</ul>` : ''}
-            `;
-        }
-    }
-
-    // Crear los elementos de la línea de tiempo
-    const items = new vis.DataSet([
+    // Experiencia laboral
+    const workExperiences = [
         {
-            id: 1, 
-            content: 'Argeniss Software', 
-            start: '2024-09-01', 
-            end: currentDate, 
-            group: 1, 
-            title: 'Data Analyst',
+            company: 'Argeniss Software',
+            position: 'Data Analyst',
+            startDate: '2024-09-01',
+            endDate: currentDate,
             technologies: 'Microsoft reporting tools, SQL, VBNet',
             achievements: [
                 'Created and maintained paginated reports in Microsoft environments for the client project.',
@@ -42,12 +20,10 @@ document.addEventListener('DOMContentLoaded', function() {
             ]
         },
         {
-            id: 2, 
-            content: 'Scale AI', 
-            start: '2023-08-01', 
-            end: currentDate, 
-            group: 2, 
-            title: 'AI Quality Assurance analyst',
+            company: 'Scale AI',
+            position: 'AI Quality Assurance analyst',
+            startDate: '2023-08-01',
+            endDate: currentDate,
             technologies: 'AI models, Code review',
             achievements: [
                 'Help train generative AI models by performing code review of model output.',
@@ -56,12 +32,10 @@ document.addEventListener('DOMContentLoaded', function() {
             ]
         },
         {
-            id: 3, 
-            content: 'NTB Solutions', 
-            start: '2018-08-01', 
-            end: '2024-02-29', 
-            group: 3, 
-            title: 'Sr Data Analyst',
+            company: 'NTB Solutions',
+            position: 'Sr Data Analyst',
+            startDate: '2018-08-01',
+            endDate: '2024-02-29',
             technologies: 'Azure Databricks, Azure, Spark, Python, Power BI, Pentaho, Tableau, SQL and NoSQL databases',
             achievements: [
                 'Built a custom report with Pentaho Report Designer that helped optimize the budget and save millions of dollars for a major health insurance company.',
@@ -71,12 +45,10 @@ document.addEventListener('DOMContentLoaded', function() {
             ]
         },
         {
-            id: 4, 
-            content: 'Sanatorio La Entrerriana', 
-            start: '2008-07-01', 
-            end: '2018-08-31', 
-            group: 4, 
-            title: 'Data Analyst and IT Manager',
+            company: 'Sanatorio La Entrerriana',
+            position: 'Data Analyst and IT Manager',
+            startDate: '2008-07-01',
+            endDate: '2018-08-31',
             technologies: 'PowerBI, Google Data Studio, SQL, Oracle databases',
             achievements: [
                 'Led the implementation of a health information system.',
@@ -84,182 +56,92 @@ document.addEventListener('DOMContentLoaded', function() {
                 'Implemented dashboards, reports, and visualizations with PowerBI and Google Data Studio.',
                 'Took care of an implementation project that was declining, implying a cultural change in the entire organization, migrating to a data-driven process and decision-making.'
             ]
-        },
-        {id: 5, content: '', start: '2015-01-01', group: 5, subgroup: 1, type: 'point', title: '2015: Database fundamental - Universidad Tecnológica Nacional (FRBA)'},
-        {id: 6, content: '', start: '2016-01-01', group: 5, subgroup: 2, type: 'point', title: '2016: Database programing - PL-SQL - Universidad Tecnológica Nacional (FRBA)'},
-        {id: 7, content: '', start: '2017-01-01', group: 5, subgroup: 1, type: 'point', title: '2017: Bachelor\'s Degree in Business Management - Universidad Autónoma de Entre Ríos'},
-        {id: 8, content: '', start: '2018-01-01', group: 5, subgroup: 2, type: 'point', title: '2018: ITIL V3® - Universidad Tecnológica Nacional (FRBA)'},
-        {id: 9, content: '', start: '2018-06-01', group: 5, subgroup: 1, type: 'point', title: '2018: ITIL® Foundation Certificate in IT Service Management - PeopleCert'},
-        {id: 10, content: '', start: '2019-01-01', group: 5, subgroup: 2, type: 'point', title: '2019: Programing fundamentals - Universidad Tecnológica Nacional (FRBA)'},
-        {id: 11, content: '', start: '2020-01-01', group: 5, subgroup: 1, type: 'point', title: '2020: Scrum Grand Master - Universidad Tecnológica Nacional (FRBA)'},
-        {id: 12, content: '', start: '2020-06-01', group: 5, subgroup: 2, type: 'point', title: '2020: Programador Lenguaje R - Edutin'},
-        {id: 13, content: '', start: '2021-01-01', group: 5, subgroup: 1, type: 'point', title: '2021: Project manager officer - Universidad Tecnológica Nacional (FRBA)'},
-        {id: 14, content: '', start: '2021-03-01', group: 5, subgroup: 2, type: 'point', title: '2021: EC2 - AWS'},
-        {id: 15, content: '', start: '2021-04-01', group: 5, subgroup: 1, type: 'point', title: '2021: Introduction to AWS Solutions - AWS'},
-        {id: 16, content: '', start: '2021-05-01', group: 5, subgroup: 2, type: 'point', title: '2021: Serverless development - AWS'},
-        {id: 17, content: '', start: '2021-06-01', group: 5, subgroup: 1, type: 'point', title: '2021: Cloud Practitioner Essentials - AWS'},
-        {id: 18, content: '', start: '2021-07-01', group: 5, subgroup: 2, type: 'point', title: '2021: CloudFormation - AWS'},
-        {id: 19, content: '', start: '2021-08-01', group: 5, subgroup: 1, type: 'point', title: '2021: Elastic Container Services - AWS'},
-        {id: 20, content: '', start: '2021-09-01', group: 5, subgroup: 2, type: 'point', title: '2021: Scrum Foundation Professional Certificate - CertiProf'},
-        {id: 21, content: '', start: '2022-01-01', group: 5, subgroup: 1, type: 'point', title: '2022: Analista PMO – Project Management Officer - Universidad Tecnológica Nacional'},
-        {id: 22, content: '', start: '2022-03-01', group: 5, subgroup: 2, type: 'point', title: '2022: Elements of AI - University of Helsinki'},
-        {id: 23, content: '', start: '2022-06-01', group: 5, subgroup: 1, type: 'point', title: '2022: Machine Learning Engineer - Anyone AI'},
-        {id: 24, content: '', start: '2023-01-01', group: 5, subgroup: 2, type: 'point', title: '2023: Azure Fundamentals. Describe cloud concepts - Azure'},
-        {id: 25, content: '', start: '2023-02-01', group: 5, subgroup: 1, type: 'point', title: '2023: Azure Fundamentals. Describe Azure architecture and services - Azure'},
-        {id: 26, content: '', start: '2023-03-01', group: 5, subgroup: 2, type: 'point', title: '2023: Azure Fundamentals. Describe Azure management - Azure'},
-        {id: 27, content: '', start: '2023-04-01', group: 5, subgroup: 1, type: 'point', title: '2023: Get started with data engineering on Azure - Azure'},
-        {id: 28, content: '', start: '2023-05-01', group: 5, subgroup: 2, type: 'point', title: '2023: Data engineering task with Apache Spark groups on Azure Synapse - Azure'},
-        {id: 29, content: '', start: '2023-06-01', group: 5, subgroup: 1, type: 'point', title: '2023: Data analysis solutions with serverless SQL groups on Azure Synapse - Azure'},
-        {id: 30, content: '', start: '2023-07-01', group: 5, subgroup: 2, type: 'point', title: '2023: Data modeling, querying and exploring on Azure Synapse - Azure'},
-        {id: 31, content: '', start: '2023-08-01', group: 5, subgroup: 1, type: 'point', title: '2023: Data storage job with on Azure Synapse Analytics - Azure'},
-        {id: 32, content: '', start: '2023-09-01', group: 5, subgroup: 2, type: 'point', title: '2023: Version Control with GIT - Azure'},
-        {id: 33, content: '', start: '2023-10-01', group: 5, subgroup: 1, type: 'point', title: '2023: Data transformation and transfer with Data pipelines on Azure Synapse Analytics - Azure'},
-        {id: 34, content: '', start: '2023-11-01', group: 5, subgroup: 2, type: 'point', title: '2023: C1 English Language - EFSET'},
-        {id: 35, content: '', start: '2023-12-01', group: 5, subgroup: 1, type: 'point', title: '2023: B2.2 English - Freedom Private Institute'},
-        {id: 36, content: '', start: '2024-01-01', group: 5, subgroup: 2, type: 'point', title: '2024: Introducción a Amazon Kinesis Analytics - AWS'},
-        {id: 37, content: '', start: '2024-02-01', group: 5, subgroup: 1, type: 'point', title: '2024: Amazon EMR Getting Started - AWS'},
-        {id: 38, content: '', start: '2024-03-01', group: 5, subgroup: 2, type: 'point', title: '2024: AWS Glue Getting Started - AWS'},
-        {id: 39, content: '', start: '2024-04-01', group: 5, subgroup: 1, type: 'point', title: '2024: Amazon Athena - AWS'},
-        {id: 40, content: '', start: '2024-05-01', group: 5, subgroup: 2, type: 'point', title: '2024: Amazon QuickSight Getting Started - AWS'},
-        {id: 41, content: '', start: '2024-06-01', group: 5, subgroup: 1, type: 'point', title: '2024: Visualizing with QuickSight - AWS'},
-        {id: 42, content: '', start: '2024-07-01', group: 5, subgroup: 2, type: 'point', title: '2024: AWS IoT Analytics Getting Started - AWS'},
-        {id: 43, content: '', start: '2024-08-01', group: 5, subgroup: 1, type: 'point', title: '2024: Amazon Redshift Getting Started - AWS'}
-    ]);
-
-    // Configurar los grupos
-    const groups = new vis.DataSet([
-        {id: 1, content: 'Work Experience', className: 'work-experience'},
-        {id: 2, content: 'Work Experience', className: 'work-experience'},
-        {id: 3, content: 'Work Experience', className: 'work-experience'},
-        {id: 4, content: 'Work Experience', className: 'work-experience'},
-        {id: 5, content: 'Education', className: 'education'}
-    ]);
-
-    // Configurar las opciones
-    const options = {
-        stack: false,
-        start: '2008-01-01',
-        end: `${currentYear + 1}-12-31`,
-        editable: false,
-        margin: {
-            item: 10,
-            axis: 5
-        },
-        tooltip: {
-            followMouse: false,
-            overflowMethod: 'flip'
-        },
-        timeAxis: {
-            scale: 'year',
-            step: 1
-        },
-        format: {
-            minorLabels: {
-                year: 'YYYY'
-            }
-        },
-        zoomable: false,
-        moveable: false,
-        onInitialDrawComplete: function() {
-            // Desactivar el tooltip nativo de vis.js
-            timeline.setOptions({ tooltip: { template: () => '' } });
         }
-    };
+    ];
 
-    // Crear la línea de tiempo
-    const container = document.getElementById('timeline');
-    const timeline = new vis.Timeline(container, items, groups, options);
+    // Educación
+const educationItems = [
+    { title: 'Amazon Connect - Infrastructure as Code Fundamentals', institution: 'AWS', year: '2024' },
+    { title: 'Amazon QuickSight Advanced Business Intelligence Authoring (Part 2)', institution: 'AWS', year: '2024' },
+    { title: 'Amazon QuickSight Advanced Business Intelligence Authoring (PART 1)', institution: 'AWS', year: '2024' },
+    { title: 'Amazon Redshift Getting Started', institution: 'AWS', year: '2024' },
+    { title: 'AWS IoT Analytics Getting Started', institution: 'AWS', year: '2024' },
+    { title: 'Visualizing with QuickSight', institution: 'AWS', year: '2024' },
+    { title: 'Amazon QuickSight Getting Started', institution: 'AWS', year: '2024' },
+    { title: 'Amazon Athena', institution: 'AWS', year: '2024' },
+    { title: 'AWS Glue Getting Started', institution: 'AWS', year: '2024' },
+    { title: 'Amazon EMR Getting Started', institution: 'AWS', year: '2024' },
+    { title: 'Introducción a Amazon Kinesis Analytics', institution: 'AWS', year: '2024' },
+    { title: 'B2.2 English', institution: 'Freedom Private Institute', year: '2023' },
+    { title: 'C1 English Language', institution: 'EFSET', year: '2023' },
+    { title: 'Data transformation and transfer with Data pipelines on Azure Synapse Analytics', institution: 'Azure', year: '2023' },
+    { title: 'Version Control with GIT', institution: 'Azure', year: '2023' },
+    { title: 'Data storage job with on Azure Synapse Analytics', institution: 'Azure', year: '2023' },
+    { title: 'Data modeling, querying and exploring on Azure Synapse', institution: 'Azure', year: '2023' },
+    { title: 'Data analysis solutions with serverless SQL groups on Azure Synapse', institution: 'Azure', year: '2023' },
+    { title: 'Data engineering task with Apache Spark groups on Azure Synapse', institution: 'Azure', year: '2023' },
+    { title: 'Get started with data engineering on Azure', institution: 'Azure', year: '2023' },
+    { title: 'Azure Fundamentals. Describe Azure management', institution: 'Azure', year: '2023' },
+    { title: 'Azure Fundamentals. Describe Azure architecture and services', institution: 'Azure', year: '2023' },
+    { title: 'Azure Fundamentals. Describe cloud concepts', institution: 'Azure', year: '2023' },
+    { title: 'Machine Learning Engineer', institution: 'Anyone AI', year: '2022' },
+    { title: 'Elements of AI', institution: 'University of Helsinki', year: '2022' },
+    { title: 'Analista PMO – Project Management Officer', institution: 'Universidad Tecnológica Nacional', year: '2022' },
+    { title: 'Scrum Foundation Professional Certificate', institution: 'CertiProf', year: '2021' },
+    { title: 'Elastic Container Services', institution: 'AWS', year: '2021' },
+    { title: 'CloudFormation', institution: 'AWS', year: '2021' },
+    { title: 'Cloud Practitioner Essentials', institution: 'AWS', year: '2021' },
+    { title: 'Serverless development', institution: 'AWS', year: '2021' },
+    { title: 'Introduction to AWS Solutions', institution: 'AWS', year: '2021' },
+    { title: 'EC2', institution: 'AWS', year: '2021' },
+    { title: 'Project manager officer', institution: 'Universidad Tecnológica Nacional (FRBA)', year: '2021' },
+    { title: 'Programador Lenguaje R', institution: 'Edutin', year: '2020' },
+    { title: 'Scrum Grand Master', institution: 'Universidad Tecnológica Nacional (FRBA)', year: '2020' },
+    { title: 'Programing fundamentals', institution: 'Universidad Tecnológica Nacional (FRBA)', year: '2019' },
+    { title: 'ITIL® Foundation Certificate in IT Service Management', institution: 'PeopleCert', year: '2018' },
+    { title: 'ITIL V3®', institution: 'Universidad Tecnológica Nacional (FRBA)', year: '2018' },
+    { title: "Bachelor's Degree in Business Management", institution: 'Universidad Autónoma de Entre Ríos', year: '2017' },
+    { title: 'Database programing - PL-SQL', institution: 'Universidad Tecnológica Nacional (FRBA)', year: '2016' },
+    { title: 'Database fundamental', institution: 'Universidad Tecnológica Nacional (FRBA)', year: '2015' }
+];
 
-    // Crear el elemento del tooltip personalizado
-    const customTooltip = document.createElement('div');
-    customTooltip.className = 'custom-tooltip';
-    document.body.appendChild(customTooltip);
-
-    // Variable para almacenar el temporizador del tooltip
-    let tooltipTimer;
-
-    // Función para posicionar el tooltip dentro de los límites de la pantalla
-    function positionTooltip(x, y) {
-        const tooltipRect = customTooltip.getBoundingClientRect();
-        const bodyRect = document.body.getBoundingClientRect();
-
-        let left = x + 10; // 10px de offset horizontal
-        let top = y - 20;  // 20px de offset vertical
-
-        // Ajustar horizontalmente si se sale por la derecha
-        if (left + tooltipRect.width > bodyRect.right) {
-            left = x - tooltipRect.width - 10;
-        }
-
-        // Ajustar verticalmente si se sale por abajo
-        if (top + tooltipRect.height > bodyRect.bottom) {
-            top = bodyRect.bottom - tooltipRect.height - 10;
-        }
-
-        // Asegurar que no se salga por arriba o por la izquierda
-        top = Math.max(10, top);
-        left = Math.max(10, left);
-
-        customTooltip.style.left = `${left}px`;
-        customTooltip.style.top = `${top}px`;
+    function createTimelineItems() {
+        const container = document.getElementById('timeline-container');
+        const isMobile = window.innerWidth <= 768;
         
+        workExperiences.forEach((exp, index) => {
+            const item = document.createElement('div');
+            item.className = `timeline-item ${index % 2 === 0 ? 'left' : 'right'}`;
+            item.innerHTML = `
+                <div class="timeline-content">
+                    <h2>${exp.company}</h2>
+                    <h3>${exp.position}</h3>
+                    <p>${exp.startDate} - ${exp.endDate === currentDate ? 'Present' : exp.endDate}</p>
+                    ${isMobile ? '' : `<p><strong>Technologies:</strong> ${exp.technologies}</p>`}
+                    <ul>
+                        ${exp.achievements.slice(0, isMobile ? 2 : 3).map(achievement => `<li>${achievement}</li>`).join('')}
+                    </ul>
+                </div>
+            `;
+            container.appendChild(item);
+        });
     }
 
-
-    // Manejar la aparición del tooltip
-    timeline.on('itemover', function(properties) {
-        clearTimeout(tooltipTimer); // Limpiar cualquier temporizador existente
-        const item = items.get(properties.item);
-        customTooltip.innerHTML = createTooltipContent(item);
-        customTooltip.style.display = 'block';
-        customTooltip.style.position = 'absolute';
-        
-    // Posicionar el tooltip
-    positionTooltip(properties.event.pageX, properties.event.pageY);
-        
-        // Añadir la clase visible para la animación
-        requestAnimationFrame(() => customTooltip.classList.add('visible'));
-    });
-
-    // Manejar la desaparición del tooltip
-    timeline.on('itemout', function() {
-        customTooltip.classList.remove('visible');
-        tooltipTimer = setTimeout(() => {
-            customTooltip.style.display = 'none';
-        }, 300);
-    });
-
-    // Actualizar la posición del tooltip al mover el mouse
-    document.addEventListener('mousemove', function(event) {
-        if (customTooltip.style.display === 'block') {
-            positionTooltip(event.pageX, event.pageY);
-        }
-    });
-
-    timeline.on('mouseOver', function(props) {
-        if (props.item) {
-            props.event.stopPropagation();
-        }
-    });
-
-    //custom legend
-    function addCustomLegend() {
-        const legendContainer = document.createElement('div');
-        legendContainer.className = 'custom-legend';
-        legendContainer.innerHTML = `
-            <div class="legend-item work-experience">
-                <span class="legend-color"></span>
-                <span>Work Experience</span>
-            </div>
-            <div class="legend-item education">
-                <span class="legend-color"></span>
-                <span>Education</span>
-            </div>
-        `;
-        container.appendChild(legendContainer);
+    function createEducationItems() {
+        const container = document.getElementById('education-container');
+        educationItems.forEach(item => {
+            const educationItem = document.createElement('div');
+            educationItem.className = 'education-item';
+            educationItem.innerHTML = `
+                <div class="education-icon">🎓</div>
+                <div class="education-title">${item.title}</div>
+                <div class="education-institution">${item.institution}</div>
+                <div class="education-date">${item.year}</div>
+            `;
+            container.appendChild(educationItem);
+        });
     }
 
-    // Llamar a la función para agregar la leyenda personalizada
-    addCustomLegend();
-    
+    createTimelineItems();
+    createEducationItems();
 });

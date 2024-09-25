@@ -1,150 +1,305 @@
-#timeline {
-    width: 80%;
-    min-height: 150px;
-    background-color: transparent;
-}
-.vis-timeline {
-    border: none;
-    font-family: 'Montserrat', sans-serif;
-}
-.vis-panel {
-    background-color: transparent !important;
-}
-.vis-labelset .vis-label {
-    color: #ffffff !important;
-}
-.vis-time-axis .vis-text {
-    color: #ffffff !important;
-}
-.vis-item {
-    background-color: rgba(255, 255, 255, 0.2);
-    border-color: rgba(255, 255, 255, 0.802);
-    color: #ffffff;
-}
-.vis-item.vis-dot {
-    border-width: 4px;
-    border-radius: 4px;
-}
-.vis-item .vis-item-content {
-    padding: 5px;
-}
-.vis-time-axis .vis-grid.vis-minor {
-    border-color: rgba(255, 255, 255, 0.857);
-}
-.vis-time-axis .vis-grid.vis-major {
-    border-color: rgba(255, 255, 255, 0.802);
-}
-.vis-timeline {
-    overflow: visible;
-}
-.vis-text {
-    font-size: 10px;
-    color: #ffffff;
-}
 
-/* Estilos para el tooltip personalizado */
-.vis-tooltip {
-    background-color: rgba(0, 0, 0, 0.7);
-    border: none;
-    box-shadow: none;
-    padding: 0;
-}
 
-.custom-tooltip {
-    background-color: rgba(0, 0, 0, 0.7);
-    backdrop-filter: blur(5px);
-    border-radius: 8px;
-    color: #ffffff;
+
+/* Estilos para la nueva sección de timeline y educación */
+
+.timeline-container {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  
+  .timeline-line {
+    position: absolute;
+    width: 2px;
+    background-color: rgba(255, 255, 255, 0.3);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -1px;
+  }
+  
+  .timeline-item {
+    padding: 10px 30px;
+    position: relative;
+    background-color: inherit;
+    width: 50%;
+  }
+  
+  .timeline-item::after {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    right: -8px;
+    background-color: #d1a1ff;
+    border: 2px solid #FF9F55;
+    top: 15px;
+    border-radius: 50%;
+    z-index: 1;
+  }
+  
+  .left {
+    left: 0;
+  }
+  
+  .right {
+    left: 50%;
+  }
+  
+  .left::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    right: 22px;
+    border: medium solid rgba(209, 161, 255, 0.1);
+    border-width: 8px 0 8px 8px;
+    border-color: transparent transparent transparent rgba(209, 161, 255, 0.1);
+  }
+  
+  .right::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    left: 22px;
+    border: medium solid rgba(209, 161, 255, 0.1);
+    border-width: 8px 8px 8px 0;
+    border-color: transparent rgba(209, 161, 255, 0.1) transparent transparent;
+  }
+  
+  .right::after {
+    left: -8px;
+  }
+  
+  .timeline-content {
     padding: 15px;
-    max-width: 250px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    font-family: 'Montserrat', sans-serif;
-    transition: opacity 0.3s ease, transform 0.3s ease;
-    opacity: 0;
-    transform: translateX(-10px);
-    pointer-events: none;
-}
-
-.custom-tooltip.visible {
-    opacity: 1;
-    transform: translateX(0);
-}
-
-.custom-tooltip h3 {
-    margin-top: 0;
-    margin-bottom: 10px;
-    font-size: 12px;
-    color: #f0f0f0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    padding-bottom: 5px;
-}
-
-.custom-tooltip p {
-    margin: 5px 0;
-    font-size: 10px;
-    line-height: 1.4;
+    background-color: rgba(209, 161, 255, 0.1);
+    position: relative;
+    border-radius: 6px;
+    font-size: 0.9em;
+    color: rgba(255, 255, 255, 0.8);
+  }
+  
+  .timeline-content h2 {
+    font-size: 1.2em;
     color: #d1a1ff;
-}
-
-.custom-tooltip ul {
-    margin: 5px 0;
-    padding-left: 20px;
-}
-
-.custom-tooltip li {
-    margin-bottom: 3px;
-    font-size: 10px;
-    color: #cccccc;
-}
-
-.custom-tooltip strong {
-    color: #d1a1ff;
-}
-
-/* Ajustes para los elementos de la línea de tiempo */
-.vis-item.vis-range {
-    background-color: rgb(205, 155, 212);
-    border-color: rgba(255, 255, 255, 0.5);
-}
-
-.vis-item.vis-point {
-    background-color: #97B0F8;
-    border-color: #3349A6;
-}
-
-/* Estilos actualizados para la leyenda personalizada */
-.custom-legend {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 5px;
+  }
+  
+  .timeline-content h3 {
+    font-size: 1em;
     color: #ffffff;
-}
-
-.custom-legend .legend-item {
+    margin-bottom: 5px;
+  }
+  
+  .timeline-content p {
+    font-size: 0.8em;
+    margin-bottom: 5px;
+  }
+  
+  .timeline-content ul {
+    padding-left: 20px;
+    margin-top: 5px;
+    font-size: 0.8em;
+  }
+  
+  .timeline-content li {
+    margin-bottom: 3px;
+  }
+  
+  /* Estilos para la sección de educación */
+  .education-container {
     display: flex;
-    align-items: center;
-    margin: 0 10px;
-}
-
-.custom-legend .legend-color {
-    width: 20px;
-    height: 20px;
-    margin-right: 5px;
-    border-radius: 3px;
-}
-
-.custom-legend .work-experience .legend-color {
-    background-color: rgb(205, 155, 212);
-    border: 1px solid rgba(255, 255, 255, 0.5);
-}
-
-.custom-legend .education .legend-color {
-    background-color: #97B0F8;
-    border: 1px solid #3349A6;
-}
-
-.custom-legend .legend-item span {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 50px;
+  }
+  
+  .education-item {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 15px;
+    width: 180px;
+    text-align: center;
+    transition: all 0.3s ease;
+  }
+  
+  .education-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .education-icon {
+    font-size: 30px;
+    margin-bottom: 8px;
+  }
+  
+  .education-title {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .education-institution {
     font-size: 12px;
-}
+    margin-bottom: 5px;
+  }
+  
+  .education-date {
+    font-size: 12px;
+    color: #d1a1ff;
+  }
+  
+  /* Responsive design */
+  @media screen and (max-width: 600px) {
+    .timeline-item {
+      width: 100%;
+      padding-left: 50px;
+      padding-right: 25px;
+    }
+    
+    .timeline-item::before {
+      left: 43px;
+      border: medium solid rgba(209, 161, 255, 0.1);
+      border-width: 8px 8px 8px 0;
+      border-color: transparent rgba(209, 161, 255, 0.1) transparent transparent;
+    }
+  
+    .left::after, .right::after {
+      left: 15px;
+    }
+  
+    .right {
+      left: 0%;
+    }
+  }
+
+  /* Responsive design */
+@media screen and (max-width: 768px) {
+    .timeline-container {
+      max-width: 100%;
+      padding: 0 20px;
+    }
+  
+    .timeline-line {
+      left: 30px;
+    }
+  
+    .timeline-item {
+      width: 100%;
+      padding-left: 45px;
+      padding-right: 15px;
+    }
+    
+    .timeline-item::before {
+      left: 22px;
+      border: medium solid rgba(209, 161, 255, 0.1);
+      border-width: 8px 8px 8px 0;
+      border-color: transparent rgba(209, 161, 255, 0.1) transparent transparent;
+    }
+  
+    .left::after, .right::after {
+      left: 23px;
+    }
+  
+    .right {
+      left: 0%;
+    }
+  
+    .timeline-content {
+      padding: 10px;
+    }
+  
+    .timeline-content h2 {
+      font-size: 1.1em;
+    }
+  
+    .timeline-content h3 {
+      font-size: 0.9em;
+    }
+  
+    .timeline-content p, .timeline-content ul {
+      font-size: 0.75em;
+    }
+  
+    .education-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .education-item {
+      width: 90%;
+      max-width: 300px;
+    }
+  }
+
+  /* Estilos para destacar ciertas tarjetas de educación */
+
+.education-item {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .education-item.highlight {
+    animation: pulse 2s infinite;
+  }
+  
+  .education-item.highlight::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(
+      circle,
+      rgba(255, 255, 255, 0.3) 0%,
+      rgba(255, 255, 255, 0) 70%
+    );
+    animation: rotate 4s linear infinite;
+  }
+  
+  @keyframes pulse {
+    0% {
+      box-shadow: 0 0 0 0 rgba(209, 161, 255, 0.4);
+    }
+    70% {
+      box-shadow: 0 0 0 10px rgba(209, 161, 255, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(209, 161, 255, 0);
+    }
+  }
+  
+  @keyframes rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  /* Ajustes para mejorar la legibilidad del texto en las tarjetas destacadas */
+  .education-item.highlight .education-title,
+  .education-item.highlight .education-institution,
+  .education-item.highlight .education-date {
+    position: relative;
+    z-index: 1;
+  }
+  
+  .education-item.highlight .education-title {
+    color: #ffffff;
+  }
+  
+  .education-item.highlight .education-institution,
+  .education-item.highlight .education-date {
+    color: #f0f0f0;
+  }
