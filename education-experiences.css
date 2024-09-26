@@ -105,12 +105,30 @@
 
 .timeline-content ul {
   padding-left: 20px;
+  margin-bottom: 10px;
   margin-top: 5px;
   font-size: 0.8em;
 }
 
 .timeline-content li {
   margin-bottom: 3px;
+}
+
+.timeline-content li.hidden {
+  display: none;
+}
+
+.timeline-content .more-info {
+  font-style: italic;
+  color: #d1a1ff;
+  font-size: 0.8em;
+  cursor: pointer;
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+.timeline-content .more-info:hover {
+  color: #ffffff;
 }
 
 /* Estilos para la sección de educación */

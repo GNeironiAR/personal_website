@@ -2,33 +2,39 @@ document.addEventListener('DOMContentLoaded', function() {
     const currentYear = new Date().getFullYear();
     const currentDate = new Date().toISOString().split('T')[0];
 
-    // Experiencia laboral
+    // Work Experience
     const workExperiences = [
         {
             company: 'Argeniss Software',
             position: 'Data Analyst',
             startDate: '2024-09-01',
             endDate: currentDate,
-            technologies: 'Microsoft reporting tools, SQL, VBNet',
+            technologies: 'Microsoft reporting tools, SQL, VBNet, SSRS, SSIS, SSAS, Power BI',
             achievements: [
-                'Created and maintained paginated reports in Microsoft environments for the client project.',
-                'Analyzed complex data sets to identify trends and insights.',
-                'Consulted with stakeholders to understand reporting requirements.',
-                'Created visually appealing and informative reports.',
-                'Programmed SQL queries for efficient data extraction.',
-                'Created a VBNet code for generating Bar Codes in the CODE39 standard without using third-party APIs or Libraries.'
+                'Created and maintained paginated reports in Microsoft environments for client projects, improving complex data visualization.',
+                'Analyzed complex data sets to identify trends and insights, providing valuable information for decision-making.',
+                'Consulted with stakeholders to understand reporting requirements, ensuring deliverables met client expectations.',
+                'Designed visually appealing and informative reports, enhancing data understanding for end-users.',
+                'Programmed efficient SQL queries for data extraction, optimizing report performance.',
+                'Developed VBNet code for generating bar codes in CODE39 standard without using third-party APIs or libraries, saving licensing costs.',
+                'Implemented BI solutions using SSRS, SSIS, and SSAS, improving data integration and analysis across the organization.',
+                'Created interactive dashboards in Power BI, allowing users to explore data intuitively and make real-time data-driven decisions.'
             ]
         },
         {
             company: 'Scale AI',
-            position: 'AI Quality Assurance analyst',
+            position: 'AI Quality Assurance Analyst',
             startDate: '2023-08-01',
             endDate: currentDate,
-            technologies: 'AI models, Code review',
+            technologies: 'AI models, Code review, Python, JavaScript, Natural Language Processing',
             achievements: [
-                'Help train generative AI models by performing code review of model output.',
-                'Write code snippets with reasoning to help the AI model respond appropriately to prompts.',
-                'Fix bugs and improve model performance.'
+                'Contributed to training generative AI models by performing code reviews of model output, improving response accuracy and relevance.',
+                'Wrote code snippets with detailed reasoning to help the AI model respond appropriately to prompts, enhancing its code comprehension and generation capabilities.',
+                'Identified and fixed bugs in model output, improving overall generated code quality.',
+                'Proposed and implemented model performance improvements, optimizing its ability to handle complex programming tasks.',
+                'Collaborated in creating specialized training datasets to enhance model capabilities in specific programming languages.',
+                'Participated in evaluating and adjusting model parameters to optimize performance across various coding tasks.',
+                'Developed automated test scripts to assess the quality and consistency of AI model output.'
             ]
         },
         {
@@ -36,12 +42,16 @@ document.addEventListener('DOMContentLoaded', function() {
             position: 'Sr Data Analyst',
             startDate: '2018-08-01',
             endDate: '2024-02-29',
-            technologies: 'Azure Databricks, Azure, Spark, Python, Power BI, Pentaho, Tableau, SQL and NoSQL databases',
+            technologies: 'Azure Databricks, Azure, Spark, Python, Power BI, Pentaho, Tableau, SQL and NoSQL databases, Machine Learning',
             achievements: [
-                'Built a custom report with Pentaho Report Designer that helped optimize the budget and save millions of dollars for a major health insurance company.',
-                'Implemented patient tracking that allows hospitals and clinics to continuously monitor patient health, schedule medical appointment reminders, and alert about potential medical interventions.',
-                'Developed predictive analytics to predict demand for medical resources, such as hospital beds or medical supplies, to ensure efficient resource management in healthcare institutions.',
-                'Evaluated operational efficiency and health care costs in health institutions, identifying areas for improvement and cost reduction.'
+                'Designed and developed a custom report with Pentaho Report Designer that helped optimize budget and save millions of dollars for a major health insurance company.',
+                'Implemented a patient tracking system allowing hospitals and clinics to continuously monitor patient health, schedule medical appointment reminders, and alert about potential medical interventions, significantly improving preventive care.',
+                'Developed predictive analytics models to forecast demand for medical resources, such as hospital beds or medical supplies, ensuring efficient resource management in healthcare institutions.',
+                'Evaluated operational efficiency and healthcare costs in health institutions, identifying areas for improvement and cost reduction, resulting in a 15% annual savings in operational expenses.',
+                'Led the implementation of a data lake solution using Azure Databricks, enhancing the organization\'s ability to process and analyze large volumes of health data.',
+                'Designed and implemented complex ETL pipelines using Spark and Python, automating data integration from multiple sources and improving data quality.',
+                'Created interactive dashboards in Power BI and Tableau, providing executives and medical staff with critical real-time information for decision-making.',
+                'Implemented machine learning models to predict hospital readmissions and optimize resource allocation, resulting in a 20% improvement in patient care efficiency.'
             ]
         },
         {
@@ -49,12 +59,16 @@ document.addEventListener('DOMContentLoaded', function() {
             position: 'Data Analyst and IT Manager',
             startDate: '2008-07-01',
             endDate: '2018-08-31',
-            technologies: 'PowerBI, Google Data Studio, SQL, Oracle databases',
+            technologies: 'PowerBI, Google Data Studio, SQL, Oracle databases, ETL processes, Health Information Systems',
             achievements: [
-                'Led the implementation of a health information system.',
-                'Analyzed, designed, and implemented ETL processes.',
-                'Implemented dashboards, reports, and visualizations with PowerBI and Google Data Studio.',
-                'Took care of an implementation project that was declining, implying a cultural change in the entire organization, migrating to a data-driven process and decision-making.'
+                'Led the successful implementation of a comprehensive health information system, improving operational efficiency and quality of patient care across the organization.',
+                'Analyzed, designed, and implemented complex ETL processes, integrating data from multiple systems and departments to create a single source of truth for health information.',
+                'Implemented dashboards, reports, and visualizations with PowerBI and Google Data Studio, providing management and medical staff with critical information for decision-making.',
+                'Rescued a declining implementation project, implying a cultural change throughout the organization, migrating to a data-driven decision-making process.',
+                'Developed a custom patient tracking system that improved continuity of care and reduced medical errors by 30%.',
+                'Implemented a medical inventory and supply management system that resulted in a 25% reduction in inventory costs.',
+                'Designed and executed training programs for medical and administrative staff on the effective use of new information systems, improving adoption and efficiency.',
+                'Established data security policies and procedures that ensured compliance with health data privacy regulations, avoiding potential sanctions and protecting sensitive patient information.'
             ]
         }
     ];
@@ -112,6 +126,18 @@ const educationItems = [
         workExperiences.forEach((exp, index) => {
             const item = document.createElement('div');
             item.className = `timeline-item ${index % 2 === 0 ? 'left' : 'right'}`;
+            
+            const visibleAchievements = isMobile ? 2 : 3;
+            const achievementsList = exp.achievements
+                .slice(0, visibleAchievements)
+                .map(achievement => `<li>${achievement}</li>`)
+                .join('');
+
+            const hiddenAchievements = exp.achievements
+                .slice(visibleAchievements)
+                .map(achievement => `<li class="hidden">${achievement}</li>`)
+                .join('');
+
             item.innerHTML = `
                 <div class="timeline-content">
                     <h2>${exp.company}</h2>
@@ -119,13 +145,29 @@ const educationItems = [
                     <p>${exp.startDate} - ${exp.endDate === currentDate ? 'Present' : exp.endDate}</p>
                     ${isMobile ? '' : `<p><strong>Technologies:</strong> ${exp.technologies}</p>`}
                     <ul>
-                        ${exp.achievements.slice(0, isMobile ? 2 : 3).map(achievement => `<li>${achievement}</li>`).join('')}
+                        ${achievementsList}
+                        ${hiddenAchievements}
                     </ul>
+                    ${exp.achievements.length > visibleAchievements ? 
+                        '<p class="more-info" onclick="toggleAchievements(this)">Click to see more achievements...</p>' : ''}
                 </div>
             `;
             container.appendChild(item);
         });
     }
+
+    window.toggleAchievements = function(element) {
+        const content = element.closest('.timeline-content');
+        const hiddenItems = content.querySelectorAll('li.hidden');
+        hiddenItems.forEach(item => item.classList.toggle('hidden'));
+        
+        if (element.textContent === 'Click to see more achievements...') {
+            element.textContent = 'Click to show less';
+        } else {
+            element.textContent = 'Click to see more achievements...';
+        }
+    };
+
 
     function createEducationItems() {
         const container = document.getElementById('education-container');
