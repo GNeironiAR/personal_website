@@ -92,6 +92,7 @@ footer {
 }
 
 /* Tech stack style */
+/* Tech stack style */
 #tech-stack .section-content {
   width: 100%;
   height: auto;
@@ -99,60 +100,88 @@ footer {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  padding: 2rem;
 }
 
 .graph-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  gap: 2rem;
   width: 100%;
   height: auto;
+  padding: 1rem;
 }
 
 .graph-wrapper {
-  width: calc(33.33% - 20px);
-  height: 300px;
-  min-height: 300px;
+  width: calc(50% - 2rem); /* Cambiado de 33.33% a 50% */
+  height: 400px; /* Aumentado de 300px a 400px */
+  min-height: 400px; /* Aumentado de 300px a 400px */
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 10px;
-  margin: 10px;
+  padding: 1rem;
   box-sizing: border-box;
+  background-color: rgba(0, 0, 0, 0.2);
 }
 
 .graph {
   width: 100%;
-  height: calc(100% - 30px); 
+  height: calc(100% - 40px); /* Ajustado para el título */
 }
 
 .graph-wrapper h3 {
   color: #d1a1ff;
-  font-size: 1rem;
-  margin: 0 0 10px 0;
+  font-size: 1.2rem; /* Aumentado de 1rem */
+  margin: 0 0 15px 0; /* Aumentado de 10px */
   text-align: center;
+  padding: 5px 0;
 }
 
+/* Ajustes responsive */
+@media (max-width: 1200px) {
+  .graph-wrapper {
+      width: calc(100% - 2rem);
+      height: 450px;
+      min-height: 450px;
+  }
+}
+
+@media (max-width: 768px) {
+  .graph-wrapper {
+      height: 400px;
+      min-height: 400px;
+  }
+
+  #tech-stack .section-content {
+      padding: 1rem;
+  }
+}
+
+/* Mejoras en la visualización de nodos */
 .node text {
   fill: #d1a1ff;
-  font-size: 4px;
-  font-weight: 100;
+  font-size: 8px; /* Aumentado de 4px */
+  font-weight: 300;
   pointer-events: none;
-  opacity: 0.7;
+  opacity: 0.8;
   transition: opacity 0.3s, font-size 0.3s;
 }
 
 .nodes g:hover text {
   opacity: 1;
-  font-size: 12px;
+  font-size: 14px; /* Aumentado de 12px */
   font-weight: bold;
 }
 
 .node circle {
   stroke: #ffffff;
   stroke-width: 1.5px;
+  r: 6; /* Aumentado el radio de los círculos */
 }
 
 .link {
-  stroke: rgba(255, 255, 255, 0.2);
+  stroke: rgba(255, 255, 255, 0.3); /* Aumentado la opacidad */
+  stroke-width: 1.5px; /* Aumentado el grosor de las líneas */
 }
 
 /* Estilos para la sección de servicios */

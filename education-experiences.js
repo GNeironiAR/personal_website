@@ -6,9 +6,26 @@ document.addEventListener('DOMContentLoaded', function() {
     const workExperiences = [
         {
             company: 'Argeniss Software',
+            position: 'Data Engineer',
+            startDate: '2024-09-01',
+            endDate: currentDate,
+            client: 'Confidential',
+            technologies: 'AWS (Lambda, S3, Glue, Lake Formation, IAM, KMS, SQS), Python, Apache Parquet, AWS CDK, Pandas, PyArrow, IaC',
+            achievements: [
+                'Designed and implemented a serverless data processing architecture using AWS CDK (Cloud Development Kit) for infrastructure as code (IaC) automation.',
+                'Developed a Python Lambda function for efficient JSON to Parquet data transformation, including implementation of processing logic to handle multiple types of medical records, optimization of data schema for analytical queries, implementation of robust error handling and logging, and integration with AWS services such as S3 and SQS.',
+                'Designed and implemented a data cataloging system using AWS Glue, including configuration of crawlers for automatic schema discovery, design of a database structure optimized for analytical queries, and implementation of efficient partitioning policies.',
+                'Implemented data security and governance best practices, including IAM role and policy configuration following the principle of least privilege, implementation of data encryption at rest using KMS, and configuration of Lake Formation for granular access control.',
+                'Achieved significant reduction in storage and processing costs through data format optimization.',
+                'Improved query performance through implementation of Parquet and efficient partitioning.',
+            ]
+        },
+        {
+            company: 'Argeniss Software',
             position: 'Data Analyst',
             startDate: '2024-09-01',
             endDate: currentDate,
+            client: 'Confidential',
             technologies: 'Microsoft reporting tools, SQL, VBNet, SSRS, SSIS, SSAS, Power BI',
             achievements: [
                 'Created and maintained paginated reports in Microsoft environments for client projects, improving complex data visualization.',

@@ -9,7 +9,8 @@ const databaseData = {
         { id: "Oracle", group: 2 },
         { id: "SQL Server", group: 2 },
         { id: "MongoDB", group: 3 },
-        { id: "Amazon RDS", group: 4 }
+        { id: "Amazon RDS", group: 4 },
+        { id: "Parquet", group: 5 } 
     ],
     links: [
         { source: "Databases", target: "SQL", value: 1 },
@@ -20,7 +21,8 @@ const databaseData = {
         { source: "SQL", target: "Oracle", value: 1 },
         { source: "SQL", target: "SQL Server", value: 1 },
         { source: "NoSQL", target: "MongoDB", value: 1 },
-        { source: "Databases", target: "Amazon RDS", value: 1 }
+        { source: "Databases", target: "Amazon RDS", value: 1 },
+        { source: "Databases", target: "Parquet", value: 1 } 
     ]
 };
 
@@ -36,7 +38,12 @@ const cloudData = {
         { id: "Amazon Kinesis", group: 2 },
         { id: "Azure Data Factory", group: 3 },
         { id: "Azure Databricks", group: 3 },
-        { id: "Microsoft Fabric", group: 3 }
+        { id: "Microsoft Fabric", group: 3 },
+        { id: "AWS Lambda", group: 2 },    
+        { id: "AWS S3", group: 2 },       
+        { id: "AWS KMS", group: 2 },       
+        { id: "AWS SQS", group: 2 },       
+        { id: "Lake Formation", group: 2 } 
     ],
     links: [
         { source: "Cloud Platforms", target: "AWS", value: 1 },
@@ -48,7 +55,12 @@ const cloudData = {
         { source: "AWS", target: "Amazon Kinesis", value: 1 },
         { source: "Azure", target: "Azure Data Factory", value: 1 },
         { source: "Azure", target: "Azure Databricks", value: 1 },
-        { source: "Azure", target: "Microsoft Fabric", value: 1 }
+        { source: "Azure", target: "Microsoft Fabric", value: 1 },
+        { source: "AWS", target: "AWS Lambda", value: 1 },     
+        { source: "AWS", target: "AWS S3", value: 1 },         
+        { source: "AWS", target: "AWS KMS", value: 1 },        
+        { source: "AWS", target: "AWS SQS", value: 1 },        
+        { source: "AWS", target: "Lake Formation", value: 1 } 
     ]
 };
 
@@ -59,6 +71,7 @@ const toolsData = {
         { id: "Project Management", group: 3 },
         { id: "Data Visualization", group: 4 },
         { id: "Integration", group: 5 },
+        { id: "Infrastructure", group: 6 },
         { id: "Docker", group: 2 },
         { id: "Git", group: 2 },
         { id: "Jira", group: 3 },
@@ -73,13 +86,16 @@ const toolsData = {
         { id: "Google Data Studio", group: 4 },
         { id: "MIRTH Connect", group: 5 },
         { id: "Mule", group: 5 },
-        { id: "HL7/FHIR", group: 5 }
+        { id: "HL7/FHIR", group: 5 },
+        { id: "AWS CDK", group: 6 },        
+        { id: "IaC", group: 6 }             
     ],
     links: [
         { source: "Tools", target: "Version Control", value: 1 },
         { source: "Tools", target: "Project Management", value: 1 },
         { source: "Tools", target: "Data Visualization", value: 1 },
         { source: "Tools", target: "Integration", value: 1 },
+        { source: "Tools", target: "Infrastructure", value: 1 },
         { source: "Version Control", target: "Docker", value: 1 },
         { source: "Version Control", target: "Git", value: 1 },
         { source: "Project Management", target: "Jira", value: 1 },
@@ -94,7 +110,9 @@ const toolsData = {
         { source: "Data Visualization", target: "Google Data Studio", value: 1 },
         { source: "Integration", target: "MIRTH Connect", value: 1 },
         { source: "Integration", target: "Mule", value: 1 },
-        { source: "Integration", target: "HL7/FHIR", value: 1 }
+        { source: "Integration", target: "HL7/FHIR", value: 1 },
+        { source: "Infrastructure", target: "AWS CDK", value: 1 },   
+        { source: "Infrastructure", target: "IaC", value: 1 }   
     ]
 };
 
@@ -121,7 +139,8 @@ const programmingData = {
         { id: "LightGBM", group: 4 },
         { id: "Apache Spark", group: 5 },
         { id: "PySpark", group: 5 },
-        { id: "Pentaho Data Integration", group: 5 }
+        { id: "Pentaho Data Integration", group: 5 },
+        { id: "PyArrow", group: 3 }
     ],
     links: [
         { source: "Programming", target: "Languages", value: 1 },
@@ -136,6 +155,7 @@ const programmingData = {
         { source: "Data Analysis", target: "Pandas", value: 1 },
         { source: "Data Analysis", target: "NumPy", value: 1 },
         { source: "Data Analysis", target: "Matplotlib", value: 1 },
+        { source: "Data Analysis", target: "PyArrow", value: 1 },
         { source: "Machine Learning", target: "Scikit-learn", value: 1 },
         { source: "Machine Learning", target: "Keras", value: 1 },
         { source: "Machine Learning", target: "PyTorch", value: 1 },
