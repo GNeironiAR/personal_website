@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const workExperiences = [
         {
             company: 'Argeniss Software',
-            position: 'Data Engineer',
+            position: 'Data Engineer (confidential client)',
             startDate: '2024-09-01',
             endDate: currentDate,
             client: 'Confidential',
@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         {
             company: 'Argeniss Software',
-            position: 'Data Analyst',
+            position: 'Data Analyst (confidential client)',
             startDate: '2024-09-01',
             endDate: currentDate,
             client: 'Confidential',
@@ -136,54 +136,64 @@ const educationItems = [
     { title: 'Database fundamental', institution: 'Universidad Tecnológica Nacional (FRBA)', year: '2015' }
 ];
 
-    function createTimelineItems() {
-        const container = document.getElementById('timeline-container');
-        const isMobile = window.innerWidth <= 768;
+function createTimelineItems() {
+    const container = document.getElementById('timeline-container');
+    const isMobile = window.innerWidth <= 768;
+    
+    workExperiences.forEach((exp, index) => {
+        const item = document.createElement('div');
+        item.className = `timeline-item ${index % 2 === 0 ? 'left' : 'right'}`;
         
-        workExperiences.forEach((exp, index) => {
-            const item = document.createElement('div');
-            item.className = `timeline-item ${index % 2 === 0 ? 'left' : 'right'}`;
-            
-            const visibleAchievements = isMobile ? 2 : 3;
-            const achievementsList = exp.achievements
-                .slice(0, visibleAchievements)
-                .map(achievement => `<li>${achievement}</li>`)
-                .join('');
+        const visibleAchievements = isMobile ? 2 : 3;
+        const achievementsList = exp.achievements
+            .slice(0, visibleAchievements)
+            .map(achievement => `<li>${achievement}</li>`)
+            .join('');
 
-            const hiddenAchievements = exp.achievements
-                .slice(visibleAchievements)
-                .map(achievement => `<li class="hidden">${achievement}</li>`)
-                .join('');
+        const hiddenAchievements = exp.achievements
+            .slice(visibleAchievements)
+            .map(achievement => `<li style="display: none;" class="hidden">${achievement}</li>`)
+            .join('');
 
-            item.innerHTML = `
-                <div class="timeline-content">
-                    <h2>${exp.company}</h2>
-                    <h3>${exp.position}</h3>
-                    <p>${exp.startDate} - ${exp.endDate === currentDate ? 'Present' : exp.endDate}</p>
-                    ${isMobile ? '' : `<p><strong>Technologies:</strong> ${exp.technologies}</p>`}
-                    <ul>
-                        ${achievementsList}
-                        ${hiddenAchievements}
-                    </ul>
-                    ${exp.achievements.length > visibleAchievements ? 
-                        '<p class="more-info" onclick="toggleAchievements(this)">Click to see more achievements...</p>' : ''}
-                </div>
-            `;
-            container.appendChild(item);
-        });
+        item.innerHTML = `
+            <div class="timeline-content">
+                <h2>${exp.company}</h2>
+                <h3>${exp.position}</h3>
+                <p>${exp.startDate} - ${exp.endDate === currentDate ? 'Present' : exp.endDate}</p>
+                ${isMobile ? '' : `<p><strong>Technologies:</strong> ${exp.technologies}</p>`}
+                <ul>
+                    ${achievementsList}
+                    ${hiddenAchievements}
+                </ul>
+                ${exp.achievements.length > visibleAchievements ? 
+                    '<button class="more-info">Click to see more achievements...</button>' : ''}
+            </div>
+        `;
+        container.appendChild(item);
+    });
+}
+
+// Función de toggle mejorada
+window.toggleAchievements = function(element) {
+    const content = element.closest('.timeline-content');
+    const hiddenItems = content.querySelectorAll('li.hidden');
+    const isExpanded = element.textContent.includes('less');
+    
+    hiddenItems.forEach(item => {
+        item.style.display = isExpanded ? 'none' : 'list-item';
+    });
+    
+    element.textContent = isExpanded ? 
+        'Click to see more achievements...' : 
+        'Click to see less';
+};
+
+// Event listener para los botones more-info
+document.addEventListener('click', function(e) {
+    if (e.target.classList.contains('more-info')) {
+        toggleAchievements(e.target);
     }
-
-    window.toggleAchievements = function(element) {
-        const content = element.closest('.timeline-content');
-        const hiddenItems = content.querySelectorAll('li.hidden');
-        hiddenItems.forEach(item => item.classList.toggle('hidden'));
-        
-        if (element.textContent === 'Click to see more achievements...') {
-            element.textContent = 'Click to show less';
-        } else {
-            element.textContent = 'Click to see more achievements...';
-        }
-    };
+});
 
 
     function createEducationItems() {

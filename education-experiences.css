@@ -1,15 +1,15 @@
-/* Estilos para la nueva sección de timeline y educación */
-
+/* Timeline styles */
 .timeline-container {
   position: relative;
-  max-width: 1000px;
+  max-width: 1200px;
   margin: 0 auto;
+  padding: 2rem 0;
 }
 
 .timeline-line {
   position: absolute;
   width: 2px;
-  background-color: rgba(255, 255, 255, 0.3);
+  background: linear-gradient(to bottom, rgba(99, 102, 241, 0.2), rgba(99, 102, 241, 0.6));
   top: 0;
   bottom: 0;
   left: 50%;
@@ -17,22 +17,30 @@
 }
 
 .timeline-item {
-  padding: 10px 30px;
+  padding: 1rem 3rem;
   position: relative;
-  background-color: inherit;
+  background-color: transparent;
   width: 50%;
+  margin: 2rem 0;
 }
 
 .timeline-item::after {
   content: '';
   position: absolute;
-  width: 15px;
-  height: 15px;
-  background-color: #d1a1ff;
-  border: 2px solid #FF9F55;
-  top: 15px;
+  width: 16px;
+  height: 16px;
+  background-color: #6366f1;
+  border: 3px solid #818cf8;
+  top: 20px;
   border-radius: 50%;
   z-index: 1;
+  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.2);
+  transition: all 0.3s ease;
+}
+
+.timeline-item:hover::after {
+  transform: scale(1.2);
+  box-shadow: 0 0 0 6px rgba(99, 102, 241, 0.3);
 }
 
 .left {
@@ -43,167 +51,112 @@
   left: 50%;
 }
 
-.left::before {
-  content: " ";
-  height: 0;
-  position: absolute;
-  top: 22px;
-  width: 0;
-  z-index: 1;
-  right: 30px;
-  border: medium solid rgba(209, 161, 255, 0.1);
-  border-width: 10px 0 10px 10px;
-  border-color: transparent transparent transparent rgba(209, 161, 255, 0.1);
-}
-
-.right::before {
-  content: " ";
-  height: 0;
-  position: absolute;
-  top: 22px;
-  width: 0;
-  z-index: 1;
-  left: 30px;
-  border: medium solid rgba(209, 161, 255, 0.1);
-  border-width: 10px 10px 10px 0;
-  border-color: transparent rgba(209, 161, 255, 0.1) transparent transparent;
-}
-
-.left::after {
-  right: -8px;
-}
-
-.right::after {
-  left: -8px;
-}
-
 .timeline-content {
-  padding: 20px 30px;
-  background-color: rgba(209, 161, 255, 0.1);
-  position: relative;
-  border-radius: 6px;
-  font-size: 0.9em;
-  color: rgba(255, 255, 255, 0.8);
+  padding: 1.5rem;
+  background: rgba(30, 41, 59, 0.5);
+  backdrop-filter: blur(10px);
+  border-radius: 1rem;
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.timeline-content:hover {
+  transform: translateY(-5px);
 }
 
 .timeline-content h2 {
-  font-size: 1.2em;
-  color: #d1a1ff;
-  margin-bottom: 5px;
+  font-size: 1.5rem;
+  color: #f8fafc;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
 }
 
 .timeline-content h3 {
-  font-size: 1em;
-  color: #ffffff;
-  margin-bottom: 5px;
+  font-size: 1.25rem;
+  color: #6366f1;
+  margin-bottom: 0.75rem;
+  font-weight: 500;
 }
 
 .timeline-content p {
-  font-size: 0.8em;
-  margin-bottom: 5px;
+  font-size: 0.95rem;
+  color: #cbd5e1;
+  margin-bottom: 1rem;
 }
 
-.timeline-content ul {
-  padding-left: 20px;
-  margin-bottom: 10px;
-  margin-top: 5px;
-  font-size: 0.8em;
-}
-
-.timeline-content li {
-  margin-bottom: 3px;
-}
-
-.timeline-content li.hidden {
-  display: none;
-}
-
-.timeline-content .more-info {
-  font-style: italic;
-  color: #d1a1ff;
-  font-size: 0.8em;
-  cursor: pointer;
-  text-decoration: underline;
-  transition: color 0.3s ease;
-}
-
-.timeline-content .more-info:hover {
-  color: #ffffff;
-}
-
-/* Estilos para la sección de educación */
+/* Education cards */
 .education-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 15px;
-  margin-top: 50px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+  width: 100%;
+  max-width: 1200px;
 }
 
 .education-item {
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 8px;
-  padding: 15px;
-  width: 180px;
-  text-align: center;
+  background: rgba(30, 41, 59, 0.5);
+  backdrop-filter: blur(10px);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  border: 1px solid rgba(99, 102, 241, 0.2);
   transition: all 0.3s ease;
 }
 
 .education-item:hover {
   transform: translateY(-5px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  border-color: rgba(99, 102, 241, 0.4);
 }
 
 .education-icon {
-  font-size: 30px;
-  margin-bottom: 8px;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #6366f1;
 }
 
 .education-title {
-  font-size: 14px;
-  font-weight: bold;
-  margin-bottom: 5px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #f8fafc;
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
 }
 
 .education-institution {
-  font-size: 12px;
-  margin-bottom: 5px;
+  font-size: 0.9rem;
+  color: #94a3b8;
+  margin-bottom: 0.5rem;
 }
 
 .education-date {
-  font-size: 12px;
-  color: #d1a1ff;
+  font-size: 0.875rem;
+  color: #6366f1;
+  font-weight: 500;
 }
 
-/* Responsive design */
-@media screen and (max-width: 600px) {
-  .timeline-item {
-    width: 100%;
-    padding-left: 50px;
-    padding-right: 25px;
-  }
-  
-  .timeline-item::before {
-    left: 43px;
-    border: medium solid rgba(209, 161, 255, 0.1);
-    border-width: 8px 8px 8px 0;
-    border-color: transparent rgba(209, 161, 255, 0.1) transparent transparent;
-  }
+/* Highlight animation */
+.education-item.highlight {
+  animation: glow 2s infinite;
+}
 
-  .left::after, .right::after {
-    left: 15px;
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 5px rgba(99, 102, 241, 0.2);
   }
-
-  .right {
-    left: 0%;
+  50% {
+    box-shadow: 0 0 20px rgba(99, 102, 241, 0.4);
+  }
+  100% {
+    box-shadow: 0 0 5px rgba(99, 102, 241, 0.2);
   }
 }
 
-/* Responsive design */
+/* Responsive adjustments */
 @media screen and (max-width: 768px) {
   .timeline-container {
-    max-width: 100%;
-    padding: 0 20px;
+    padding: 1rem;
   }
 
   .timeline-line {
@@ -212,112 +165,109 @@
 
   .timeline-item {
     width: 100%;
-    padding-left: 45px;
-    padding-right: 15px;
-  }
-  
-  .timeline-item::before {
-    left: 22px;
-    border: medium solid rgba(209, 161, 255, 0.1);
-    border-width: 8px 8px 8px 0;
-    border-color: transparent rgba(209, 161, 255, 0.1) transparent transparent;
-  }
-
-  .left::after, .right::after {
-    left: 23px;
+    padding-left: 60px;
+    padding-right: 1rem;
   }
 
   .right {
-    left: 0%;
+    left: 0;
   }
 
   .timeline-content {
-    padding: 10px;
-  }
-
-  .timeline-content h2 {
-    font-size: 1.1em;
-  }
-
-  .timeline-content h3 {
-    font-size: 0.9em;
-  }
-
-  .timeline-content p, .timeline-content ul {
-    font-size: 0.75em;
+    padding: 1rem;
   }
 
   .education-container {
-    flex-direction: column;
-    align-items: center;
+    grid-template-columns: 1fr;
+    padding: 1rem;
   }
 
   .education-item {
-    width: 90%;
-    max-width: 300px;
+    padding: 1.25rem;
   }
 }
 
-/* Estilos para destacar ciertas tarjetas de educación */
 
-.education-item {
-  position: relative;
+/* Existing styles remain the same */
+.timeline-content li {
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+  transition: max-height 0.3s ease-out;
+}
+
+/* Hide elements with the hidden class */
+.timeline-content li.hidden {
+  display: none;
+}
+
+/* Style for the "show more" button */
+.more-info {
+  color: #6366f1;
+  cursor: pointer;
+  margin-top: 1rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.more-info:hover {
+  color: #818cf8;
+  text-decoration: underline;
+}
+
+/* Limit the initial height of timeline content */
+.timeline-content {
+  max-height: none;
   overflow: hidden;
+  transition: max-height 0.3s ease-out;
 }
 
-.education-item.highlight {
-  animation: pulse 2s infinite;
+/* Add some spacing between list items */
+.timeline-content ul {
+  margin: 1rem 0;
+  padding-left: 1.2rem;
 }
 
-.education-item.highlight::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(
-    circle,
-    rgba(255, 255, 255, 0.3) 0%,
-    rgba(255, 255, 255, 0) 70%
-  );
-  animation: rotate 4s linear infinite;
+/* Style for the achievements list */
+.timeline-content li {
+  color: #cbd5e1;
+  font-size: 0.95rem;
 }
 
-@keyframes pulse {
-  0% {
-    box-shadow: 0 0 0 0 rgba(209, 161, 255, 0.4);
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .timeline-content {
+      padding: 1rem;
   }
-  70% {
-    box-shadow: 0 0 0 10px rgba(209, 161, 255, 0);
-  }
-  100% {
-    box-shadow: 0 0 0 0 rgba(209, 161, 255, 0);
+  
+  .timeline-content li {
+      font-size: 0.9rem;
   }
 }
 
-@keyframes rotate {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
+.more-info {
+  color: #6366f1;
+  cursor: pointer;
+  margin-top: 1rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  background: none;
+  border: none;
+  padding: 0;
+  text-align: left;
 }
 
-/* Ajustes para mejorar la legibilidad del texto en las tarjetas destacadas */
-.education-item.highlight .education-title,
-.education-item.highlight .education-institution,
-.education-item.highlight .education-date {
-  position: relative;
-  z-index: 1;
+.more-info:hover {
+  color: #818cf8;
+  text-decoration: underline;
 }
 
-.education-item.highlight .education-title {
-  color: #ffffff;
+.timeline-content li.hidden {
+  display: none;
 }
 
-.education-item.highlight .education-institution,
-.education-item.highlight .education-date {
-  color: #f0f0f0;
+.timeline-content li {
+  margin-bottom: 0.5rem;
+  color: #cbd5e1;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
 }
