@@ -584,3 +584,47 @@ footer {
   overflow: hidden;
   box-sizing: border-box;
 }
+
+
+/* Estilo específico para el botón de descarga */
+.download-button {
+  position: relative;
+  background: #6366f1; /* Color base del botón */
+  animation: glowing 2s infinite;
+  background-size: 200% auto;
+  transition: all 0.3s ease;
+}
+
+/* Efecto de resplandor */
+@keyframes glowing {
+  0% {
+      box-shadow: 0 0 5px #6366f1,
+                  0 0 10px #6366f1,
+                  0 0 15px #6366f1;
+  }
+  50% {
+      box-shadow: 0 0 10px #818cf8,
+                  0 0 20px #818cf8,
+                  0 0 30px #818cf8;
+  }
+  100% {
+      box-shadow: 0 0 5px #6366f1,
+                  0 0 10px #6366f1,
+                  0 0 15px #6366f1;
+  }
+}
+
+/* Hover effect */
+.download-button:hover {
+  transform: translateY(-2px);
+  background: #4f46e5;
+  box-shadow: 0 0 20px #6366f1,
+              0 0 40px #6366f1;
+}
+
+/* Ajuste responsive */
+@media screen and (max-width: 768px) {
+  .download-button {
+      animation: glowing 3s infinite;
+  }
+}
