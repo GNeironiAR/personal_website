@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
             company: 'Scale AI',
             position: 'AI Quality Assurance Analyst',
             startDate: '2023-08-01',
-            endDate: currentDate,
+            endDate: '2024-10-20',
             technologies: 'AI models, Code review, Python, JavaScript, Natural Language Processing',
             achievements: [
                 'Contributed to training generative AI models by performing code reviews of model output, improving response accuracy and relevance.',
