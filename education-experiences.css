@@ -9,7 +9,7 @@
 .timeline-line {
   position: absolute;
   width: 2px;
-  background: linear-gradient(to bottom, rgba(99, 102, 241, 0.2), rgba(99, 102, 241, 0.6));
+  background: linear-gradient(to bottom, rgba(255, 153, 0, 0.2), rgba(255, 153, 0, 0.6));
   top: 0;
   bottom: 0;
   left: 50%;
@@ -29,18 +29,18 @@
   position: absolute;
   width: 16px;
   height: 16px;
-  background-color: #6366f1;
-  border: 3px solid #818cf8;
+  background-color: #ff9900; /* AWS Orange */
+  border: 3px solid rgba(255, 153, 0, 0.5);
   top: 20px;
   border-radius: 50%;
   z-index: 1;
-  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.2);
+  box-shadow: 0 0 0 4px rgba(255, 153, 0, 0.2);
   transition: all 0.3s ease;
 }
 
 .timeline-item:hover::after {
   transform: scale(1.2);
-  box-shadow: 0 0 0 6px rgba(99, 102, 241, 0.3);
+  box-shadow: 0 0 0 6px rgba(255, 153, 0, 0.3);
 }
 
 .left {
@@ -53,140 +53,38 @@
 
 .timeline-content {
   padding: 1.5rem;
-  background: rgba(30, 41, 59, 0.5);
+  background: rgba(47, 60, 77, 0.8); /* Lighter AWS blue with transparency */
   backdrop-filter: blur(10px);
   border-radius: 1rem;
-  border: 1px solid rgba(99, 102, 241, 0.2);
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 153, 0, 0.2); /* AWS Orange border */
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease;
 }
 
 .timeline-content:hover {
   transform: translateY(-5px);
+  border-color: #ff9900; /* AWS Orange */
 }
 
 .timeline-content h2 {
   font-size: 1.5rem;
-  color: #f8fafc;
+  color: #ff9900; /* AWS Orange */
   margin-bottom: 0.75rem;
   font-weight: 600;
 }
 
 .timeline-content h3 {
   font-size: 1.25rem;
-  color: #6366f1;
+  color: #ffffff;
   margin-bottom: 0.75rem;
   font-weight: 500;
 }
 
 .timeline-content p {
   font-size: 0.95rem;
-  color: #cbd5e1;
+  color: #d5dbdb; /* Light gray for better contrast */
   margin-bottom: 1rem;
 }
-
-/* Education cards */
-.education-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 1.5rem;
-  padding: 2rem;
-  width: 100%;
-  max-width: 1200px;
-}
-
-.education-item {
-  background: rgba(30, 41, 59, 0.5);
-  backdrop-filter: blur(10px);
-  border-radius: 1rem;
-  padding: 1.5rem;
-  border: 1px solid rgba(99, 102, 241, 0.2);
-  transition: all 0.3s ease;
-}
-
-.education-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-  border-color: rgba(99, 102, 241, 0.4);
-}
-
-.education-icon {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  color: #6366f1;
-}
-
-.education-title {
-  font-size: 1rem;
-  font-weight: 600;
-  color: #f8fafc;
-  margin-bottom: 0.5rem;
-  line-height: 1.4;
-}
-
-.education-institution {
-  font-size: 0.9rem;
-  color: #94a3b8;
-  margin-bottom: 0.5rem;
-}
-
-.education-date {
-  font-size: 0.875rem;
-  color: #6366f1;
-  font-weight: 500;
-}
-
-/* Highlight animation */
-.education-item.highlight {
-  animation: glow 2s infinite;
-}
-
-@keyframes glow {
-  0% {
-    box-shadow: 0 0 5px rgba(99, 102, 241, 0.2);
-  }
-  50% {
-    box-shadow: 0 0 20px rgba(99, 102, 241, 0.4);
-  }
-  100% {
-    box-shadow: 0 0 5px rgba(99, 102, 241, 0.2);
-  }
-}
-
-/* Responsive adjustments */
-@media screen and (max-width: 768px) {
-  .timeline-container {
-    padding: 1rem;
-  }
-
-  .timeline-line {
-    left: 30px;
-  }
-
-  .timeline-item {
-    width: 100%;
-    padding-left: 60px;
-    padding-right: 1rem;
-  }
-
-  .right {
-    left: 0;
-  }
-
-  .timeline-content {
-    padding: 1rem;
-  }
-
-  .education-container {
-    grid-template-columns: 1fr;
-    padding: 1rem;
-  }
-
-  .education-item {
-    padding: 1.25rem;
-  }
-}
-
 
 /* Existing styles remain the same */
 .timeline-content li {
@@ -202,7 +100,7 @@
 
 /* Style for the "show more" button */
 .more-info {
-  color: #6366f1;
+  color: #ff9900; /* AWS Orange */
   cursor: pointer;
   margin-top: 1rem;
   font-weight: 500;
@@ -210,7 +108,7 @@
 }
 
 .more-info:hover {
-  color: #818cf8;
+  color: #ec7211; /* Darker AWS Orange */
   text-decoration: underline;
 }
 
@@ -229,7 +127,7 @@
 
 /* Style for the achievements list */
 .timeline-content li {
-  color: #cbd5e1;
+  color: #d5dbdb; /* Light gray for better contrast */
   font-size: 0.95rem;
 }
 
@@ -245,7 +143,7 @@
 }
 
 .more-info {
-  color: #6366f1;
+  color: #ff9900; /* AWS Orange */
   cursor: pointer;
   margin-top: 1rem;
   font-weight: 500;
@@ -257,7 +155,7 @@
 }
 
 .more-info:hover {
-  color: #818cf8;
+  color: #ec7211; /* Darker AWS Orange */
   text-decoration: underline;
 }
 
@@ -267,7 +165,109 @@
 
 .timeline-content li {
   margin-bottom: 0.5rem;
-  color: #cbd5e1;
+  color: #d5dbdb; /* Light gray for better contrast */
   font-size: 0.95rem;
   transition: all 0.3s ease;
+}
+
+/* Updated Education cards to make them more rectangular and compact */
+.education-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+  padding: 1.5rem;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.education-item {
+  background: rgba(47, 60, 77, 0.8); /* Lighter AWS blue with transparency */
+  border-radius: 0.75rem;
+  padding: 1rem;
+  border: 1px solid rgba(255, 153, 0, 0.2); /* AWS Orange border */
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 80px; /* Fixed height to make them more rectangular */
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
+}
+
+.education-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 12px -3px rgba(0, 0, 0, 0.2);
+  border-color: #ff9900; /* AWS Orange */
+}
+
+.education-icon {
+  font-size: 1.5rem;
+  margin-right: 1rem;
+  color: #ff9900; /* AWS Orange */
+  flex-shrink: 0;
+}
+
+.education-details {
+  flex-grow: 1;
+  overflow: hidden;
+}
+
+.education-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 0.25rem;
+  line-height: 1.3;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.education-institution {
+  font-size: 0.8rem;
+  color: #d5dbdb; /* Light gray for better contrast */
+  margin-bottom: 0.25rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.education-date {
+  font-size: 0.75rem;
+  color: #ff9900; /* AWS Orange */
+  font-weight: 500;
+}
+
+/* Highlight animation */
+.education-item.highlight {
+  animation: glow 2s infinite;
+}
+
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 5px rgba(255, 153, 0, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(255, 153, 0, 0.4);
+  }
+  100% {
+    box-shadow: 0 0 5px rgba(255, 153, 0, 0.2);
+  }
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .education-container {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+  }
+
+  .education-item {
+    padding: 0.75rem;
+    height: 70px;
+  }
+  
+  .education-icon {
+    font-size: 1.25rem;
+  }
 }

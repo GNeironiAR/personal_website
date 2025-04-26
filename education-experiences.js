@@ -6,6 +6,37 @@ document.addEventListener('DOMContentLoaded', function() {
     const workExperiences = [
         {
             company: 'Argeniss Software',
+            position: 'AWS Data Warehouse Engineer',
+            startDate: '2025-02-01',
+            endDate: currentDate,
+            client: 'Confidential',
+            technologies: 'AWS (CDK, Lambda, S3, Glue, Athena), Python, JSON, Parquet',
+            achievements: [
+                'Built CDK infrastructure for API data extraction and processing.',
+                'Developed Lambda system for JSON to Parquet transformation.',
+                'Designed incremental processing with timestamp controls.',
+                'Configured AWS Glue for Athena queries.',
+                'Implemented secure credential management.',
+                'Optimized data flows with batch processing and pagination.'
+            ]
+        },
+        {
+            company: 'Argeniss Software',
+            position: 'AWS MLOPS Cloud Engineer',
+            startDate: '2025-02-01',
+            endDate: currentDate,
+            client: 'Confidential',
+            technologies: 'AWS (CDK, Lambda, S3, SageMaker), Python, Docker',
+            achievements: [
+                'Implemented forecast infrastructure using SageMaker Canvas models.',
+                'Created dual system for short/long-term predictions.',
+                'Configured S3 data flows with input/output separation.',
+                'Set up GitHub Actions CI/CD pipeline.',
+                'Implemented multi-environment deployment with parameterization.'
+            ]
+        },
+        {
+            company: 'Argeniss Software',
             position: 'Data Engineer (confidential client)',
             startDate: '2024-09-01',
             endDate: currentDate,
@@ -196,6 +227,7 @@ document.addEventListener('click', function(e) {
 });
 
 
+    // Updated function to create education items with new structure
     function createEducationItems() {
         const container = document.getElementById('education-container');
         educationItems.forEach(item => {
@@ -203,9 +235,11 @@ document.addEventListener('click', function(e) {
             educationItem.className = 'education-item';
             educationItem.innerHTML = `
                 <div class="education-icon">🎓</div>
-                <div class="education-title">${item.title}</div>
-                <div class="education-institution">${item.institution}</div>
-                <div class="education-date">${item.year}</div>
+                <div class="education-details">
+                    <div class="education-title">${item.title}</div>
+                    <div class="education-institution">${item.institution}</div>
+                    <div class="education-date">${item.year}</div>
+                </div>
             `;
             container.appendChild(educationItem);
         });
