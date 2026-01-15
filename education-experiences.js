@@ -24,6 +24,24 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         {
             company: 'Argeniss Software',
+            position: 'AWS Data Integration Engineer',
+            startDate: '2024-10-01',
+            endDate: currentDate,
+            client: 'Fintech Company',
+            technologies: 'AWS (DMS, Lambda, Step Functions, DynamoDB, S3, Redshift, KMS), Terraform, Python, SQL Server, MongoDB, REST APIs',
+            achievements: [
+                'Architected and deployed automated DMS system replicating 10-30 SQL Server databases to Redshift with CDC (30-120 sec latency).',
+                'Built reusable Terraform modules (DMS instance, endpoints, KMS) following Infrastructure-as-Code best practices.',
+                'Designed multi-source architecture supporting SQL Server (DMS), MongoDB (Change Streams), and REST APIs (Salesforce, NetSuite).',
+                'Developed orchestration system with Step Functions and Lambda (Python) for zero-touch database onboarding (3 commands to replicate).',
+                'Implemented DynamoDB-driven configuration catalog and S3 data lake for semi-structured data (JSON/Parquet).',
+                'Deployed multi-AZ, Security Hub compliant infrastructure with automated KMS rotation and CloudWatch monitoring.',
+                'Created Redshift Spectrum integration for querying S3-based data alongside relational tables.',
+                'Delivered 60-70% infrastructure reusability across source types, reducing onboarding time from weeks to days.'
+            ]
+        },
+        {
+            company: 'Argeniss Software',
             position: 'AWS Data Warehouse Engineer',
             startDate: '2025-02-01',
             endDate: currentDate,
