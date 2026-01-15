@@ -127,7 +127,7 @@ Agile/Scrum (Certified), DevOps, ITIL, Infrastructure as Code (IaC), Test-Driven
 ## Professional Experience
 
 ### **CloudPrune AI** | *Founder & Technical Lead*
-**July 2024 - Present** | SaaS Startup (Side Project) | Remote
+**November 2025 - Present** | SaaS Startup (Side Project) | Remote
 
 Founded and built production-ready **FinOps SaaS platform** from concept to validated MVP in 4 months, automating AWS cost optimization through AI-powered infrastructure-as-code generation.
 

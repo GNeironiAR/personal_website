@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
         {
             company: 'CloudPrune AI',
             position: 'Founder & Technical Lead',
-            startDate: '2024-07-01',
+            startDate: '2025-11-01',
             endDate: currentDate,
             client: 'SaaS Startup (Side Project)',
             technologies: 'AWS (CDK, Lambda, ECS Fargate, RDS, S3, SQS, Cost Explorer), FastAPI, Next.js 14, PostgreSQL, Stripe, Auth0, Python, TypeScript, Docker',

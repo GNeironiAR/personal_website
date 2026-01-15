@@ -61,7 +61,7 @@ Power BI, Tableau, Pentaho, QuickSight, SSRS
 ## Professional Experience
 
 ### **CloudPrune AI** | *Founder & Technical Lead*
-**July 2024 - Present** | SaaS Startup (Side Project)
+**November 2025 - Present** | SaaS Startup (Side Project)
 
 - Founded production **FinOps SaaS platform** analyzing AWS accounts and auto-generating infrastructure-as-code for cost optimization
 - Implemented **8 resource analyzers** (EC2, EBS, S3, RDS, Zombie Services) detecting **20-40% average savings**
