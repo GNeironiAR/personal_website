@@ -4,14 +4,28 @@ html, body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 body {
   font-family: 'Inter', sans-serif;
-  background: #232f3e; /* AWS primary dark blue */
+  background: linear-gradient(135deg, #1a2332 0%, #232f3e 50%, #2a3a4f 100%);
+  background-attachment: fixed;
   color: #ffffff;
   overflow-y: auto;
   line-height: 1.6;
+}
+
+/* Fade-in animation for sections */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 main {
@@ -28,7 +42,20 @@ main {
   backdrop-filter: blur(10px);
   overflow-y: auto;
   padding: 4rem 1rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 153, 0, 0.1);
+  animation: fadeInUp 0.8s ease-out;
+  position: relative;
+}
+
+.fullscreen-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #ff9900, transparent);
+  opacity: 0.3;
 }
 
 .section-content {
@@ -42,13 +69,30 @@ main {
 }
 
 h2 {
-  color: #ffffff;
+  background: linear-gradient(135deg, #ffffff 0%, #ff9900 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   margin-bottom: 3rem;
   text-align: center;
   width: 100%;
   font-size: 2.5rem;
   font-weight: 700;
   letter-spacing: -0.025em;
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #ff9900, transparent);
+  border-radius: 2px;
 }
 
 /* About Me section */
@@ -63,8 +107,34 @@ h2 {
   padding: 2rem;
   background: rgba(47, 60, 77, 0.7); /* Lighter AWS blue with transparency */
   border-radius: 1rem;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2), 0 2px 4px -1px rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(255, 153, 0, 0.2); /* AWS Orange border */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 0 0 20px rgba(255, 153, 0, 0.1);
+  border: 1px solid rgba(255, 153, 0, 0.3); /* AWS Orange border */
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.about-content::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 153, 0, 0.05) 0%, transparent 70%);
+  animation: rotate 20s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.about-content:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4), 0 0 30px rgba(255, 153, 0, 0.2);
+  border-color: #ff9900;
 }
 
 .profile-photo {
@@ -72,14 +142,17 @@ h2 {
   height: 240px;
   object-fit: cover;
   border-radius: 1rem;
-  border: 4px solid rgba(255, 153, 0, 0.3); /* AWS Orange */
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease;
+  border: 4px solid rgba(255, 153, 0, 0.4); /* AWS Orange */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3), 0 0 15px rgba(255, 153, 0, 0.3);
+  transition: all 0.4s ease;
+  position: relative;
+  z-index: 1;
 }
 
 .profile-photo:hover {
-  transform: scale(1.02);
+  transform: scale(1.05) rotate(2deg);
   border-color: #ff9900; /* Solid AWS Orange on hover */
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4), 0 0 25px rgba(255, 153, 0, 0.5);
 }
 
 .about-text {
@@ -339,9 +412,15 @@ footer {
   height: 162px;
   background: rgba(47, 60, 77, 0.8); /* Lighter AWS blue with transparency */
   margin: 40px 20px;
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
-  border: 1px solid rgba(255, 153, 0, 0.2); /* AWS Orange border */
+  border: 1px solid rgba(255, 153, 0, 0.3); /* AWS Orange border */
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
 }
 
 .hexagon:before,
@@ -366,17 +445,19 @@ footer {
 }
 
 .hexagon:hover {
-  transform: scale(1.05);
-  background: rgba(47, 60, 77, 0.9);
+  transform: scale(1.08) translateY(-5px);
+  background: rgba(47, 60, 77, 0.95);
   border-color: #ff9900; /* AWS Orange */
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4), 0 0 25px rgba(255, 153, 0, 0.4);
+  animation: none;
 }
 
 .hexagon:hover:before {
-  border-bottom-color: rgba(47, 60, 77, 0.9);
+  border-bottom-color: rgba(47, 60, 77, 0.95);
 }
 
 .hexagon:hover:after {
-  border-top-color: rgba(47, 60, 77, 0.9);
+  border-top-color: rgba(47, 60, 77, 0.95);
 }
 
 .hexagon-content {
