@@ -6,6 +6,7 @@ const toolsData = {
         { id: "Integration", group: 4 },
         { id: "Infrastructure", group: 5 },
         { id: "CI/CD", group: 6 },
+        { id: "Auth", group: 7 },
         { id: "Docker", group: 2 },
         { id: "Git", group: 2 },
         { id: "GitHub", group: 2 },
@@ -18,9 +19,10 @@ const toolsData = {
         { id: "MIRTH Connect", group: 4 },
         { id: "Mule", group: 4 },
         { id: "HL7/FHIR", group: 4 },
-        { id: "AWS CDK", group: 5 },        
+        { id: "AWS CDK", group: 5 },
         { id: "IaC", group: 5 },
-        { id: "GitHub Actions", group: 6 }
+        { id: "GitHub Actions", group: 6 },
+        { id: "Auth0", group: 7 }
     ],
     links: [
         { source: "Tools", target: "Version Control", value: 1 },
@@ -28,6 +30,7 @@ const toolsData = {
         { source: "Tools", target: "Integration", value: 1 },
         { source: "Tools", target: "Infrastructure", value: 1 },
         { source: "Tools", target: "CI/CD", value: 1 },
+        { source: "Tools", target: "Auth", value: 1 },
         { source: "Version Control", target: "Docker", value: 1 },
         { source: "Version Control", target: "Git", value: 1 },
         { source: "Version Control", target: "GitHub", value: 1 },
@@ -42,7 +45,8 @@ const toolsData = {
         { source: "Integration", target: "HL7/FHIR", value: 1 },
         { source: "Infrastructure", target: "AWS CDK", value: 1 },
         { source: "Infrastructure", target: "IaC", value: 1 },
-        { source: "CI/CD", target: "GitHub Actions", value: 1 }
+        { source: "CI/CD", target: "GitHub Actions", value: 1 },
+        { source: "Auth", target: "Auth0", value: 1 }
     ]
 };
 
@@ -54,11 +58,12 @@ const programmingData = {
         { id: "Data Visualization", group: 4 },
         { id: "Big Data", group: 5 },
         { id: "Machine Learning", group: 6 },
+        { id: "Web Frameworks", group: 7 },
         { id: "Python", group: 2 },
         { id: "R", group: 2 },
         { id: "VB.NET", group: 2 },
         { id: "Scala", group: 2 },
-        { id: "Django", group: 2 },
+        { id: "TypeScript", group: 2 },
         { id: "JavaScript", group: 2 },
         { id: "Pandas", group: 3 },
         { id: "NumPy", group: 3 },
@@ -75,7 +80,10 @@ const programmingData = {
         { id: "Pentaho Data Integration", group: 5 },
         { id: "SSIS", group: 5 },
         { id: "SageMaker", group: 6 },
-        { id: "SageMaker Canvas", group: 6 }
+        { id: "SageMaker Canvas", group: 6 },
+        { id: "FastAPI", group: 7 },
+        { id: "Next.js", group: 7 },
+        { id: "Django", group: 7 }
     ],
     links: [
         { source: "Programming", target: "Languages", value: 1 },
@@ -83,11 +91,12 @@ const programmingData = {
         { source: "Programming", target: "Data Visualization", value: 1 },
         { source: "Programming", target: "Big Data", value: 1 },
         { source: "Programming", target: "Machine Learning", value: 1 },
+        { source: "Programming", target: "Web Frameworks", value: 1 },
         { source: "Languages", target: "Python", value: 1 },
         { source: "Languages", target: "R", value: 1 },
         { source: "Languages", target: "VB.NET", value: 1 },
         { source: "Languages", target: "Scala", value: 1 },
-        { source: "Languages", target: "Django", value: 1 },
+        { source: "Languages", target: "TypeScript", value: 1 },
         { source: "Languages", target: "JavaScript", value: 1 },
         { source: "Data Analysis", target: "Pandas", value: 1 },
         { source: "Data Analysis", target: "NumPy", value: 1 },
@@ -104,7 +113,10 @@ const programmingData = {
         { source: "Big Data", target: "Pentaho Data Integration", value: 1 },
         { source: "Big Data", target: "SSIS", value: 1 },
         { source: "Machine Learning", target: "SageMaker", value: 1 },
-        { source: "Machine Learning", target: "SageMaker Canvas", value: 1 }
+        { source: "Machine Learning", target: "SageMaker Canvas", value: 1 },
+        { source: "Web Frameworks", target: "FastAPI", value: 1 },
+        { source: "Web Frameworks", target: "Next.js", value: 1 },
+        { source: "Web Frameworks", target: "Django", value: 1 }
     ]
 };
 
@@ -153,11 +165,14 @@ const cloudData = {
         { id: "Data Services", group: 7 },
         { id: "Security Services", group: 8 },
         { id: "Messaging Services", group: 9 },
+        { id: "Payment Services", group: 10 },
         { id: "Amazon QuickSight", group: 4 },
         { id: "Amazon Athena", group: 4 },
+        { id: "Cost Explorer", group: 4 },
         { id: "Azure Databricks", group: 4 },
         { id: "AWS S3", group: 5 },
         { id: "AWS Lambda", group: 6 },
+        { id: "ECS Fargate", group: 6 },
         { id: "Amazon EMR", group: 7 },
         { id: "AWS Glue", group: 7 },
         { id: "Amazon Kinesis", group: 7 },
@@ -166,7 +181,8 @@ const cloudData = {
         { id: "Microsoft Fabric", group: 7 },
         { id: "AWS KMS", group: 8 },
         { id: "AWS IAM", group: 8 },
-        { id: "AWS SQS", group: 9 }
+        { id: "AWS SQS", group: 9 },
+        { id: "Stripe API", group: 10 }
     ],
     links: [
         { source: "Cloud Platforms", target: "AWS", value: 1 },
@@ -177,10 +193,13 @@ const cloudData = {
         { source: "Cloud Platforms", target: "Data Services", value: 1 },
         { source: "Cloud Platforms", target: "Security Services", value: 1 },
         { source: "Cloud Platforms", target: "Messaging Services", value: 1 },
+        { source: "Cloud Platforms", target: "Payment Services", value: 1 },
         { source: "AWS", target: "Amazon QuickSight", value: 1 },
         { source: "AWS", target: "Amazon Athena", value: 1 },
+        { source: "AWS", target: "Cost Explorer", value: 1 },
         { source: "AWS", target: "AWS S3", value: 1 },
         { source: "AWS", target: "AWS Lambda", value: 1 },
+        { source: "AWS", target: "ECS Fargate", value: 1 },
         { source: "AWS", target: "Amazon EMR", value: 1 },
         { source: "AWS", target: "AWS Glue", value: 1 },
         { source: "AWS", target: "Amazon Kinesis", value: 1 },
@@ -193,9 +212,11 @@ const cloudData = {
         { source: "Azure", target: "Microsoft Fabric", value: 1 },
         { source: "Analytics Services", target: "Amazon QuickSight", value: 1 },
         { source: "Analytics Services", target: "Amazon Athena", value: 1 },
+        { source: "Analytics Services", target: "Cost Explorer", value: 1 },
         { source: "Analytics Services", target: "Azure Databricks", value: 1 },
         { source: "Storage Services", target: "AWS S3", value: 1 },
         { source: "Compute Services", target: "AWS Lambda", value: 1 },
+        { source: "Compute Services", target: "ECS Fargate", value: 1 },
         { source: "Data Services", target: "Amazon EMR", value: 1 },
         { source: "Data Services", target: "AWS Glue", value: 1 },
         { source: "Data Services", target: "Amazon Kinesis", value: 1 },
@@ -204,7 +225,8 @@ const cloudData = {
         { source: "Data Services", target: "Microsoft Fabric", value: 1 },
         { source: "Security Services", target: "AWS KMS", value: 1 },
         { source: "Security Services", target: "AWS IAM", value: 1 },
-        { source: "Messaging Services", target: "AWS SQS", value: 1 }
+        { source: "Messaging Services", target: "AWS SQS", value: 1 },
+        { source: "Payment Services", target: "Stripe API", value: 1 }
     ]
 };
 

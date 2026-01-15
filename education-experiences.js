@@ -5,6 +5,24 @@ document.addEventListener('DOMContentLoaded', function() {
     // Work Experience
     const workExperiences = [
         {
+            company: 'CloudPrune AI',
+            position: 'Founder & Technical Lead',
+            startDate: '2024-09-01',
+            endDate: currentDate,
+            client: 'SaaS Startup (Side Project)',
+            technologies: 'AWS (CDK, Lambda, ECS Fargate, RDS, S3, SQS, Cost Explorer), FastAPI, Next.js 14, PostgreSQL, Stripe, Auth0, Python, TypeScript, Docker',
+            achievements: [
+                'Founded FinOps SaaS platform that analyzes AWS accounts and auto-generates infrastructure-as-code for cost optimization (app.cloudpruneai.com).',
+                'Implemented 8 resource analyzers (EC2, EBS, S3, RDS, Zombie Services, CloudWatch Logs, Secrets Manager, Snapshots) detecting 20-40% average savings.',
+                'Built hybrid serverless architecture: Lambda for API (FastAPI), ECS Fargate for long-running scan workers, RDS PostgreSQL for data persistence.',
+                'Developed AI-powered CDK code generation using Claude API (Anthropic) for automated implementation of optimization recommendations.',
+                'Designed gainshare pricing model (15% of detected savings) with Stripe integration and automated unlock system.',
+                'Validated with real fintech scenario: detected $256K/year savings across 249 instances in 3 AWS accounts (72 recommendations).',
+                'Deployed production-ready MVP in 4 months with full CI/CD pipeline via GitHub Actions and AWS Amplify.',
+                'Registered trademark with USPTO (Serial: 99585602) and established company LinkedIn presence.'
+            ]
+        },
+        {
             company: 'Argeniss Software',
             position: 'AWS Data Warehouse Engineer',
             startDate: '2025-02-01',
