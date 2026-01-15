@@ -168,6 +168,9 @@ const cloudData = {
         { id: "Security Services", group: 8 },
         { id: "Messaging Services", group: 9 },
         { id: "Payment Services", group: 10 },
+        { id: "AI/ML Services", group: 11 },
+        { id: "CDN Services", group: 12 },
+        { id: "Integration Services", group: 13 },
         { id: "Amazon QuickSight", group: 4 },
         { id: "Amazon Athena", group: 4 },
         { id: "Cost Explorer", group: 4 },
@@ -187,8 +190,12 @@ const cloudData = {
         { id: "DynamoDB", group: 7 },
         { id: "AWS KMS", group: 8 },
         { id: "AWS IAM", group: 8 },
+        { id: "Secrets Manager", group: 8 },
         { id: "AWS SQS", group: 9 },
-        { id: "Stripe API", group: 10 }
+        { id: "Stripe API", group: 10 },
+        { id: "AWS Bedrock", group: 11 },
+        { id: "CloudFront", group: 12 },
+        { id: "EventBridge", group: 13 }
     ],
     links: [
         { source: "Cloud Platforms", target: "AWS", value: 1 },
@@ -200,6 +207,9 @@ const cloudData = {
         { source: "Cloud Platforms", target: "Security Services", value: 1 },
         { source: "Cloud Platforms", target: "Messaging Services", value: 1 },
         { source: "Cloud Platforms", target: "Payment Services", value: 1 },
+        { source: "Cloud Platforms", target: "AI/ML Services", value: 1 },
+        { source: "Cloud Platforms", target: "CDN Services", value: 1 },
+        { source: "Cloud Platforms", target: "Integration Services", value: 1 },
         { source: "AWS", target: "Amazon QuickSight", value: 1 },
         { source: "AWS", target: "Amazon Athena", value: 1 },
         { source: "AWS", target: "Cost Explorer", value: 1 },
@@ -216,7 +226,11 @@ const cloudData = {
         { source: "AWS", target: "DynamoDB", value: 1 },
         { source: "AWS", target: "AWS KMS", value: 1 },
         { source: "AWS", target: "AWS IAM", value: 1 },
+        { source: "AWS", target: "Secrets Manager", value: 1 },
         { source: "AWS", target: "AWS SQS", value: 1 },
+        { source: "AWS", target: "AWS Bedrock", value: 1 },
+        { source: "AWS", target: "CloudFront", value: 1 },
+        { source: "AWS", target: "EventBridge", value: 1 },
         { source: "Azure", target: "Azure Data Factory", value: 1 },
         { source: "Azure", target: "Azure Databricks", value: 1 },
         { source: "Azure", target: "Microsoft Fabric", value: 1 },
@@ -239,8 +253,12 @@ const cloudData = {
         { source: "Data Services", target: "DynamoDB", value: 1 },
         { source: "Security Services", target: "AWS KMS", value: 1 },
         { source: "Security Services", target: "AWS IAM", value: 1 },
+        { source: "Security Services", target: "Secrets Manager", value: 1 },
         { source: "Messaging Services", target: "AWS SQS", value: 1 },
-        { source: "Payment Services", target: "Stripe API", value: 1 }
+        { source: "Payment Services", target: "Stripe API", value: 1 },
+        { source: "AI/ML Services", target: "AWS Bedrock", value: 1 },
+        { source: "CDN Services", target: "CloudFront", value: 1 },
+        { source: "Integration Services", target: "EventBridge", value: 1 }
     ]
 };
 

@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
         {
             company: 'Argeniss Software',
             position: 'AWS Data Integration Engineer',
-            startDate: '2024-10-01',
+            startDate: '2025-10-01',
             endDate: currentDate,
             client: 'Fintech Company',
             technologies: 'AWS (DMS, Lambda, Step Functions, DynamoDB, S3, Redshift, KMS), Terraform, Python, SQL Server, MongoDB, REST APIs',
@@ -38,6 +38,24 @@ document.addEventListener('DOMContentLoaded', function() {
                 'Deployed multi-AZ, Security Hub compliant infrastructure with automated KMS rotation and CloudWatch monitoring.',
                 'Created Redshift Spectrum integration for querying S3-based data alongside relational tables.',
                 'Delivered 60-70% infrastructure reusability across source types, reducing onboarding time from weeks to days.'
+            ]
+        },
+        {
+            company: 'Argeniss Software',
+            position: 'AWS Data Engineer',
+            startDate: '2025-03-01',
+            endDate: '2025-10-01',
+            client: 'E-learning & Healthcare Company',
+            technologies: 'AWS (CDK, Lambda, API Gateway, Bedrock Claude, Athena, Glue, S3, DynamoDB, SQS, CloudFront, EventBridge, Secrets Manager), Python, MySQL, Parquet, Vue.js, Docker',
+            achievements: [
+                'Architected complete ETL system extracting student performance data from MySQL to S3 Data Lake with Parquet optimization and user partitioning.',
+                'Built dynamic REST API with API Gateway + Lambda + Athena for configurable student analytics endpoints (no-code endpoint creation via DynamoDB).',
+                'Developed LLM-powered analysis system using AWS Bedrock (Claude 3.5 Sonnet) for personalized educational recommendations and NCLEX question generation.',
+                'Implemented 6 production Lambda functions (containerized) handling ETL, API queries, LLM analysis, NCLEX generation, SQS updates, and batch processing.',
+                'Created real-time update pipeline with SQS for user-specific data refreshes without full ETL re-runs.',
+                'Designed Vue.js frontend with CloudFront distribution for NCLEX question generator with iterative AI feedback.',
+                'Deployed multi-stack CDK infrastructure (3 stacks) with automated Glue Crawlers, EventBridge schedulers, and DynamoDB configuration tables.',
+                'Optimized query costs with Athena partitioning strategy and S3 Intelligent Tiering, achieving sub-second API response times.'
             ]
         },
         {
