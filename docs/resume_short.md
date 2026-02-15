@@ -1,5 +1,5 @@
 # Germán Neironi
-**Cloud Data Engineer | AWS Specialist | AI/ML Integration**
+**Cloud & AI Solutions Engineer | Founder @ CloudPruneAI**
 
 📧 g.neironi@gmail.com
 🔗 [linkedin.com/in/gneironi](https://www.linkedin.com/in/gneironi/)
@@ -10,11 +10,13 @@
 
 ## Professional Summary
 
-Cloud Data Engineer with **15+ years** of experience across healthcare informatics, business intelligence, and enterprise data systems. Expert in building AWS data infrastructures, implementing ETL/ELT processes, and creating impactful analytical solutions.
+Cloud & AI Solutions Engineer with **15+ years** of experience designing and building cloud solutions that integrate AI to solve real business problems — from architecture to production deployment.
 
-Specialized in **full-stack cloud development** with AWS (CDK, Lambda, ECS Fargate, RDS, S3, Glue, Athena), FastAPI, Next.js, PostgreSQL, and **AI integration**. Skilled in Python, TypeScript, Docker, and designing **hybrid serverless architectures** for production SaaS platforms.
+Founded **CloudPruneAI**, a FinOps SaaS platform that scans AWS accounts, detects billing waste, and auto-generates ready-to-deploy CDK infrastructure code using AI. In beta, identified **$18K/month in savings** for a Series B fintech across 249 instances and 3 AWS accounts.
 
-Currently leading cloud data projects at **Argeniss Software**. Founded **CloudPrune AI**, a production FinOps SaaS platform that automates AWS cost optimization through AI-powered infrastructure-as-code generation.
+Expert in **full-stack cloud development** with AWS (CDK, Lambda, ECS Fargate, Bedrock, RDS, S3, Glue, Athena), FastAPI, Next.js, PostgreSQL, and **AI integration** (Claude API, AWS Bedrock). Skilled in Python, TypeScript, Docker, and designing **hybrid serverless architectures** for production systems where AI generates real output, not just prototypes.
+
+Currently leading cloud data and AI projects at **Argeniss Software** while operating CloudPrune AI.
 
 ---
 

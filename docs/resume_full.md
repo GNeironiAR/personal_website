@@ -1,5 +1,5 @@
 # Germán Neironi
-**Cloud Data Engineer | AWS Solutions Architect | AI/ML Integration Specialist**
+**Cloud & AI Solutions Engineer | Founder @ CloudPruneAI**
 
 📧 g.neironi@gmail.com
 🔗 [linkedin.com/in/gneironi](https://www.linkedin.com/in/gneironi/)
@@ -10,19 +10,21 @@
 
 ## Professional Summary
 
-Highly accomplished **Cloud Data Engineer** with over **15 years of progressive experience** across healthcare informatics, business intelligence, enterprise data systems, and SaaS platform development. Recognized expert in designing and implementing scalable AWS data infrastructures, complex ETL/ELT processes, and production-grade analytical solutions that drive measurable business outcomes.
+**Cloud & AI Solutions Engineer** with over **15 years of progressive experience** designing and building cloud solutions that integrate AI to solve real business problems — from architecture to production deployment. Recognized expert in transforming business challenges into scalable, production-ready systems across healthcare informatics, enterprise data systems, and SaaS platform development.
 
 ### Core Expertise
+- **AI-Powered Cloud Solutions**: Production experience building systems that integrate LLMs and AI services (Claude API, AWS Bedrock) to automate complex workflows — from infrastructure code generation to intelligent data analysis
 - **Full-Stack Cloud Architecture**: Deep expertise in AWS ecosystem (CDK, Lambda, ECS Fargate, RDS, DMS, Bedrock, S3, Glue, Athena, Redshift, DynamoDB, Step Functions, SQS, EventBridge, CloudFront) and Terraform Infrastructure-as-Code
-- **Advanced Data Engineering**: Design and implementation of hybrid serverless architectures, real-time data pipelines, multi-source ETL systems, and optimized data lake architectures
-- **AI/ML Integration**: Production experience integrating AWS Bedrock (Claude 3.5 Sonnet), building LLM-powered applications, and implementing multi-model AI consensus systems
-- **Modern Development Stack**: FastAPI, Next.js 14, Vue.js, TypeScript, Python, PostgreSQL, with CI/CD automation via GitHub Actions
+- **Data Engineering & Analytics**: Design and implementation of hybrid serverless architectures, real-time data pipelines, multi-source ETL systems, and optimized data lake architectures that turn raw data into business decisions
+- **Modern Development Stack**: FastAPI, Next.js 14, Vue.js, TypeScript, Python, PostgreSQL, with full CI/CD automation via GitHub Actions
 - **Leadership & Strategy**: Proven track record founding SaaS startup (CloudPrune AI), leading cross-functional teams of 26+ professionals, and managing enterprise-scale transformation projects
 
 ### Professional Differentiators
-Currently leading cloud data projects at **Argeniss Software** while simultaneously operating as **Founder & Technical Lead** of **CloudPrune AI**, a production FinOps SaaS platform validated with **$256K/year savings detection** in real fintech scenarios. Extensive experience working with distributed teams across multiple time zones and countries using modern collaboration tools (Slack, Discord, Teams, Jira, Figma).
+Founded **CloudPruneAI**, a production FinOps SaaS platform that scans AWS accounts, detects billing waste, and auto-generates ready-to-deploy CDK infrastructure code using AI. Validated with **$256K/year savings detection** ($18K/month) in real Series B fintech scenario across 249 instances and 3 AWS accounts.
 
-Results-oriented professional who translates complex data challenges into scalable, production-ready solutions. Strategic thinker with diplomatic approach to stakeholder management and commitment to continuous learning and emerging technologies.
+Currently leading cloud data and AI integration projects at **Argeniss Software** while operating CloudPrune AI. Extensive experience working with distributed teams across multiple time zones and countries using modern collaboration tools (Slack, Discord, Teams, Jira, Figma).
+
+Results-oriented professional who translates complex business problems into scalable, production-ready solutions where AI generates real output, not just prototypes. Strategic thinker with diplomatic approach to stakeholder management and commitment to continuous learning in emerging AI technologies.
 
 ---
 
@@ -503,7 +505,7 @@ Successfully led transformation of **failing implementation project** into insti
 ## Featured Projects & Achievements
 
 ### **CloudPrune AI - Production FinOps SaaS Platform**
-**Role:** Founder & Technical Lead | **Timeline:** July 2024 - Present
+**Role:** Founder & Technical Lead | **Timeline:** November 2025 - Present
 
 **Project Overview:**
 Production-ready FinOps SaaS platform that automatically analyzes AWS infrastructure and generates cost optimization recommendations with infrastructure-as-code implementation.
