@@ -1,7 +1,7 @@
 # German Neironi
 Cloud and AI Solutions Engineer | Founder at CloudPruneAI
 
-g.neironi@gmail.com | linkedin.com/in/gneironi | website.gneironi.com | github.com/gneironiar
+g.neironi@gmail.com | linkedin.com/in/gneironi | gneironiar.github.io/personal_website | github.com/gneironiar
 Cordoba, Argentina (Open to Remote - US/EU/LATAM)
 
 ---
