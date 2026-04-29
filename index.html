@@ -3,11 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Germán Neironi — Cloud & AI Solutions Engineer. I build production cloud solutions integrating AI, from architecture to deployment. Founder of CloudPruneAI.">
-    <meta name="keywords" content="Cloud Engineer, AI Solutions, AWS CDK, FinOps, CloudPruneAI, Infrastructure as Code, LLM Integration, Data Engineering">
+    <meta name="description" content="Germán Neironi — Cloud & AI Solutions Engineer. I build production cloud solutions integrating AI, from architecture to deployment. Founder of CloudPruneAI and Quira.">
+    <meta name="keywords" content="Cloud Engineer, AI Solutions, AWS CDK, FinOps, CloudPruneAI, Quira, Industrial IoT, Infrastructure as Code, LLM Integration, Data Engineering">
     <meta property="og:title" content="Germán Neironi — Cloud & AI Solutions Engineer">
-    <meta property="og:description" content="I design and build cloud solutions that integrate AI to solve real business problems.">
+    <meta property="og:description" content="I design and build cloud solutions that integrate AI to solve real business problems. Founder of CloudPruneAI and Quira.">
     <meta property="og:url" content="https://gneironiar.github.io/personal_website/">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://gneironiar.github.io/personal_website/images/foto%204.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Germán Neironi — Cloud & AI Solutions Engineer">
+    <meta name="twitter:description" content="I design and build cloud solutions that integrate AI to solve real business problems. Founder of CloudPruneAI and Quira.">
+    <meta name="twitter:image" content="https://gneironiar.github.io/personal_website/images/foto%204.jpg">
     <title>Germán Neironi — Cloud & AI Solutions Engineer</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="education-experiences.css">
@@ -36,9 +42,9 @@
                       <img src="images\foto 4.jpg" alt="My profile photo" class="profile-photo">
                       <div class="about-text">
                         <h2>Germán Neironi</h2>
-                        <h3>Cloud & AI Solutions Engineer | Founder @ CloudPruneAI</h3>
+                        <h3>Cloud & AI Solutions Engineer | Founder @ CloudPruneAI and Quira</h3>
                         <p>I design and build cloud solutions that integrate AI to solve real business problems — from architecture to production deployment.</p>
-                        <p>I founded CloudPruneAI, a FinOps SaaS platform that scans AWS accounts, detects billing waste, and auto-generates ready-to-deploy CDK infrastructure code using AI. In beta, it identified $18K/month in savings for a Series B fintech across 249 instances and 3 AWS accounts.</p>
+                        <p>I founded and operate two SaaS products in production: <strong>CloudPruneAI</strong>, a FinOps platform with AI-powered IaC code generation in 3 formats (CDK, Terraform, CloudFormation) — 18 analyzers, 31+ optimization checks, and a B2B2B partner channel with 4 active partners across Argentina, Spain, and Uruguay; and <strong>Quira</strong>, a multi-tenant industrial IoT platform for environmental monitoring, validated end-to-end with real ESP32 hardware and launched in April 2026 with first partner LOI signed in Colombia.</p>
                         <p>With 15+ years of experience spanning healthcare IT, data engineering, and cloud architecture, I've delivered solutions across industries and countries, combining hands-on technical depth with business analysis and team leadership.</p>
                         <p>I work daily with Python, AWS CDK, Lambda, ECS Fargate, FastAPI, Next.js, PostgreSQL, Claude API, and AWS Bedrock — building systems where AI generates real output, not just prototypes.</p>
                       </div>
@@ -100,6 +106,12 @@
                     </div>
                     <div class="hexagon">
                         <div class="hexagon-content">
+                            <h3>Industrial IoT & Hardware Integration</h3>
+                            <p>I build multi-tenant IoT platforms with secure device authentication (HMAC-SHA256 + HKDF), real-time alerting, and hardware-validated ingestion pipelines — from ESP32 firmware to AWS-hosted SaaS.</p>
+                        </div>
+                    </div>
+                    <div class="hexagon">
+                        <div class="hexagon-content">
                             <h3>Healthcare IT & Interoperability</h3>
                             <p>I lead digital transformation in healthcare organizations, including HL7/FHIR integration, clinical data systems, and regulatory compliance.</p>
                         </div>
@@ -130,12 +142,19 @@
                 <h2>Project Portfolio</h2>
                     <div class="experience-block">
                         <h3>CloudPrune AI - FinOps SaaS Platform 🚀</h3>
-                        <p><strong>Production SaaS</strong> | AWS CDK + Lambda + ECS Fargate + FastAPI + Next.js 14 + PostgreSQL + Claude API + Stripe</p>
-                        <p>Production-ready FinOps SaaS platform that analyzes AWS accounts, identifies cost savings opportunities (20-40% average), and auto-generates CDK infrastructure-as-code for automated implementation.</p>
-                        <p><strong>Key Features:</strong> 8 resource analyzers (EC2, EBS, S3, RDS, Zombie Services detection), AI-powered CDK code generation using Claude API, hybrid serverless architecture (Lambda + ECS Fargate), gainshare pricing model with Stripe integration, full CI/CD pipeline.</p>
-                        <p><strong>Validation:</strong> Detected $256K/year savings in real fintech scenario (249 instances, 3 AWS accounts, 72 recommendations).</p>
+                        <p><strong>Production B2B2B SaaS</strong> | AWS CDK + Lambda (FastAPI + Mangum) + ECS Fargate + Next.js 14 + async PostgreSQL + Claude API + Stripe + Turbo</p>
+                        <p>Production B2B2B FinOps SaaS platform that analyzes AWS accounts and auto-generates Infrastructure-as-Code in 3 formats (CDK Python, Terraform HCL, CloudFormation YAML) for cost optimization, distributed via a partner-led GTM model.</p>
+                        <p><strong>Key Features:</strong> 18 resource analyzers covering 31+ optimization checks across compute, storage, networking, databases, commitments, extended support, and AI/ML; AI-powered IaC code generation using Claude API with business context enrichment via Claude Haiku; hybrid serverless architecture (Lambda + Mangum + ECS Fargate); white-label PDF reports; gainshare pricing (10% / 7.5% at scale) plus recurring Operate Plan subscriptions; GDPR-compliant architecture with DPA, ROPA, and Security Posture Document.</p>
+                        <p><strong>Validation:</strong> 4 active partners across Argentina, Spain, and Uruguay. First real partner scan detected USD 5,260/year in waste across a client AWS account.</p>
                         <a href="https://app.cloudpruneai.com" class="new-button" target="_blank">Visit Website</a>
                         <a href="https://www.linkedin.com/company/cloudpruneai" class="linkedin-button" target="_blank">Company LinkedIn</a>
+                    </div>
+                    <div class="experience-block">
+                        <h3>Quira - Industrial IoT Platform 🚀</h3>
+                        <p><strong>Production Multi-Tenant SaaS</strong> | AWS CDK (9 stacks) + ECS Fargate + ALB + WAF + Cognito + RDS PostgreSQL 15 + FastAPI + Next.js 14 + ESP32 (Arduino C++)</p>
+                        <p>Multi-tenant industrial IoT platform for environmental monitoring (temperature, humidity), with real-time alerts, auditable PDF/CSV reports, and native Microsoft Teams integration via Power Automate. Built solo from architecture to production launch in under 4 months.</p>
+                        <p><strong>Key Features:</strong> 9 CDK stacks on AWS (ECS Fargate behind ALB with WAF, Route53 + ACM, RDS PostgreSQL 15, Cognito, SQS, 6 Lambdas, SNS); FastAPI backend with 47 endpoints and 103 tests; HMAC-SHA256 + HKDF device authentication with idempotent ingestion; alert engine with severity escalation; async PDF/CSV report generation via WeasyPrint; sensor-agnostic data model and driver registry (CO2, pressure, vibration on V2 roadmap); Next.js 14 admin panel with 25 pages and full ES/EN i18n.</p>
+                        <p><strong>Validation:</strong> End-to-end validated with real ESP32 + SHT31 hardware. First partner LOI signed in Colombia (aerospace warehouse pilot, ~30 devices). Production launch: April 19, 2026.</p>
                     </div>
                     <div class="experience-block">
                         <h3>Moovelix — B2B Logistics Marketplace</h3>
@@ -224,6 +243,7 @@
                         <h3>Amazon Web Services (AWS)</h3>
                         <ul class="cert-list">
                             <li>AWS Certified Cloud Practitioner</li>
+                            <li>AWS Certified Solutions Architect — Associate (SAA-C03) <em>(in progress, exam April 2026)</em></li>
                             <li>AWS Kinesis Analytics</li>
                             <li>AWS EMR</li>
                             <li>AWS Glue</li>

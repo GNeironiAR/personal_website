@@ -1,5 +1,5 @@
 # German Neironi
-Cloud and AI Solutions Engineer | Founder at CloudPruneAI
+Cloud and AI Solutions Engineer | Founder at CloudPruneAI and Quira
 
 g.neironi@gmail.com | linkedin.com/in/gneironi | gneironiar.github.io/personal_website | github.com/gneironiar
 Cordoba, Argentina (Open to Remote - US/EU/LATAM)
@@ -10,11 +10,11 @@ Cordoba, Argentina (Open to Remote - US/EU/LATAM)
 
 Cloud and AI Solutions Engineer with 15+ years of experience designing and building cloud solutions that integrate AI to solve real business problems - from architecture to production deployment.
 
-Founded CloudPruneAI, a FinOps SaaS platform that scans AWS accounts, detects billing waste, and auto-generates ready-to-deploy CDK infrastructure code using AI and LLMs. In beta, identified $18K/month in savings for a Series B fintech across 249 instances and 3 AWS accounts.
+Founded and operates two SaaS products in production: CloudPruneAI (FinOps platform with AI-powered IaC code generation, 18 analyzers, 31+ checks, B2B2B partner channel across 3 countries) and Quira (multi-tenant industrial IoT platform for environmental monitoring, launched April 2026). Both products built solo from architecture to production, integrating Claude API for code generation, business context enrichment, and customer-facing features.
 
 Expert in full-stack cloud development with AWS (CDK, Lambda, ECS Fargate, Bedrock, RDS, S3, Glue, Athena), FastAPI, Next.js, PostgreSQL, and Generative AI integration (Claude API, AWS Bedrock, Prompt Engineering, RAG). Skilled in Python, TypeScript, Docker, and designing hybrid serverless architectures for production systems.
 
-Currently leading cloud data and AI projects at Argeniss Software while operating CloudPruneAI.
+Currently leading cloud data and AI projects at Argeniss Software while operating CloudPruneAI and Quira.
 
 ---
 
@@ -23,15 +23,44 @@ Currently leading cloud data and AI projects at Argeniss Software while operatin
 ### CloudPruneAI | Founder and Technical Lead
 November 2025 - Present | Independent SaaS Startup | Remote
 
-- Founded production FinOps SaaS platform analyzing AWS accounts and auto-generating infrastructure-as-code for cost optimization using Generative AI and LLMs
-- Implemented 8 resource analyzers (EC2, EBS, S3, RDS, Zombie Services) detecting 20-40% average savings
-- Built hybrid serverless architecture: Lambda for API (FastAPI), ECS Fargate for scan workers, RDS PostgreSQL
-- Developed AI-powered CDK code generation using Claude API (Anthropic) and Prompt Engineering for automated optimization
-- Designed gainshare pricing model with Stripe integration
-- Validated: Detected $256K/year savings in real fintech scenario (249 instances, 3 AWS accounts)
-- Deployed production MVP in 4 months with full CI/CD pipeline
+- Founded production FinOps SaaS platform analyzing AWS accounts and auto-generating Infrastructure-as-Code (CDK Python, Terraform HCL, CloudFormation YAML) for cost optimization using Generative AI and LLMs
+- Built and deployed 18 resource analyzers covering 31+ optimization checks across compute, storage, networking, databases, commitments, extended support, and AI/ML services
+- Architected hybrid serverless platform: FastAPI on AWS Lambda + Mangum for API, ECS Fargate for scan workers, async RDS PostgreSQL, Auth0, Stripe, Resend, monorepo with Turbo
+- Implemented AI-powered IaC code generation using Claude API (Anthropic) with multi-format output and business context enrichment via Claude Haiku
+- Designed B2B2B partner-led GTM model: white-label PDF reports, gainshare pricing (10% / 7.5% at scale) plus recurring Operate Plan subscriptions
+- Onboarded 4 partners across Argentina, Spain, and Uruguay; first real scan with consulting partner detected USD 5,260/year in waste across a client AWS account
+- Drove technical onboarding of partners across 3 countries: discovery calls, AWS account integration, white-label configuration, and hands-on support during first scans
+- GDPR-compliant architecture with Privacy Policy, DPA, ROPA, Security Posture Document, and DELETE /users/me
 
-Tech Stack: AWS CDK, Lambda, ECS Fargate, RDS, S3, SQS, Cost Explorer, FastAPI, Next.js 14, PostgreSQL, Stripe, Auth0, Python, TypeScript, Docker
+Tech Stack: AWS CDK, Lambda, ECS Fargate, RDS PostgreSQL (async), API Gateway, S3, SQS, Cost Explorer, FastAPI, Next.js 14, Material UI, Auth0, Stripe, Claude API, Python, TypeScript, Docker, Turbo
+
+---
+
+### Quira | Founder and Technical Lead
+December 2025 - Present | Independent SaaS Startup | Remote
+
+- Founded multi-tenant industrial IoT platform for environmental monitoring (temperature, humidity), with real-time alerts, auditable PDF/CSV reports, and native Microsoft Teams integration via Power Automate
+- Designed and deployed full production stack on AWS in under 4 months: 9 CDK stacks covering ECS Fargate, ALB, WAF, Route53, ACM, RDS PostgreSQL 15, Cognito, SQS, 6 Lambdas, and SNS
+- Built FastAPI backend (47 endpoints, 103 tests) with HMAC-SHA256 + HKDF device authentication, async ingestion pipeline with idempotent client-side deduplication, alert engine with severity escalation, and async report generation via WeasyPrint workers
+- Designed sensor-agnostic data model and driver registry to support multi-sensor expansion without schema changes (CO2, pressure, vibration on the V2 roadmap)
+- Developed Next.js 14 admin panel with 25 pages, 6-section sidebar, i18n (ES/EN), and Recharts-based reading visualizations
+- Validated end-to-end with real ESP32 + SHT31 hardware: device readings reach the platform, trigger alerts, and render in production charts
+- Designed B2B2B revenue model: tripartite split between platform, partner, and vendor; first partner LOI signed in Colombia (aerospace warehouse pilot, ~30 devices)
+- Production launch: April 19, 2026
+
+Tech Stack: AWS CDK, ECS Fargate, ALB, WAF, Cognito, RDS PostgreSQL 15, SQS, Lambda, SNS, Route53, ACM, KMS, FastAPI, Next.js 14, Material UI, next-intl, ESP32 (Arduino C++), SHT31, HMAC-SHA256, Python, TypeScript, PostgreSQL, Resend
+
+---
+
+### Argeniss Software | Solutions Architect / Pre-Sales Engineer
+March 2026 - Present | Multiple Clients | Remote
+
+- Technical advisor in pre-sales engagements supporting the COO during client discovery and proposal phases
+- Lead technical assessments, architecture proposals, and stack recommendations for early-stage and pre-seed clients
+- Created Technical Assessment Playbook (Discovery -> Assessment -> Proposal) standardizing the pre-sales workflow
+- Generate additional engineering scope for delivery teams (PM + Architect + Engineer) by anchoring trust through technical depth
+
+Tech Stack: AWS, Cloud Architecture, Solution Design, Technical Discovery, Stack Selection
 
 ---
 
@@ -51,45 +80,27 @@ Tech Stack: AWS DMS, Lambda, Step Functions, DynamoDB, S3, Redshift, KMS, Terraf
 
 ---
 
-### Argeniss Software | AWS Data Engineer - AI and LLM Integration
-March 2025 - October 2025 | E-learning and Healthcare Client | Remote
+### Argeniss Software | AWS Cloud and AI Engineer
+February 2025 - October 2025 | Multiple Clients (E-learning, Healthcare) | Remote
+
+Concurrent client engagements covering data engineering, AI/LLM integration, and machine learning forecasting.
 
 - Architected complete ETL system extracting student performance data from MySQL to S3 Data Lake with Parquet optimization
 - Built dynamic REST API with API Gateway, Lambda, and Athena for configurable analytics endpoints
 - Developed LLM-powered analysis system using AWS Bedrock (Claude 3.5 Sonnet) and Prompt Engineering for personalized educational recommendations (RAG pattern)
-- Implemented 6 production Lambda functions (containerized) handling ETL, API queries, LLM analysis, NCLEX generation
+- Implemented 6 production Lambda functions (containerized) handling ETL, API queries, LLM analysis, and NCLEX question generation
 - Created real-time update pipeline with SQS for user-specific data refreshes
 - Designed Vue.js frontend with CloudFront for NCLEX question generator with iterative AI feedback
 - Deployed multi-stack CDK infrastructure with automated Glue Crawlers and EventBridge schedulers
 - Optimized query costs with Athena partitioning strategy, achieving sub-second API response times
-
-Tech Stack: AWS CDK, Lambda, API Gateway, AWS Bedrock, Claude API, Athena, Glue, S3, DynamoDB, SQS, CloudFront, EventBridge, Secrets Manager, Python, MySQL, Parquet, Vue.js, Docker
-
----
-
-### Argeniss Software | AWS Data Warehouse Engineer
-February 2025 - October 2025 | Multiple Clients | Remote
-
-- Built API data extraction and transformation pipelines using AWS CDK
-- Developed automated JSON-to-Parquet conversion with partitioned storage
-- Configured Glue Crawlers for automated schema cataloging and Athena optimization
+- Built API data extraction and transformation pipelines with automated JSON-to-Parquet conversion and partitioned storage
 - Implemented secure credential management with Parameter Store and S3 encryption
-
-Tech Stack: AWS CDK, Glue, Athena, S3, Lambda, Parameter Store, Python
-
----
-
-### Argeniss Software | AWS SageMaker and AI Engineer
-February 2025 - October 2025 | Multiple Clients | Remote
-
-- Implemented machine learning forecast infrastructure using SageMaker Canvas models
-- Created dual prediction system for short-term (180 days) and long-term (12 months) forecasting
-- Set up GitHub Actions CI/CD pipeline with multi-environment deployment
-- Designed multi-model Generative AI pipeline using AWS Bedrock with 4 concurrent models (Claude Sonnet, Haiku, Nova Lite, Nova Pro)
-- Built serverless architecture with Step Functions orchestrating 3-stage LLM workflow
+- Implemented machine learning forecast infrastructure using SageMaker Canvas with dual prediction system for short-term (180 days) and long-term (12 months) forecasting
+- Designed multi-model Generative AI pipeline using AWS Bedrock with 4 concurrent models (Claude Sonnet, Haiku, Nova Lite, Nova Pro), orchestrated by Step Functions in a 3-stage LLM workflow
 - Implemented automated CSV processing handling 300+ records with EventBridge triggers
+- Set up GitHub Actions CI/CD pipeline with multi-environment deployment
 
-Tech Stack: SageMaker Canvas, AWS Bedrock, Lambda (Docker), S3, Step Functions, EventBridge, CDK, GitHub Actions
+Tech Stack: AWS CDK, Lambda (Docker), API Gateway, AWS Bedrock, Claude API, Athena, Glue, S3, DynamoDB, SQS, CloudFront, EventBridge, Secrets Manager, Parameter Store, Step Functions, SageMaker Canvas, GitHub Actions, Python, MySQL, Parquet, Vue.js, Docker
 
 ---
 
@@ -133,10 +144,9 @@ Tech Stack: Python, Scikit-learn, Keras, PyTorch, TensorFlow, Docker
 ### Sanatorio la Entrerriana | Data Analyst and IT Manager
 July 2008 - August 2018 | Parana, Argentina
 
-- Led implementation of health information system for large healthcare institution
-- Created dashboards and reports using Power BI and Google Data Studio
-- Managed Oracle databases and data-driven decision-making processes
-- Achievement: Successfully led complex implementation project involving 100% organizational cultural change
+- Led multi-year implementation of integrated HIS/LIS/RIS health information system across the institution, achieving full staff adoption and replacing legacy paper-based workflows
+- Created executive dashboards and operational reports using Power BI and Google Data Studio
+- Managed Oracle databases and led data-driven decision-making processes for clinical and administrative operations
 
 Tech Stack: Oracle, SQL, Power BI, Google Data Studio, ETL processes
 
@@ -145,13 +155,13 @@ Tech Stack: Oracle, SQL, Power BI, Google Data Studio, ETL processes
 ## Core Technical Skills
 
 Cloud and Infrastructure:
-AWS (CDK, Lambda, Step Functions, ECS Fargate, DMS, Bedrock, S3, Glue, Athena, Redshift, DynamoDB, SQS, KMS, EventBridge, Secrets Manager, CloudFront, SageMaker), Terraform, Azure
+AWS (CDK, Lambda, Step Functions, ECS Fargate, ALB, WAF, Cognito, ACM, Route53, SNS, DMS, Bedrock, S3, Glue, Athena, Redshift, DynamoDB, SQS, KMS, EventBridge, Secrets Manager, CloudFront, SageMaker), Terraform, Azure
 
 Generative AI and LLMs:
 AWS Bedrock, Claude API (Anthropic), Prompt Engineering, RAG (Retrieval-Augmented Generation), LLM Integration, AI Agents, Generative AI, SageMaker Canvas
 
 Programming and Frameworks:
-Python, TypeScript, SQL (T-SQL, PL/SQL), JavaScript, FastAPI, Next.js 14, Vue.js, R
+Python, TypeScript, SQL (T-SQL, PL/SQL), JavaScript, FastAPI, Next.js 14, Vue.js, R, Arduino C++ (ESP32), Embedded Systems
 
 Data Engineering:
 ETL/ELT, Parquet, JSON, Pandas, PySpark, Apache Spark, Data Pipeline Design
@@ -170,7 +180,10 @@ Power BI, Tableau, Pentaho, QuickSight, SSRS
 ## Key Projects and Achievements
 
 CloudPruneAI Platform:
-Production-ready FinOps SaaS detecting $256K/year savings in fintech validation scenario. AI-powered CDK code generation using LLMs and gainshare pricing model.
+Production B2B2B FinOps SaaS with 18 analyzers and 31+ optimization checks. AI-powered IaC code generation in 3 formats (CDK, Terraform, CloudFormation). 4 active partners across Argentina, Spain, and Uruguay. First real scan detected USD 5,260/year in client savings.
+
+Quira IoT Platform:
+Multi-tenant industrial IoT platform for environmental monitoring, launched April 2026. 9 CDK stacks on AWS, 47 backend endpoints, end-to-end validated with real ESP32 hardware. First partner LOI signed in Colombia (aerospace pilot).
 
 Multi-Source DMS Architecture:
 Automated replication system supporting SQL Server, MongoDB, and REST APIs with 60-70% infrastructure reusability.
@@ -196,6 +209,9 @@ Certifications:
 - C1 English Language - EFSET
 - Scrum Foundation Professional
 - ITIL Foundation Certificate in IT Service Management
+
+In Progress:
+- AWS Certified Solutions Architect - Associate (SAA-C03) - exam scheduled April 2026
 
 ---
 

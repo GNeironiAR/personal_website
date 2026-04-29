@@ -5,21 +5,55 @@ document.addEventListener('DOMContentLoaded', function() {
     // Work Experience
     const workExperiences = [
         {
+            company: 'Argeniss Software',
+            position: 'Solutions Architect / Pre-Sales Engineer',
+            startDate: '2026-03-01',
+            endDate: currentDate,
+            client: 'Multiple Clients',
+            technologies: 'AWS, Cloud Architecture, Solution Design, Technical Discovery, Stack Selection',
+            achievements: [
+                'Technical advisor in pre-sales engagements supporting the COO during client discovery and proposal phases.',
+                'Lead technical assessments, architecture proposals, and stack recommendations for early-stage and pre-seed clients.',
+                'Created Technical Assessment Playbook (Discovery -> Assessment -> Proposal) standardizing the pre-sales workflow across the company.',
+                'Generate additional engineering scope for delivery teams (PM + Architect + Engineer) by anchoring trust through technical depth.',
+                'Bridge the gap between commercial conversation and engineering execution.',
+                'Enable the COO to engage technical buyers credibly during early-stage sales cycles.'
+            ]
+        },
+        {
+            company: 'Quira',
+            position: 'Founder & Technical Lead',
+            startDate: '2025-12-01',
+            endDate: currentDate,
+            client: 'SaaS Startup',
+            technologies: 'AWS (CDK 9 stacks, ECS Fargate, ALB, WAF, Cognito, RDS PostgreSQL 15, SQS, Lambda, SNS, Route53, ACM, KMS), FastAPI, Next.js 14, Material UI, next-intl, Recharts, ESP32 (Arduino C++), SHT31, HMAC-SHA256 + HKDF, WeasyPrint, Python, TypeScript, Resend',
+            achievements: [
+                'Founded multi-tenant industrial IoT platform for environmental monitoring (temperature, humidity), with real-time alerts, auditable PDF/CSV reports, and native Microsoft Teams integration via Power Automate.',
+                'Designed and deployed full production stack on AWS via 9 CDK stacks: ECS Fargate behind ALB with WAF, Route53 + ACM, RDS PostgreSQL 15, Cognito, SQS, 6 Lambdas, and SNS.',
+                'Built FastAPI backend with 47 endpoints and 103 tests; HMAC-SHA256 + HKDF device authentication with idempotent client-side deduplication; alert engine with severity escalation; async report generation via WeasyPrint workers (PDF/CSV).',
+                'Designed sensor-agnostic data model and driver registry to support multi-sensor expansion (CO2, pressure, vibration on V2 roadmap) without schema changes.',
+                'Developed Next.js 14 admin panel with 25 pages, 6-section sidebar, full ES/EN i18n via next-intl, and Recharts-based reading visualizations.',
+                'Validated end-to-end with real ESP32 + SHT31 hardware: device readings reach the platform, trigger alerts, and render in production charts.',
+                'Designed B2B2B revenue model with tripartite split between platform, partner, and vendor; first partner LOI signed in Colombia (aerospace warehouse pilot, ~30 devices).',
+                'Production launch: April 19, 2026.'
+            ]
+        },
+        {
             company: 'CloudPrune AI',
             position: 'Founder & Technical Lead',
             startDate: '2025-11-01',
             endDate: currentDate,
-            client: 'SaaS Startup (Side Project)',
-            technologies: 'AWS (CDK, Lambda, ECS Fargate, RDS, S3, SQS, Cost Explorer), FastAPI, Next.js 14, PostgreSQL, Stripe, Auth0, Python, TypeScript, Docker',
+            client: 'SaaS Startup',
+            technologies: 'AWS (CDK, Lambda, ECS Fargate, RDS PostgreSQL async, API Gateway, S3, SQS, Cost Explorer, KMS), FastAPI, Mangum, Next.js 14, Material UI, PostgreSQL, Stripe, Auth0, Resend, Claude API, Python, TypeScript, Docker, Turbo, GitHub Actions',
             achievements: [
-                'Founded FinOps SaaS platform that analyzes AWS accounts and auto-generates infrastructure-as-code for cost optimization (app.cloudpruneai.com).',
-                'Implemented 8 resource analyzers (EC2, EBS, S3, RDS, Zombie Services, CloudWatch Logs, Secrets Manager, Snapshots) detecting 20-40% average savings.',
-                'Built hybrid serverless architecture: Lambda for API (FastAPI), ECS Fargate for long-running scan workers, RDS PostgreSQL for data persistence.',
-                'Developed AI-powered CDK code generation using Claude API (Anthropic) for automated implementation of optimization recommendations.',
-                'Designed gainshare pricing model (15% of detected savings) with Stripe integration and automated unlock system.',
-                'Validated with real fintech scenario: detected $256K/year savings across 249 instances in 3 AWS accounts (72 recommendations).',
-                'Deployed production-ready MVP in 4 months with full CI/CD pipeline via GitHub Actions and AWS Amplify.',
-                'Registered trademark with USPTO (Serial: 99585602) and established company LinkedIn presence.'
+                'Founded production B2B2B FinOps SaaS platform that analyzes AWS accounts and auto-generates Infrastructure-as-Code in 3 formats (CDK Python, Terraform HCL, CloudFormation YAML) for cost optimization (app.cloudpruneai.com).',
+                'Built and deployed 18 resource analyzers covering 31+ optimization checks across compute, storage, networking, databases, commitments, extended support, and AI/ML services.',
+                'Architected hybrid serverless platform: FastAPI on AWS Lambda + Mangum (API), ECS Fargate (scan workers), async RDS PostgreSQL, monorepo with Turbo unifying TypeScript and Python tooling.',
+                'Implemented AI-powered IaC code generation using Claude API (Anthropic) with multi-format output and business context enrichment via Claude Haiku.',
+                'Designed B2B2B partner-led GTM model: white-label PDF reports, gainshare pricing (10% / 7.5% at scale) plus recurring Operate Plan subscriptions for continuous monitoring.',
+                'Onboarded 4 active partners across Argentina, Spain, and Uruguay. Drove technical onboarding end-to-end: discovery calls, AWS account integration, white-label configuration, and hands-on support during first scans.',
+                'First real scan with consulting partner detected USD 5,260/year in waste across a client AWS account.',
+                'GDPR-compliant architecture with Privacy Policy, Data Processing Agreement (DPA), Records of Processing Activities (ROPA), Security Posture Document, and DELETE /users/me. Registered USPTO trademark (Serial: 99585602).'
             ]
         },
         {
@@ -42,58 +76,29 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         {
             company: 'Argeniss Software',
-            position: 'AWS Data Engineer',
-            startDate: '2025-03-01',
+            position: 'AWS Cloud and AI Engineer',
+            startDate: '2025-02-01',
             endDate: '2025-10-01',
-            client: 'E-learning & Healthcare Company',
-            technologies: 'AWS (CDK, Lambda, API Gateway, Bedrock Claude, Athena, Glue, S3, DynamoDB, SQS, CloudFront, EventBridge, Secrets Manager), Python, MySQL, Parquet, Vue.js, Docker',
+            client: 'Multiple Clients (E-learning, Healthcare)',
+            technologies: 'AWS (CDK, Lambda Docker, API Gateway, Bedrock Claude 3.5 Sonnet, Athena, Glue, S3, DynamoDB, SQS, CloudFront, EventBridge, Secrets Manager, Parameter Store, KMS, Lake Formation, IAM, SageMaker Canvas, CloudWatch), GitHub Actions, Python, MySQL, Parquet, Vue.js, Docker',
             achievements: [
+                'Concurrent client engagements covering data engineering, AI/LLM integration, and machine learning forecasting; sole engineer responsible for design and implementation across multiple production systems.',
                 'Architected complete ETL system extracting student performance data from MySQL to S3 Data Lake with Parquet optimization and user partitioning.',
                 'Built dynamic REST API with API Gateway + Lambda + Athena for configurable student analytics endpoints (no-code endpoint creation via DynamoDB).',
-                'Developed LLM-powered analysis system using AWS Bedrock (Claude 3.5 Sonnet) for personalized educational recommendations and NCLEX question generation.',
+                'Developed LLM-powered analysis system using AWS Bedrock (Claude 3.5 Sonnet) and RAG pattern for personalized educational recommendations and NCLEX question generation, with iterative AI feedback loop.',
                 'Implemented 6 production Lambda functions (containerized) handling ETL, API queries, LLM analysis, NCLEX generation, SQS updates, and batch processing.',
-                'Created real-time update pipeline with SQS for user-specific data refreshes without full ETL re-runs.',
-                'Designed Vue.js frontend with CloudFront distribution for NCLEX question generator with iterative AI feedback.',
-                'Deployed multi-stack CDK infrastructure (3 stacks) with automated Glue Crawlers, EventBridge schedulers, and DynamoDB configuration tables.',
-                'Optimized query costs with Athena partitioning strategy and S3 Intelligent Tiering, achieving sub-second API response times.'
-            ]
-        },
-        {
-            company: 'Argeniss Software',
-            position: 'AWS Data Warehouse Engineer',
-            startDate: '2025-02-01',
-            endDate: currentDate,
-            client: 'Confidential',
-            technologies: 'AWS (CDK, Lambda, S3, Glue, Athena), Python, JSON, Parquet',
-            achievements: [
-                'Built CDK infrastructure for API data extraction and processing.',
-                'Developed Lambda system for JSON to Parquet transformation.',
-                'Designed incremental processing with timestamp controls.',
-                'Configured AWS Glue for Athena queries.',
-                'Implemented secure credential management.',
-                'Optimized data flows with batch processing and pagination.'
-            ]
-        },
-        {
-            company: 'Argeniss Software',
-            position: 'AWS MLOPS Cloud Engineer',
-            startDate: '2025-02-01',
-            endDate: currentDate,
-            client: 'Confidential',
-            technologies: 'AWS (CDK, Lambda, S3, SageMaker), Python, Docker',
-            achievements: [
-                'Implemented forecast infrastructure using SageMaker Canvas models.',
-                'Created dual system for short/long-term predictions.',
-                'Configured S3 data flows with input/output separation.',
-                'Set up GitHub Actions CI/CD pipeline.',
-                'Implemented multi-environment deployment with parameterization.'
+                'Designed Vue.js frontend with CloudFront distribution for NCLEX question generator.',
+                'Built API-to-Data Lake pipeline with dual-Lambda architecture, incremental timestamp-based processing, JSON-to-Parquet conversion, and partitioned storage (year/month/day).',
+                'Implemented machine learning forecast infrastructure using SageMaker Canvas with dual prediction system (short-term 180 days / long-term 12 months), full GitHub Actions CI/CD with multi-environment deployment.',
+                'Designed Healthcare Data Lake with serverless CDK architecture, Lake Formation granular access control, KMS encryption, and HIPAA-compliant security.',
+                'Optimized query costs with Athena partitioning strategies, achieving sub-second API response times.'
             ]
         },
         {
             company: 'Argeniss Software',
             position: 'Data Engineer (confidential client)',
             startDate: '2024-09-01',
-            endDate: currentDate,
+            endDate: '2025-02-01',
             client: 'Confidential',
             technologies: 'AWS (Lambda, S3, Glue, Lake Formation, IAM, KMS, SQS), Python, Apache Parquet, AWS CDK, Pandas, PyArrow, IaC',
             achievements: [
@@ -109,7 +114,7 @@ document.addEventListener('DOMContentLoaded', function() {
             company: 'Argeniss Software',
             position: 'Data Analyst (confidential client)',
             startDate: '2024-09-01',
-            endDate: currentDate,
+            endDate: '2025-02-01',
             client: 'Confidential',
             technologies: 'Microsoft reporting tools, SQL, VBNet, SSRS, SSIS, SSAS, Power BI',
             achievements: [
@@ -163,11 +168,11 @@ document.addEventListener('DOMContentLoaded', function() {
             endDate: '2018-08-31',
             technologies: 'PowerBI, Google Data Studio, SQL, Oracle databases, ETL processes, Health Information Systems',
             achievements: [
-                'Led the successful implementation of a comprehensive health information system, improving operational efficiency and quality of patient care across the organization.',
+                'Led multi-year implementation of integrated HIS/LIS/RIS health information system across the institution, achieving full staff adoption and replacing legacy paper-based workflows.',
                 'Analyzed, designed, and implemented complex ETL processes, integrating data from multiple systems and departments to create a single source of truth for health information.',
-                'Implemented dashboards, reports, and visualizations with PowerBI and Google Data Studio, providing management and medical staff with critical information for decision-making.',
-                'Rescued a declining implementation project, implying a cultural change throughout the organization, migrating to a data-driven decision-making process.',
-                'Developed a custom patient tracking system that improved continuity of care and reduced medical errors by 30%.',
+                'Created executive dashboards and operational reports with PowerBI and Google Data Studio, providing management and medical staff with critical information for decision-making.',
+                'Managed Oracle databases for mission-critical healthcare applications, optimizing SQL queries for report generation and data extraction.',
+                'Built and led IT team from 2 to 8 professionals, managing vendor relationships and coordinating with clinical leadership on technology adoption strategies.',
                 'Implemented a medical inventory and supply management system that resulted in a 25% reduction in inventory costs.',
                 'Designed and executed training programs for medical and administrative staff on the effective use of new information systems, improving adoption and efficiency.',
                 'Established data security policies and procedures that ensured compliance with health data privacy regulations, avoiding potential sanctions and protecting sensitive patient information.'

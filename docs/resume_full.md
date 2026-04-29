@@ -1,5 +1,5 @@
 # German Neironi
-Cloud and AI Solutions Engineer | Founder at CloudPruneAI
+Cloud and AI Solutions Engineer | Founder at CloudPruneAI and Quira
 
 g.neironi@gmail.com | linkedin.com/in/gneironi | gneironiar.github.io/personal_website | github.com/gneironiar
 Cordoba, Argentina (Open to Remote - US/EU/LATAM)
@@ -15,12 +15,12 @@ Cloud and AI Solutions Engineer with over 15 years of progressive experience des
 - Full-Stack Cloud Architecture: Deep expertise in AWS ecosystem (CDK, Lambda, ECS Fargate, RDS, DMS, Bedrock, S3, Glue, Athena, Redshift, DynamoDB, Step Functions, SQS, EventBridge, CloudFront) and Terraform Infrastructure-as-Code
 - Data Engineering and Analytics: Design and implementation of hybrid serverless architectures, real-time data pipelines, multi-source ETL systems, and optimized data lake architectures that turn raw data into business decisions
 - Modern Development Stack: FastAPI, Next.js 14, Vue.js, TypeScript, Python, PostgreSQL, with full CI/CD automation via GitHub Actions
-- Leadership and Strategy: Proven track record founding SaaS startup (CloudPruneAI), leading cross-functional teams of 26+ professionals, and managing enterprise-scale transformation projects
+- Leadership and Strategy: Proven track record founding two SaaS startups (CloudPruneAI and Quira), leading cross-functional teams of 26+ professionals, and managing enterprise-scale transformation projects
 
 ### Professional Differentiators
-Founded CloudPruneAI, a production FinOps SaaS platform that scans AWS accounts, detects billing waste, and auto-generates ready-to-deploy CDK infrastructure code using Generative AI and LLMs. Validated with $256K/year savings detection ($18K/month) in real Series B fintech scenario across 249 instances and 3 AWS accounts.
+Founded and operates two SaaS products in production: CloudPruneAI (FinOps platform with AI-powered IaC code generation in 3 formats - CDK, Terraform, CloudFormation - 18 analyzers, 31+ optimization checks, B2B2B partner channel with 4 active partners across Argentina, Spain, and Uruguay) and Quira (multi-tenant industrial IoT platform for environmental monitoring, launched April 2026, validated end-to-end with real ESP32 hardware, first partner LOI signed in Colombia). Both products built solo from architecture to production, integrating Claude API for code generation, business context enrichment, and customer-facing features.
 
-Currently leading cloud data and AI integration projects at Argeniss Software while operating CloudPruneAI. Extensive experience working with distributed teams across multiple time zones and countries using modern collaboration tools (Slack, Discord, Teams, Jira, Figma).
+Currently leading cloud data and AI integration projects at Argeniss Software while operating CloudPruneAI and Quira. Extensive experience working with distributed teams across multiple time zones and countries using modern collaboration tools (Slack, Discord, Teams, Jira, Figma).
 
 Results-oriented professional who translates complex business problems into scalable, production-ready solutions where AI generates real output, not just prototypes. Strategic thinker with diplomatic approach to stakeholder management and commitment to continuous learning in emerging AI technologies.
 
@@ -31,41 +31,121 @@ Results-oriented professional who translates complex business problems into scal
 ### CloudPruneAI | Founder and Technical Lead
 November 2025 - Present | Independent SaaS Startup | Remote
 
-Founded and built production-ready FinOps SaaS platform from concept to validated MVP in 4 months, automating AWS cost optimization through AI-powered infrastructure-as-code generation.
+Founded and built production FinOps SaaS platform from concept to live partner-channel product in 4 months, automating AWS cost optimization through AI-powered infrastructure-as-code generation across CDK, Terraform, and CloudFormation.
 
 #### Key Responsibilities and Achievements
 
 Product Development and Architecture:
-- Architected and deployed complete hybrid serverless architecture combining Lambda (FastAPI API layer) with ECS Fargate (long-running scan workers) and RDS PostgreSQL for data persistence
-- Designed and implemented 8 specialized resource analyzers (EC2, EBS, S3, RDS, Zombie Services, CloudWatch Logs, Secrets Manager, Snapshots) achieving 20-40% average cost savings detection
-- Built AI-powered CDK code generation system using Claude API (Anthropic) and Prompt Engineering for automated implementation of optimization recommendations
+- Architected and deployed hybrid serverless platform combining FastAPI on AWS Lambda + Mangum (API layer) with ECS Fargate (long-running scan workers) and async RDS PostgreSQL for data persistence
+- Designed and implemented 18 specialized resource analyzers covering 31+ optimization checks across compute, storage, networking, databases, commitments, extended support, and AI/ML services
+- Built AI-powered IaC code generation using Claude API (Anthropic) with multi-format output (CDK Python, Terraform HCL, CloudFormation YAML) and business context enrichment via Claude Haiku
 - Developed complete REST API with authentication (Auth0), role-based access control, and multi-tenant support
+- Structured the codebase as a monorepo with Turbo for unified TypeScript/Python tooling
 
 Business Model and Monetization:
-- Designed innovative gainshare pricing model (15% of detected savings) with Stripe payment integration
-- Implemented automated recommendation unlock system tied to payment processing
-- Created customer dashboard for real-time savings tracking and CDK code downloads
+- Designed B2B2B partner-led GTM model with white-label PDF reports for consulting partners
+- Implemented gainshare pricing (10% of detected savings, 7.5% at scale) plus recurring Operate Plan subscriptions for continuous monitoring
+- Integrated Stripe payment processing with automated recommendation unlock tied to payment events
+- Created customer dashboard for real-time savings tracking and IaC code downloads in 3 formats
 
 Technical Infrastructure:
 - Deployed full CI/CD pipeline via GitHub Actions with automated testing and multi-environment deployment
 - Implemented comprehensive monitoring and alerting using CloudWatch
 - Configured multi-AZ deployment for high availability
 - Established data encryption at rest and in transit using KMS
+- Integrated Resend for transactional email and notifications
 
-Validation and Business Development:
-- Validated platform with real fintech scenario: Detected $256K/year potential savings across 249 EC2 instances in 3 AWS accounts (72 actionable recommendations)
+Compliance and Security:
+- Designed GDPR-compliant architecture with Privacy Policy, Data Processing Agreement (DPA), Records of Processing Activities (ROPA), and Security Posture Document
+- Implemented user-controlled data deletion via DELETE /users/me endpoint
+- Documented data flows and retention policies for partner due diligence
+
+Partner Onboarding and Validation:
+- Onboarded 4 active partners across Argentina, Spain, and Uruguay
+- Drove technical onboarding end-to-end: discovery calls, AWS account integration, white-label configuration, and hands-on support during first scans
+- First real scan with consulting partner detected USD 5,260/year in waste across a client AWS account
 - Registered USPTO trademark (Serial: 99585602)
 - Established company LinkedIn presence and go-to-market materials
 - Deployed production environment: app.cloudpruneai.com
 
-Technical Stack: AWS (CDK, Lambda, ECS Fargate, RDS PostgreSQL, S3, SQS, Cost Explorer, CloudWatch, KMS), FastAPI, Next.js 14, TypeScript, Python, Docker, Auth0, Stripe API, GitHub Actions
+Technical Stack: AWS (CDK, Lambda, ECS Fargate, RDS PostgreSQL async, API Gateway, S3, SQS, Cost Explorer, CloudWatch, KMS), FastAPI, Mangum, Next.js 14, Material UI, TypeScript, Python, Docker, Turbo, Auth0, Stripe API, Resend, Claude API, GitHub Actions
 
 Quantifiable Impact:
-- 4-month MVP delivery (concept to production)
-- $256K annual savings detected in validation
-- 8 production-grade analyzers
-- 72 optimization recommendations generated
-- 20-40% average cost reduction potential
+- 4-month delivery from concept to live partner channel
+- 18 production-grade analyzers covering 31+ optimization checks
+- 3 IaC output formats (CDK, Terraform, CloudFormation) auto-generated by AI
+- 4 active partners across 3 countries (Argentina, Spain, Uruguay)
+- USD 5,260/year detected in first real partner scan
+
+---
+
+### Quira | Founder and Technical Lead
+December 2025 - Present | Independent SaaS Startup | Remote
+
+Founded and deployed multi-tenant industrial IoT platform for environmental monitoring (temperature, humidity), built solo from architecture to production launch in under 4 months. Validated end-to-end with real ESP32 hardware and first partner LOI signed in Colombia.
+
+#### Key Responsibilities and Achievements
+
+Product Development and Architecture:
+- Designed and deployed full production stack on AWS via 9 CDK stacks: ECS Fargate behind ALB with WAF, Route53 + ACM, RDS PostgreSQL 15, Cognito, SQS queues, 6 Lambdas, and SNS for alert delivery
+- Built FastAPI backend with 47 endpoints and 103 tests covering authentication, ingestion, alerts, devices, organizations, sites, reports, and webhooks
+- Implemented HMAC-SHA256 + HKDF device authentication with per-device key derivation, replay protection, and idempotent client-side deduplication on the ingestion pipeline
+- Designed alert engine with severity escalation logic and async report generation via WeasyPrint workers (PDF/CSV)
+
+Sensor-Agnostic Data Model:
+- Designed sensor-agnostic data model and driver registry to support multi-sensor expansion without schema changes
+- Built CO2, pressure, and vibration support into the V2 roadmap without requiring database migrations
+- Implemented native Microsoft Teams integration via Power Automate for enterprise alerting
+
+Frontend and User Experience:
+- Developed Next.js 14 admin panel with 25 pages organized in a 6-section sidebar
+- Implemented full i18n (Spanish and English) using next-intl
+- Built reading visualizations with Recharts for time-series temperature and humidity data
+
+Hardware Integration and Validation:
+- Validated end-to-end with real ESP32 + SHT31 hardware: device readings reach the platform, trigger alerts, and render in production charts
+- Built device firmware in Arduino C++ with HMAC signing, OTA-ready architecture, and configurable sampling intervals
+
+Business Model and Validation:
+- Designed B2B2B revenue model with tripartite split between platform, partner, and vendor
+- Signed first partner LOI in Colombia (aerospace warehouse pilot, ~30 devices)
+- Production launch: April 19, 2026
+
+Technical Stack: AWS (CDK, ECS Fargate, ALB, WAF, Cognito, RDS PostgreSQL 15, SQS, Lambda, SNS, Route53, ACM, KMS, CloudWatch), FastAPI, Next.js 14, Material UI, next-intl, Recharts, ESP32 (Arduino C++), SHT31, HMAC-SHA256 + HKDF, WeasyPrint, Python, TypeScript, PostgreSQL, Resend
+
+Quantifiable Impact:
+- Concept to production in under 4 months, solo
+- 9 CDK stacks deployed on AWS
+- 47 backend endpoints, 103 tests
+- 25 frontend pages, full ES/EN i18n
+- End-to-end validated with real ESP32 + SHT31 hardware
+- First partner LOI signed (Colombia, aerospace pilot ~30 devices)
+
+---
+
+### Argeniss Software | Solutions Architect / Pre-Sales Engineer
+March 2026 - Present | Multiple Clients | Remote
+
+Technical advisor in pre-sales engagements supporting the COO during client discovery and proposal phases. Anchors trust through technical depth and converts discovery conversations into delivery scope.
+
+#### Key Responsibilities and Achievements
+
+Pre-Sales Technical Leadership:
+- Lead technical assessments, architecture proposals, and stack recommendations for early-stage and pre-seed clients
+- Run discovery calls alongside the COO to surface technical requirements and constraints
+- Translate ambiguous business goals into concrete technical roadmaps and stack choices
+
+Process and Standardization:
+- Created Technical Assessment Playbook (Discovery -> Assessment -> Proposal) standardizing the pre-sales workflow across the company
+- Documented decision frameworks for stack selection (cloud provider, language, framework, data layer)
+- Established architecture proposal templates reusable across engagements
+
+Business Impact:
+- Generate additional engineering scope for delivery teams (PM + Architect + Engineer) by anchoring trust through technical depth
+- Bridge the gap between commercial conversation and engineering execution
+- Enable the COO to engage technical buyers credibly during early-stage sales cycles
+
+Technical Stack: AWS, Cloud Architecture, Solution Design, Technical Discovery, Stack Selection
 
 ---
 
@@ -109,12 +189,14 @@ Quantifiable Impact:
 
 ---
 
-### Argeniss Software | AWS Data Engineer - AI and LLM Integration
-March 2025 - October 2025 | E-learning and Healthcare Company | Remote
+### Argeniss Software | AWS Cloud and AI Engineer
+February 2025 - October 2025 | Multiple Clients (E-learning, Healthcare) | Remote
+
+Concurrent client engagements covering data engineering, AI/LLM integration, and machine learning forecasting. Sole engineer responsible for design and implementation across multiple production systems.
+
+#### Engagement 1: Educational Analytics Platform with LLM Integration (E-learning and Healthcare Client)
 
 Sole engineer responsible for designing and implementing complete educational analytics platform serving thousands of nursing students with real-time performance insights and AI-powered recommendations.
-
-#### Key Responsibilities and Achievements
 
 Data Pipeline and ETL:
 - Architected end-to-end ETL system extracting student performance data from MySQL to S3 Data Lake with Parquet optimization and user-based partitioning strategy
@@ -144,9 +226,7 @@ Infrastructure and DevOps:
 - Configured EventBridge schedulers for automated maintenance tasks
 - Established Secrets Manager integration for secure credential management
 
-Technical Stack: AWS (CDK, Lambda, API Gateway, Bedrock Claude 3.5 Sonnet, Athena, Glue, S3, DynamoDB, SQS, CloudFront, EventBridge, Secrets Manager, CloudWatch), Python, MySQL, Parquet, Vue.js, Docker, OAuth2
-
-Quantifiable Impact:
+Engagement Impact:
 - 300+ student records processed per batch
 - Sub-second API query response times
 - 6 production microservices deployed
@@ -154,14 +234,8 @@ Quantifiable Impact:
 - 24/7 system availability with automated monitoring
 - Zero data breaches (FERPA compliant)
 
----
+#### Engagement 2: API-to-Data Lake Pipeline (Confidential Client)
 
-### Argeniss Software | AWS Data Warehouse Engineer
-February 2025 - October 2025 | Multiple Clients | Remote
-
-#### Project 1: API-to-Data Lake Pipeline (Confidential Client)
-
-Responsibilities:
 - Built dual-Lambda architecture for API data extraction and transformation using AWS CDK
 - Implemented incremental processing system with timestamp-based change detection to prevent data duplication
 - Developed automated JSON-to-Parquet conversion with partitioned storage strategy (year/month/day hierarchy)
@@ -170,32 +244,26 @@ Responsibilities:
 - Integrated Parameter Store for secure credential management and S3 server-side encryption (KMS)
 - Created control file system for processing state management and data lineage tracking
 
-Technical Stack: AWS (CDK, Lambda, S3, Glue, Athena, Parameter Store, KMS), Python, Parquet
-
-Impact:
+Engagement Impact:
 - 70% reduction in storage costs (JSON to Parquet)
 - 10x faster Athena queries through partitioning
 - Automated daily processing with zero manual intervention
 
-#### Project 2: SageMaker Forecast System (Confidential Client)
+#### Engagement 3: SageMaker Forecast System (Confidential Client)
 
-Responsibilities:
-- Implemented forecast infrastructure using SageMaker Canvas models for predictive analytics
-- Created dual forecasting system supporting both short-term (weekly) and long-term (quarterly) predictions
+- Implemented machine learning forecast infrastructure using SageMaker Canvas models for predictive analytics
+- Created dual forecasting system supporting both short-term (180 days) and long-term (12 months) predictions
 - Configured S3 data flows with input/output separation for model training and inference
 - Set up GitHub Actions CI/CD pipeline with automated testing
 - Implemented multi-environment deployment (dev/staging/prod) with CDK parameterization
 
-Technical Stack: AWS (SageMaker Canvas, S3, Lambda, CDK), Python, GitHub Actions
-
-Impact:
+Engagement Impact:
 - Automated forecast generation reducing manual effort by 95%
 - Multi-environment deployment capability
 - Continuous delivery pipeline
 
-#### Project 3: Healthcare Data Lake (Confidential Client)
+#### Engagement 4: Healthcare Data Lake (Confidential Client)
 
-Responsibilities:
 - Designed and implemented serverless data processing architecture for medical records using AWS CDK
 - Developed Python Lambda functions for JSON to Parquet data transformation across multiple medical record types
 - Implemented robust error handling and logging with CloudWatch integration
@@ -203,12 +271,12 @@ Responsibilities:
 - Configured IAM roles and policies following least privilege principle
 - Implemented data encryption using KMS and granular access control with Lake Formation
 
-Technical Stack: AWS (CDK, Lambda, S3, Glue, Lake Formation, KMS, IAM), Python, Parquet
-
-Impact:
+Engagement Impact:
 - Significant reduction in storage costs through format optimization
 - Improved query performance via Parquet and efficient partitioning
 - HIPAA-compliant security implementation
+
+Combined Technical Stack: AWS (CDK, Lambda Docker, API Gateway, Bedrock Claude 3.5 Sonnet, Athena, Glue, S3, DynamoDB, SQS, CloudFront, EventBridge, Secrets Manager, Parameter Store, KMS, Lake Formation, IAM, SageMaker Canvas, CloudWatch), GitHub Actions, Python, MySQL, Parquet, Vue.js, Docker, OAuth2
 
 ---
 
@@ -360,19 +428,18 @@ Skills Developed:
 ### Sanatorio la Entrerriana | Data Analyst and IT Manager
 July 2008 - August 2018 | Parana, Argentina | On-site
 
-Led digital transformation initiative for large healthcare institution (300+ beds, 1000+ employees) including implementation of comprehensive health information system and establishment of data-driven culture.
+Led multi-year implementation of integrated HIS/LIS/RIS health information system across the institution, achieving full staff adoption and replacing legacy paper-based workflows.
 
 #### Key Responsibilities and Achievements
 
-Major Project - HIS Implementation:
-- Led implementation of enterprise-wide health information system involving 100% organizational cultural change
-- Successfully rescued declining implementation project through strategic leadership and stakeholder management
-- Managed cross-functional team of clinical and technical staff
+Major Project - HIS/LIS/RIS Implementation:
+- Led multi-year implementation of integrated HIS/LIS/RIS health information system across the institution, achieving full staff adoption and replacing legacy paper-based workflows
+- Managed cross-functional team of clinical and technical staff through phased rollout across departments
 - Coordinated change management across all departments (clinical, administrative, financial)
 
 Data Analysis and Business Intelligence:
 - Established data analytics function from ground zero
-- Created executive dashboards and reports using Power BI and Google Data Studio
+- Created executive dashboards and operational reports using Power BI and Google Data Studio
 - Performed ad-hoc analysis for clinical and administrative decision-making
 - Developed KPIs and metrics for hospital performance monitoring
 
@@ -386,26 +453,25 @@ Leadership and Team Management:
 - Built and led IT team from 2 to 8 professionals
 - Managed vendor relationships for software and hardware procurement
 - Coordinated with clinical leadership on technology adoption strategies
-- Conducted user training for 1000+ employees
+- Conducted user training across the institution
 
 Major Achievement:
-Successfully led transformation of failing implementation project into institution-wide success. System remains in production use 12+ years later, supporting all clinical and administrative processes. Project involved complete organizational culture change from paper-based to digital workflows.
+Led successful adoption of the integrated HIS/LIS/RIS system, which remains in production use 12+ years later, supporting all clinical and administrative processes.
 
 Technical Stack: Oracle Database, SQL, Power BI, Google Data Studio, Health Information Systems, Windows Server, Network Administration
 
 Quantifiable Impact:
-- 100% organizational process coverage
-- 1000+ employees trained
-- 12+ years system longevity
+- Full institutional adoption of integrated HIS/LIS/RIS
+- 12+ years system longevity in production
 - Zero critical system failures post-implementation
-- Complete elimination of paper-based clinical records
+- Replaced legacy paper-based clinical and administrative workflows
 
 ---
 
 ## Technical Skills
 
 ### Cloud Platforms and Infrastructure
-AWS (Advanced): CDK, Lambda, Step Functions, ECS Fargate, AWS DMS, AWS Bedrock (Claude API), API Gateway, S3, Glue, Athena, Amazon Redshift, DynamoDB, SQS, SNS, KMS, EventBridge, Secrets Manager, CloudFront, Cost Explorer, SageMaker Canvas, Lake Formation, IAM, CloudWatch
+AWS (Advanced): CDK, Lambda, Step Functions, ECS Fargate, ALB, WAF, Cognito, ACM, Route53, AWS DMS, AWS Bedrock (Claude API), API Gateway, S3, Glue, Athena, Amazon Redshift, DynamoDB, SQS, SNS, KMS, EventBridge, Secrets Manager, CloudFront, Cost Explorer, SageMaker Canvas, Lake Formation, IAM, CloudWatch
 Infrastructure as Code: Terraform, AWS CDK
 Azure: Data Factory, Databricks, Synapse Analytics, Fundamentals certified
 Containerization and Orchestration: Docker, Container-based Lambda deployments
@@ -415,7 +481,7 @@ AWS Bedrock (Claude 3.5 Sonnet, Haiku, Nova Lite, Nova Pro), Claude API (Anthrop
 
 ### Programming and Scripting Languages
 Expert: Python (Pandas, NumPy, PyArrow, Boto3), SQL (T-SQL, PL/SQL, PostgreSQL)
-Proficient: TypeScript, JavaScript, R, Scala
+Proficient: TypeScript, JavaScript, R, Scala, Arduino C++ (ESP32, Embedded Systems)
 Working Knowledge: VB.NET
 
 ### Web Frameworks and APIs
@@ -459,24 +525,51 @@ Agile/Scrum (Certified), DevOps, ITIL, Infrastructure as Code (IaC), Test-Driven
 Role: Founder and Technical Lead | Timeline: November 2025 - Present
 
 Project Overview:
-Production-ready FinOps SaaS platform that automatically analyzes AWS infrastructure and generates cost optimization recommendations with infrastructure-as-code implementation.
+Production B2B2B FinOps SaaS platform that automatically analyzes AWS infrastructure and auto-generates Infrastructure-as-Code in 3 formats (CDK Python, Terraform HCL, CloudFormation YAML) for cost optimization, distributed via a partner-led GTM model.
 
 Technical Architecture:
-- Hybrid serverless: Lambda (FastAPI) + ECS Fargate (scan workers) + RDS PostgreSQL
-- 8 specialized analyzers: EC2, EBS, S3, RDS, Zombie Services, CloudWatch Logs, Secrets Manager, Snapshots
-- AI-powered CDK code generation using Claude API and Prompt Engineering
+- Hybrid serverless: FastAPI on Lambda + Mangum (API) + ECS Fargate (scan workers) + async RDS PostgreSQL
+- 18 specialized analyzers covering 31+ optimization checks across compute, storage, networking, databases, commitments, extended support, and AI/ML services
+- AI-powered IaC code generation using Claude API with multi-format output and business context enrichment via Claude Haiku
 - Multi-tenant architecture with Auth0 authentication
-- Stripe payment integration with gainshare pricing model
+- Monorepo with Turbo unifying TypeScript and Python tooling
+- Stripe payment integration with gainshare pricing plus recurring Operate Plan subscriptions
 
 Key Achievements:
-- $256K/year savings detected in fintech validation (249 instances, 3 accounts, 72 recommendations)
-- 4-month MVP delivery from concept to production
+- 4 active partners across Argentina, Spain, and Uruguay
+- First real partner scan detected USD 5,260/year in waste across a client AWS account
+- 4-month delivery from concept to live partner channel
 - USPTO trademark registered (Serial: 99585602)
-- 20-40% average cost reduction potential across analyzed accounts
+- GDPR-compliant architecture with Privacy Policy, DPA, ROPA, and Security Posture Document
 
-Tech Stack: AWS (CDK, Lambda, ECS, RDS, S3, SQS, Cost Explorer), FastAPI, Next.js, TypeScript, Docker, Stripe, Auth0
+Tech Stack: AWS (CDK, Lambda, ECS Fargate, RDS PostgreSQL async, S3, SQS, Cost Explorer), FastAPI, Mangum, Next.js 14, Material UI, TypeScript, Python, Docker, Turbo, Stripe, Auth0, Resend, Claude API
 
 Production URL: app.cloudpruneai.com
+
+---
+
+### Quira - Multi-Tenant Industrial IoT Platform
+Role: Founder and Technical Lead | Timeline: December 2025 - Present
+
+Project Overview:
+Multi-tenant industrial IoT platform for environmental monitoring (temperature, humidity), with real-time alerts, auditable PDF/CSV reports, and native Microsoft Teams integration via Power Automate. Validated end-to-end with real ESP32 hardware. Production launch April 19, 2026.
+
+Technical Architecture:
+- Full AWS stack via 9 CDK stacks: ECS Fargate behind ALB with WAF, Route53 + ACM, RDS PostgreSQL 15, Cognito, SQS, 6 Lambdas, SNS
+- FastAPI backend with 47 endpoints and 103 tests covering ingestion, alerts, devices, organizations, sites, reports, webhooks
+- HMAC-SHA256 + HKDF device authentication with idempotent client-side deduplication
+- Async report generation via WeasyPrint workers (PDF/CSV)
+- Sensor-agnostic data model and driver registry to support multi-sensor expansion (CO2, pressure, vibration on V2 roadmap) without schema changes
+- Next.js 14 admin panel with 25 pages, full ES/EN i18n via next-intl, Recharts visualizations
+- ESP32 + SHT31 firmware in Arduino C++ with HMAC signing
+
+Key Achievements:
+- Concept to production in under 4 months, solo
+- End-to-end validated with real ESP32 + SHT31 hardware: readings reach the platform, trigger alerts, and render in production charts
+- First partner LOI signed in Colombia (aerospace warehouse pilot, ~30 devices)
+- B2B2B revenue model with tripartite split between platform, partner, and vendor
+
+Tech Stack: AWS (CDK, ECS Fargate, ALB, WAF, Cognito, RDS PostgreSQL 15, SQS, Lambda, SNS, Route53, ACM, KMS), FastAPI, Next.js 14, Material UI, next-intl, Recharts, ESP32 (Arduino C++), SHT31, WeasyPrint, Python, TypeScript, Resend
 
 ---
 
@@ -558,6 +651,9 @@ Bachelor's Degree in Business Management
 Universidad Autonoma de Entre Rios (UADER), Parana, Argentina | 2017
 
 ### Professional Certifications and Advanced Training
+
+In Progress
+- AWS Certified Solutions Architect - Associate (SAA-C03) - exam scheduled April 2026
 
 AWS Cloud Services (2024)
 - Introduction to Amazon Kinesis Analytics (LATAM Spanish)
@@ -708,4 +804,4 @@ Available upon request.
 
 ---
 
-Last Updated: March 2026
+Last Updated: April 2026

@@ -61,12 +61,16 @@ const programmingData = {
         { id: "Big Data", group: 5 },
         { id: "Machine Learning", group: 6 },
         { id: "Web Frameworks", group: 7 },
+        { id: "Embedded", group: 8 },
         { id: "Python", group: 2 },
         { id: "R", group: 2 },
         { id: "VB.NET", group: 2 },
         { id: "Scala", group: 2 },
         { id: "TypeScript", group: 2 },
         { id: "JavaScript", group: 2 },
+        { id: "Arduino C++", group: 2 },
+        { id: "ESP32", group: 8 },
+        { id: "SHT31 Sensors", group: 8 },
         { id: "Pandas", group: 3 },
         { id: "NumPy", group: 3 },
         { id: "Matplotlib", group: 3 },
@@ -118,7 +122,11 @@ const programmingData = {
         { source: "Machine Learning", target: "SageMaker Canvas", value: 1 },
         { source: "Web Frameworks", target: "FastAPI", value: 1 },
         { source: "Web Frameworks", target: "Next.js", value: 1 },
-        { source: "Web Frameworks", target: "Django", value: 1 }
+        { source: "Web Frameworks", target: "Django", value: 1 },
+        { source: "Languages", target: "Arduino C++", value: 1 },
+        { source: "Programming", target: "Embedded", value: 1 },
+        { source: "Embedded", target: "ESP32", value: 1 },
+        { source: "Embedded", target: "SHT31 Sensors", value: 1 }
     ]
 };
 
@@ -135,9 +143,13 @@ const databaseData = {
         { id: "Oracle", group: 2 },
         { id: "SQL Server", group: 2 },
         { id: "MongoDB", group: 3 },
+        { id: "DynamoDB", group: 3 },
         { id: "JSON", group: 4 },
         { id: "Parquet", group: 4 },
-        { id: "Amazon RDS", group: 5 }
+        { id: "CSV", group: 4 },
+        { id: "Amazon RDS", group: 5 },
+        { id: "Amazon Redshift", group: 5 },
+        { id: "PostGIS", group: 5 }
     ],
     links: [
         { source: "Databases", target: "SQL", value: 1 },
@@ -150,9 +162,13 @@ const databaseData = {
         { source: "SQL", target: "Oracle", value: 1 },
         { source: "SQL", target: "SQL Server", value: 1 },
         { source: "NoSQL", target: "MongoDB", value: 1 },
+        { source: "NoSQL", target: "DynamoDB", value: 1 },
         { source: "File Formats", target: "JSON", value: 1 },
         { source: "File Formats", target: "Parquet", value: 1 },
-        { source: "Managed Services", target: "Amazon RDS", value: 1 }
+        { source: "File Formats", target: "CSV", value: 1 },
+        { source: "Managed Services", target: "Amazon RDS", value: 1 },
+        { source: "Managed Services", target: "Amazon Redshift", value: 1 },
+        { source: "Managed Services", target: "PostGIS", value: 1 }
     ]
 };
 
@@ -171,6 +187,7 @@ const cloudData = {
         { id: "AI/ML Services", group: 11 },
         { id: "CDN Services", group: 12 },
         { id: "Integration Services", group: 13 },
+        { id: "Networking Services", group: 14 },
         { id: "Amazon QuickSight", group: 4 },
         { id: "Amazon Athena", group: 4 },
         { id: "Cost Explorer", group: 4 },
@@ -191,11 +208,19 @@ const cloudData = {
         { id: "AWS KMS", group: 8 },
         { id: "AWS IAM", group: 8 },
         { id: "Secrets Manager", group: 8 },
+        { id: "AWS WAF", group: 8 },
+        { id: "AWS Cognito", group: 8 },
+        { id: "AWS ACM", group: 8 },
         { id: "AWS SQS", group: 9 },
+        { id: "AWS SNS", group: 9 },
         { id: "Stripe API", group: 10 },
         { id: "AWS Bedrock", group: 11 },
+        { id: "Claude API", group: 11 },
         { id: "CloudFront", group: 12 },
-        { id: "EventBridge", group: 13 }
+        { id: "EventBridge", group: 13 },
+        { id: "API Gateway", group: 13 },
+        { id: "AWS ALB", group: 14 },
+        { id: "AWS Route53", group: 14 }
     ],
     links: [
         { source: "Cloud Platforms", target: "AWS", value: 1 },
@@ -210,6 +235,7 @@ const cloudData = {
         { source: "Cloud Platforms", target: "AI/ML Services", value: 1 },
         { source: "Cloud Platforms", target: "CDN Services", value: 1 },
         { source: "Cloud Platforms", target: "Integration Services", value: 1 },
+        { source: "Cloud Platforms", target: "Networking Services", value: 1 },
         { source: "AWS", target: "Amazon QuickSight", value: 1 },
         { source: "AWS", target: "Amazon Athena", value: 1 },
         { source: "AWS", target: "Cost Explorer", value: 1 },
@@ -227,10 +253,17 @@ const cloudData = {
         { source: "AWS", target: "AWS KMS", value: 1 },
         { source: "AWS", target: "AWS IAM", value: 1 },
         { source: "AWS", target: "Secrets Manager", value: 1 },
+        { source: "AWS", target: "AWS WAF", value: 1 },
+        { source: "AWS", target: "AWS Cognito", value: 1 },
+        { source: "AWS", target: "AWS ACM", value: 1 },
         { source: "AWS", target: "AWS SQS", value: 1 },
+        { source: "AWS", target: "AWS SNS", value: 1 },
         { source: "AWS", target: "AWS Bedrock", value: 1 },
         { source: "AWS", target: "CloudFront", value: 1 },
         { source: "AWS", target: "EventBridge", value: 1 },
+        { source: "AWS", target: "API Gateway", value: 1 },
+        { source: "AWS", target: "AWS ALB", value: 1 },
+        { source: "AWS", target: "AWS Route53", value: 1 },
         { source: "Azure", target: "Azure Data Factory", value: 1 },
         { source: "Azure", target: "Azure Databricks", value: 1 },
         { source: "Azure", target: "Microsoft Fabric", value: 1 },
@@ -254,11 +287,19 @@ const cloudData = {
         { source: "Security Services", target: "AWS KMS", value: 1 },
         { source: "Security Services", target: "AWS IAM", value: 1 },
         { source: "Security Services", target: "Secrets Manager", value: 1 },
+        { source: "Security Services", target: "AWS WAF", value: 1 },
+        { source: "Security Services", target: "AWS Cognito", value: 1 },
+        { source: "Security Services", target: "AWS ACM", value: 1 },
         { source: "Messaging Services", target: "AWS SQS", value: 1 },
+        { source: "Messaging Services", target: "AWS SNS", value: 1 },
         { source: "Payment Services", target: "Stripe API", value: 1 },
         { source: "AI/ML Services", target: "AWS Bedrock", value: 1 },
+        { source: "AI/ML Services", target: "Claude API", value: 1 },
         { source: "CDN Services", target: "CloudFront", value: 1 },
-        { source: "Integration Services", target: "EventBridge", value: 1 }
+        { source: "Integration Services", target: "EventBridge", value: 1 },
+        { source: "Integration Services", target: "API Gateway", value: 1 },
+        { source: "Networking Services", target: "AWS ALB", value: 1 },
+        { source: "Networking Services", target: "AWS Route53", value: 1 }
     ]
 };
 
