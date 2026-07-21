@@ -5,19 +5,37 @@ document.addEventListener('DOMContentLoaded', function() {
     // Work Experience
     const workExperiences = [
         {
+            company: 'Marvell Technology',
+            position: 'Senior AI Engineer - Forward Deployed Engineer',
+            startDate: '2026-06-01',
+            endDate: currentDate,
+            client: 'Contractor via InterEx Group',
+            technologies: 'LLM Gateway, Claude API, Anthropic Admin API, AWS Bedrock, Snowflake/BigQuery, Databricks, PowerBI, Copilot Kit, ServiceNow, Glean, Workday, MCP, RAG, Prompt Engineering',
+            achievements: [
+                'Enterprise AI engineer within Marvell\'s Enterprise AI team (semiconductor company, Nvidia NVLink Fusion partner - USD 2B partnership announced March 2026).',
+                'Own 5 concurrent enterprise AI verticals and engagements: Finance (dashboards and analytics), HR/People (governance-first configuration on Workday HRIS), Global Workplace Services (real estate, facilities, EHS, sustainability), Video Creators Conference Support (AI video tooling for presenter enablement), and Claude Cost Monitoring & Alerting.',
+                'Designed end-to-end solution architecture for Claude Cost Monitoring: LLM Gateway (source of truth) -> warehouse -> BI dashboards + alert engine + Copilot Kit self-service governance UI.',
+                'Author bilingual delivery documentation (ES working copy + EN VDI-ready) with vertical-specific training and templates, following a reusable playbook for onboarding new verticals.',
+                'Ship code review and peer-review docs cross-team, coordinating with Enterprise AI leadership (Lead Architect, Business Engagement Model owner) and the platform team on tooling standards (Databricks, PowerBI).',
+                'Operate under a Forward Deployed Engineering model: scoping AI enablement per role and user rather than universal tooling.'
+            ]
+        },
+        {
             company: 'Argeniss Software',
             position: 'Solutions Architect / Pre-Sales Engineer',
             startDate: '2026-03-01',
             endDate: currentDate,
-            client: 'Multiple Clients',
-            technologies: 'AWS, Cloud Architecture, Solution Design, Technical Discovery, Stack Selection',
+            client: 'Multiple Clients (Travel-tech, Healthcare)',
+            technologies: 'AWS, Cloud Architecture, Solution Design, Technical Discovery, Stack Selection, Healthcare Interoperability, Multi-tenant SaaS Design',
             achievements: [
                 'Technical advisor in pre-sales engagements supporting the COO during client discovery and proposal phases.',
-                'Lead technical assessments, architecture proposals, and stack recommendations for early-stage and pre-seed clients.',
-                'Created Technical Assessment Playbook (Discovery -> Assessment -> Proposal) standardizing the pre-sales workflow across the company.',
+                'Lead technical assessments, architecture proposals, and stack recommendations for early-stage and pre-seed clients across travel tech and healthcare.',
+                'Created Technical Assessment Playbook (Discovery -> Assessment -> Proposal) standardizing the pre-sales workflow across clients.',
+                'Designed a Reviewer-of-Record engagement model for a travel-tech CRM built with AI coding agents: architecture review of critical paths + production support with severity-based SLAs.',
+                'Authored a staffing-model proposal for phased healthcare (homecare AR) ERP modernization on AWS (Postgres operational + Redshift analytical domains, Cognito + SSO, PWA-first, scheduling algorithm).',
+                'Established reusable proposal patterns: AWS-first, Cognito over custom JWT, ETL batch (Glue) vs CDC managed, dual operational/analytical domains, snapshot JSONB vs cross-schema FKs.',
                 'Generate additional engineering scope for delivery teams (PM + Architect + Engineer) by anchoring trust through technical depth.',
-                'Bridge the gap between commercial conversation and engineering execution.',
-                'Enable the COO to engage technical buyers credibly during early-stage sales cycles.'
+                'Formalized role scope with Argeniss leadership (July 2026): pre-sales technical ownership + limited healthcare-domain advisory for delivery teams.'
             ]
         },
         {
@@ -44,16 +62,17 @@ document.addEventListener('DOMContentLoaded', function() {
             startDate: '2025-11-01',
             endDate: currentDate,
             client: 'SaaS Startup',
-            technologies: 'AWS (CDK, Lambda, ECS Fargate, RDS PostgreSQL async, API Gateway, S3, SQS, Cost Explorer, KMS), FastAPI, Mangum, Next.js 14, Material UI, PostgreSQL, Stripe, Auth0, Resend, Claude API, Python, TypeScript, Docker, Turbo, GitHub Actions',
+            technologies: 'AWS (CDK, Lambda, ECS Fargate, RDS PostgreSQL async, API Gateway, S3, SQS, Cost Explorer, EventBridge, KMS), FastAPI, Mangum, Next.js 14, Material UI, PostgreSQL, Stripe, Auth0, Resend, Claude API, MCP, Python, TypeScript, Docker, Turbo, GitHub Actions OIDC',
             achievements: [
                 'Founded production B2B2B FinOps SaaS platform that analyzes AWS accounts and auto-generates Infrastructure-as-Code in 3 formats (CDK Python, Terraform HCL, CloudFormation YAML) for cost optimization (app.cloudpruneai.com).',
                 'Built and deployed 18 resource analyzers covering 31+ optimization checks across compute, storage, networking, databases, commitments, extended support, and AI/ML services.',
-                'Architected hybrid serverless platform: FastAPI on AWS Lambda + Mangum (API), ECS Fargate (scan workers), async RDS PostgreSQL, monorepo with Turbo unifying TypeScript and Python tooling.',
+                'Shipped a production real-time anomaly detection engine (Q3 2026): 3-sigma against a trailing 30-day baseline, EventBridge daily cron, Lambda worker, and alert delivery via Slack and Teams webhooks with per-account settings + history UI.',
+                'Added an AI cost tracking module for Bedrock, OpenAI, and Anthropic spend visibility (token-level tracking on the Q3+ roadmap).',
+                'Architected hybrid serverless platform: FastAPI on AWS Lambda + Mangum (API), ECS Fargate (scan workers), async RDS PostgreSQL, 271-test suite with CI/CD via GitHub Actions OIDC (no long-lived credentials).',
                 'Implemented AI-powered IaC code generation using Claude API (Anthropic) with multi-format output and business context enrichment via Claude Haiku.',
-                'Designed B2B2B partner-led GTM model: white-label PDF reports, gainshare pricing (10% / 7.5% at scale) plus recurring Operate Plan subscriptions for continuous monitoring.',
-                'Onboarded 4 active partners across Argentina, Spain, and Uruguay. Drove technical onboarding end-to-end: discovery calls, AWS account integration, white-label configuration, and hands-on support during first scans.',
-                'First real scan with consulting partner detected USD 5,260/year in waste across a client AWS account.',
-                'GDPR-compliant architecture with Privacy Policy, Data Processing Agreement (DPA), Records of Processing Activities (ROPA), Security Posture Document, and DELETE /users/me. Registered USPTO trademark (Serial: 99585602).'
+                'Designed B2B2B partner-led GTM model with tiered pricing (Free / Assist EUR 4,900 one-time / Operate EUR 590/month): white-label PDF reports, gainshare (10% / 7.5% at scale) plus recurring subscriptions.',
+                'Onboarded 4 active partners across Argentina, Spain, and Uruguay; first real scan with a consulting partner detected USD 5,260/year in waste across a client AWS account.',
+                'GDPR-compliant architecture (Privacy Policy, DPA, ROPA, Security Posture Document, DELETE /users/me). USPTO trademark registration in progress (Serial: 99585602; certificate expected August 2026).'
             ]
         },
         {

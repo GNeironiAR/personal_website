@@ -1,5 +1,5 @@
 # German Neironi
-Cloud and AI Solutions Engineer | Founder at CloudPruneAI and Quira
+Senior AI Engineer (FDE) at Marvell | Founder at CloudPruneAI and Quira | Solutions Architect at Argeniss
 
 g.neironi@gmail.com | linkedin.com/in/gneironi | gneironiar.github.io/personal_website | github.com/gneironiar
 Cordoba, Argentina (Open to Remote - US/EU/LATAM)
@@ -8,25 +8,54 @@ Cordoba, Argentina (Open to Remote - US/EU/LATAM)
 
 ## Professional Summary
 
-Cloud and AI Solutions Engineer with over 15 years of progressive experience designing and building cloud solutions that integrate AI to solve real business problems - from architecture to production deployment. Recognized expert in transforming business challenges into scalable, production-ready systems across healthcare informatics, enterprise data systems, and SaaS platform development.
+Cloud and AI Solutions Engineer with over 15 years of progressive experience designing and building cloud and AI systems in production - from architecture and IaC to enterprise deployment and multi-vertical AI enablement. Recognized expert in transforming business challenges into scalable, production-ready systems across enterprise AI, healthcare informatics, enterprise data systems, and SaaS platform development.
+
+Currently working as Senior AI Engineer - Forward Deployed Engineer at Marvell Technology (via InterEx Group), owning 5 concurrent enterprise AI engagements across Finance, HR/People, Global Workplace Services, Video Creators Conference Support, and Claude Cost Monitoring & Alerting. Marvell is Nvidia's NVLink Fusion partner (USD 2B partnership, March 2026).
 
 ### Core Expertise
-- AI-Powered Cloud Solutions: Production experience building systems that integrate LLMs and Generative AI services (Claude API, AWS Bedrock) to automate complex workflows - from infrastructure code generation to intelligent data analysis
+- Enterprise AI Enablement: LLM Gateway design, RAG, Prompt Engineering, cost monitoring & governance, and self-service tooling delivered across business verticals under a Forward Deployed Engineering model
+- AI-Powered Cloud Solutions: Production experience building systems that integrate LLMs and Generative AI services (Claude API, AWS Bedrock, MCP) to automate complex workflows - from infrastructure code generation to intelligent data analysis
 - Full-Stack Cloud Architecture: Deep expertise in AWS ecosystem (CDK, Lambda, ECS Fargate, RDS, DMS, Bedrock, S3, Glue, Athena, Redshift, DynamoDB, Step Functions, SQS, EventBridge, CloudFront) and Terraform Infrastructure-as-Code
 - Data Engineering and Analytics: Design and implementation of hybrid serverless architectures, real-time data pipelines, multi-source ETL systems, and optimized data lake architectures that turn raw data into business decisions
-- Modern Development Stack: FastAPI, Next.js 14, Vue.js, TypeScript, Python, PostgreSQL, with full CI/CD automation via GitHub Actions
-- Leadership and Strategy: Proven track record founding two SaaS startups (CloudPruneAI and Quira), leading cross-functional teams of 26+ professionals, and managing enterprise-scale transformation projects
+- Modern Development Stack: FastAPI, Next.js 14, Vue.js, TypeScript, Python, PostgreSQL, with full CI/CD automation via GitHub Actions (OIDC)
+- Leadership and Strategy: Proven track record founding two SaaS startups (CloudPruneAI and Quira), owning enterprise AI engagements at Marvell, and structuring pre-sales engagement models at Argeniss
 
 ### Professional Differentiators
-Founded and operates two SaaS products in production: CloudPruneAI (FinOps platform with AI-powered IaC code generation in 3 formats - CDK, Terraform, CloudFormation - 18 analyzers, 31+ optimization checks, B2B2B partner channel with 4 active partners across Argentina, Spain, and Uruguay) and Quira (multi-tenant industrial IoT platform for environmental monitoring, launched April 2026, validated end-to-end with real ESP32 hardware, first partner LOI signed in Colombia). Both products built solo from architecture to production, integrating Claude API for code generation, business context enrichment, and customer-facing features.
+Founded and operates two SaaS products in production: CloudPruneAI (B2B2B FinOps platform with AI-powered IaC code generation in 3 formats - CDK, Terraform, CloudFormation - 18 analyzers, 31+ optimization checks, real-time anomaly detection engine, 271-test suite, and a partner channel with 4 active partners across Argentina, Spain, and Uruguay) and Quira (multi-tenant industrial IoT platform for environmental monitoring, launched April 2026, validated end-to-end with real ESP32 hardware, first partner LOI signed in Colombia). Both products built solo from architecture to production, integrating Claude API for code generation, business context enrichment, and customer-facing features.
 
-Currently leading cloud data and AI integration projects at Argeniss Software while operating CloudPruneAI and Quira. Extensive experience working with distributed teams across multiple time zones and countries using modern collaboration tools (Slack, Discord, Teams, Jira, Figma).
+Also serves as Solutions Architect / Pre-Sales Engineer at Argeniss Software, leading technical assessments and architectural proposals for enterprise clients across travel tech and healthcare, including a reviewer-of-record engagement model for internally-built products. Extensive experience working with distributed teams across multiple time zones and countries using modern collaboration tools (Slack, Discord, Teams, Jira, Figma).
 
 Results-oriented professional who translates complex business problems into scalable, production-ready solutions where AI generates real output, not just prototypes. Strategic thinker with diplomatic approach to stakeholder management and commitment to continuous learning in emerging AI technologies.
 
 ---
 
 ## Professional Experience
+
+### Marvell Technology | Senior AI Engineer - Forward Deployed Engineer
+June 2026 - Present | Contractor via InterEx Group | Remote
+
+Enterprise AI engineer within Marvell's Enterprise AI team (semiconductor company, Nvidia NVLink Fusion partner). Owns 5 concurrent verticals and engagements under a Forward Deployed Engineering model, scoping AI enablement per role and user rather than universal tooling.
+
+#### Key Responsibilities and Achievements
+
+Multi-Vertical AI Ownership:
+- Own 5 concurrent verticals and engagements: Finance (dashboards and analytics), HR/People (governance-first configuration on Workday HRIS), Global Workplace Services (real estate, facilities, EHS, sustainability), Video Creators Conference Support (AI video tools for presenter enablement - Nano Banana, OpenArt, Pictory), and Claude Cost Monitoring & Alerting
+- Follow a reusable playbook for onboarding new verticals with vertical-specific training and templates
+
+Solution Architecture:
+- Designed end-to-end solution architecture for Claude Cost Monitoring: LLM Gateway (source of truth) -> warehouse -> BI dashboards + alert engine + Copilot Kit self-service governance UI
+- Coordinate with Enterprise AI leadership (Lead Architect, Business Engagement Model owner) and the platform team on tooling standards (Databricks, PowerBI)
+
+Delivery and Documentation:
+- Author bilingual delivery documentation (ES working copy + EN VDI-ready) with vertical-specific training and templates
+- Ship code review and peer-review docs cross-team
+- Forward Deployed Engineering model: scoping per role/user rather than universal tooling - a key differentiator identified during the technical interview
+
+Contract: 40 hs/week, delivery-based with meeting availability.
+
+Technical Stack: LLM Gateway, Claude API, AWS Bedrock, Snowflake/BigQuery, Databricks, PowerBI, Copilot Kit, Anthropic Admin API, ServiceNow, Glean, Workday, MCP, RAG, Prompt Engineering
+
+---
 
 ### CloudPruneAI | Founder and Technical Lead
 November 2025 - Present | Independent SaaS Startup | Remote
@@ -38,13 +67,16 @@ Founded and built production FinOps SaaS platform from concept to live partner-c
 Product Development and Architecture:
 - Architected and deployed hybrid serverless platform combining FastAPI on AWS Lambda + Mangum (API layer) with ECS Fargate (long-running scan workers) and async RDS PostgreSQL for data persistence
 - Designed and implemented 18 specialized resource analyzers covering 31+ optimization checks across compute, storage, networking, databases, commitments, extended support, and AI/ML services
+- Shipped a production real-time anomaly detection engine (Q3 2026): 3-sigma against a trailing 30-day baseline, EventBridge daily cron scheduler, Lambda worker, alert delivery via Slack and Teams webhooks, and per-account settings + history UI; absorbed a client feature request (budget anomaly email alerts) that had been in backlog since April
+- Added an AI cost tracking module for Bedrock, OpenAI, and Anthropic spend visibility (token-level tracking on the Q3+ roadmap)
 - Built AI-powered IaC code generation using Claude API (Anthropic) with multi-format output (CDK Python, Terraform HCL, CloudFormation YAML) and business context enrichment via Claude Haiku
 - Developed complete REST API with authentication (Auth0), role-based access control, and multi-tenant support
-- Structured the codebase as a monorepo with Turbo for unified TypeScript/Python tooling
+- Structured the codebase as a monorepo with Turbo for unified TypeScript/Python tooling, backed by a 271-test suite with CI/CD via GitHub Actions OIDC (no long-lived credentials)
+- MCP Server + Assistant Backend + Chat UI + Slack Bot bundle on the active roadmap ("talk to your data" conversational layer)
 
 Business Model and Monetization:
-- Designed B2B2B partner-led GTM model with white-label PDF reports for consulting partners
-- Implemented gainshare pricing (10% of detected savings, 7.5% at scale) plus recurring Operate Plan subscriptions for continuous monitoring
+- Designed B2B2B partner-led GTM model with tiered pricing (Free / Assist EUR 4,900 one-time / Operate EUR 590/month) and white-label PDF reports for consulting partners
+- Implemented gainshare pricing (10% of detected savings, 7.5% at scale) plus recurring Operate subscriptions for continuous monitoring
 - Integrated Stripe payment processing with automated recommendation unlock tied to payment events
 - Created customer dashboard for real-time savings tracking and IaC code downloads in 3 formats
 
@@ -64,15 +96,17 @@ Partner Onboarding and Validation:
 - Onboarded 4 active partners across Argentina, Spain, and Uruguay
 - Drove technical onboarding end-to-end: discovery calls, AWS account integration, white-label configuration, and hands-on support during first scans
 - First real scan with consulting partner detected USD 5,260/year in waste across a client AWS account
-- Registered USPTO trademark (Serial: 99585602)
+- USPTO trademark registration in progress (Serial: 99585602; registration certificate expected August 2026)
 - Established company LinkedIn presence and go-to-market materials
 - Deployed production environment: app.cloudpruneai.com
 
-Technical Stack: AWS (CDK, Lambda, ECS Fargate, RDS PostgreSQL async, API Gateway, S3, SQS, Cost Explorer, CloudWatch, KMS), FastAPI, Mangum, Next.js 14, Material UI, TypeScript, Python, Docker, Turbo, Auth0, Stripe API, Resend, Claude API, GitHub Actions
+Technical Stack: AWS (CDK, Lambda, ECS Fargate, RDS PostgreSQL async, API Gateway, S3, SQS, Cost Explorer, EventBridge, CloudWatch, KMS), FastAPI, Mangum, Next.js 14, Material UI, TypeScript, Python, Docker, Turbo, Auth0, Stripe API, Resend, Claude API, MCP, GitHub Actions OIDC
 
 Quantifiable Impact:
 - 4-month delivery from concept to live partner channel
 - 18 production-grade analyzers covering 31+ optimization checks
+- Real-time anomaly detection engine with Slack/Teams alert delivery
+- 271-test suite with GitHub OIDC CI/CD
 - 3 IaC output formats (CDK, Terraform, CloudFormation) auto-generated by AI
 - 4 active partners across 3 countries (Argentina, Spain, Uruguay)
 - USD 5,260/year detected in first real partner scan
@@ -124,28 +158,32 @@ Quantifiable Impact:
 ---
 
 ### Argeniss Software | Solutions Architect / Pre-Sales Engineer
-March 2026 - Present | Multiple Clients | Remote
+March 2026 - Present | Multiple Clients (Travel-tech, Healthcare) | Remote
 
-Technical advisor in pre-sales engagements supporting the COO during client discovery and proposal phases. Anchors trust through technical depth and converts discovery conversations into delivery scope.
+Technical advisor in pre-sales engagements supporting the COO during client discovery and proposal phases. Leads technical assessments and architectural proposals for enterprise clients across travel tech and healthcare, and anchors trust through technical depth to convert discovery conversations into delivery scope.
 
 #### Key Responsibilities and Achievements
 
 Pre-Sales Technical Leadership:
-- Lead technical assessments, architecture proposals, and stack recommendations for early-stage and pre-seed clients
+- Lead technical assessments, architecture proposals, and stack recommendations for early-stage and pre-seed clients across travel tech and healthcare
 - Run discovery calls alongside the COO to surface technical requirements and constraints
 - Translate ambiguous business goals into concrete technical roadmaps and stack choices
 
+Active Engagements:
+- Travel-tech CRM platform: designed a Reviewer-of-Record engagement model for a product built internally with AI coding agents (architecture review of critical paths + production support with severity-based SLAs)
+- Healthcare (homecare AR): authored a staffing-model proposal for phased ERP modernization on AWS (Postgres operational + Redshift analytical domains, Cognito + SSO, PWA-first, scheduling algorithm)
+
 Process and Standardization:
-- Created Technical Assessment Playbook (Discovery -> Assessment -> Proposal) standardizing the pre-sales workflow across the company
+- Created Technical Assessment Playbook (Discovery -> Assessment -> Proposal) standardizing the pre-sales workflow across clients
+- Established reusable proposal patterns for healthcare and travel-tech clients: AWS-first, Cognito over custom JWT, ETL batch (Glue) vs CDC managed, dual operational/analytical domains, snapshot JSONB vs cross-schema FKs
 - Documented decision frameworks for stack selection (cloud provider, language, framework, data layer)
-- Established architecture proposal templates reusable across engagements
 
 Business Impact:
 - Generate additional engineering scope for delivery teams (PM + Architect + Engineer) by anchoring trust through technical depth
 - Bridge the gap between commercial conversation and engineering execution
-- Enable the COO to engage technical buyers credibly during early-stage sales cycles
+- Formalized role scope with Argeniss leadership (July 2026): pre-sales technical ownership + limited healthcare-domain advisory for delivery teams (no PM, no delivery ownership)
 
-Technical Stack: AWS, Cloud Architecture, Solution Design, Technical Discovery, Stack Selection
+Technical Stack: AWS, Cloud Architecture, Solution Design, Technical Discovery, Stack Selection, Healthcare Interoperability, Multi-tenant SaaS Design, Legal/Contract Frameworks (retainer + hourly + fixed-price bundles)
 
 ---
 
@@ -476,8 +514,11 @@ Infrastructure as Code: Terraform, AWS CDK
 Azure: Data Factory, Databricks, Synapse Analytics, Fundamentals certified
 Containerization and Orchestration: Docker, Container-based Lambda deployments
 
-### Generative AI and LLMs
-AWS Bedrock (Claude 3.5 Sonnet, Haiku, Nova Lite, Nova Pro), Claude API (Anthropic), Prompt Engineering, RAG (Retrieval-Augmented Generation), LLM Integration, AI Agents, Generative AI, SageMaker Canvas
+### Enterprise AI and LLMs
+LLM Gateway Design, AWS Bedrock (Claude 3.5 Sonnet, Haiku, Nova Lite, Nova Pro), Claude API (Anthropic), Anthropic Admin API, Prompt Engineering, RAG (Retrieval-Augmented Generation), MCP (Model Context Protocol) Servers, AI Agents, Generative AI Multi-model Orchestration, SageMaker Canvas, Copilot Kit
+
+### AI Enablement Tools (Enterprise Context)
+Glean, Databricks, PowerBI, Snowflake/BigQuery patterns, ServiceNow integration, Workday HRIS context, Nano Banana, OpenArt, Pictory (video generation)
 
 ### Programming and Scripting Languages
 Expert: Python (Pandas, NumPy, PyArrow, Boto3), SQL (T-SQL, PL/SQL, PostgreSQL)
@@ -521,6 +562,22 @@ Agile/Scrum (Certified), DevOps, ITIL, Infrastructure as Code (IaC), Test-Driven
 
 ## Featured Projects and Achievements
 
+### Marvell Enterprise AI Delivery
+Role: Senior AI Engineer - Forward Deployed Engineer | Timeline: June 2026 - Present
+
+Project Overview:
+Own 5 concurrent enterprise AI verticals at Marvell Technology (Nvidia NVLink Fusion partner). Deliver AI enablement scoped per role and user under a Forward Deployed Engineering model.
+
+Key Achievements:
+- Designed Claude Cost Monitoring architecture (LLM Gateway -> warehouse -> BI + alerts + self-service governance UI)
+- Own Finance, HR/People (Workday HRIS), Global Workplace Services, Video Creators Conference Support, and Claude Cost Monitoring & Alerting
+- Author bilingual delivery docs (ES + EN VDI-ready) and a reusable vertical onboarding playbook
+- Coordinate with Enterprise AI leadership and the platform team on tooling standards (Databricks, PowerBI)
+
+Tech Stack: LLM Gateway, Claude API, AWS Bedrock, Snowflake/BigQuery, Databricks, PowerBI, Copilot Kit, Anthropic Admin API, ServiceNow, Glean, Workday, MCP, RAG, Prompt Engineering
+
+---
+
 ### CloudPruneAI - Production FinOps SaaS Platform
 Role: Founder and Technical Lead | Timeline: November 2025 - Present
 
@@ -530,19 +587,21 @@ Production B2B2B FinOps SaaS platform that automatically analyzes AWS infrastruc
 Technical Architecture:
 - Hybrid serverless: FastAPI on Lambda + Mangum (API) + ECS Fargate (scan workers) + async RDS PostgreSQL
 - 18 specialized analyzers covering 31+ optimization checks across compute, storage, networking, databases, commitments, extended support, and AI/ML services
+- Real-time anomaly detection engine (3-sigma, EventBridge cron, Lambda worker, Slack/Teams delivery) plus an AI cost tracking module for Bedrock, OpenAI, and Anthropic spend
 - AI-powered IaC code generation using Claude API with multi-format output and business context enrichment via Claude Haiku
-- Multi-tenant architecture with Auth0 authentication
+- Multi-tenant architecture with Auth0 authentication, 271-test suite, CI/CD via GitHub Actions OIDC
 - Monorepo with Turbo unifying TypeScript and Python tooling
-- Stripe payment integration with gainshare pricing plus recurring Operate Plan subscriptions
+- Stripe payment integration with tiered pricing (Free / Assist / Operate) plus gainshare
 
 Key Achievements:
 - 4 active partners across Argentina, Spain, and Uruguay
 - First real partner scan detected USD 5,260/year in waste across a client AWS account
 - 4-month delivery from concept to live partner channel
-- USPTO trademark registered (Serial: 99585602)
+- USPTO trademark registration in progress (Serial: 99585602; certificate expected August 2026)
 - GDPR-compliant architecture with Privacy Policy, DPA, ROPA, and Security Posture Document
+- MCP Server + Assistant Backend + Chat UI + Slack Bot bundle on the active roadmap
 
-Tech Stack: AWS (CDK, Lambda, ECS Fargate, RDS PostgreSQL async, S3, SQS, Cost Explorer), FastAPI, Mangum, Next.js 14, Material UI, TypeScript, Python, Docker, Turbo, Stripe, Auth0, Resend, Claude API
+Tech Stack: AWS (CDK, Lambda, ECS Fargate, RDS PostgreSQL async, S3, SQS, Cost Explorer, EventBridge), FastAPI, Mangum, Next.js 14, Material UI, TypeScript, Python, Docker, Turbo, Stripe, Auth0, Resend, Claude API, MCP
 
 Production URL: app.cloudpruneai.com
 
@@ -653,7 +712,7 @@ Universidad Autonoma de Entre Rios (UADER), Parana, Argentina | 2017
 ### Professional Certifications and Advanced Training
 
 In Progress
-- AWS Certified Solutions Architect - Associate (SAA-C03) - exam scheduled April 2026
+- AWS Certified Solutions Architect - Associate (SAA-C03)
 
 AWS Cloud Services (2024)
 - Introduction to Amazon Kinesis Analytics (LATAM Spanish)
@@ -804,4 +863,4 @@ Available upon request.
 
 ---
 
-Last Updated: April 2026
+Last Updated: July 2026
