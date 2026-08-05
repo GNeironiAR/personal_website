@@ -39,6 +39,24 @@ document.addEventListener('DOMContentLoaded', function() {
             ]
         },
         {
+            company: 'Argeniss Software',
+            position: 'Senior Cloud and AI Engineer',
+            startDate: '2026-01-01',
+            endDate: currentDate,
+            client: 'Multiple US Clients (confidential)',
+            technologies: 'AWS CDK (Python), Terraform, Lambda (Docker), Step Functions, S3, EventBridge, DynamoDB (Streams / GSI / single-table), API Gateway (HTTP + WebSocket), Cognito, Bedrock AgentCore, Bedrock (Claude Sonnet), Strands, Comprehend Medical, Textract, Glue (PySpark), AWS DMS, Redshift (Spectrum, medallion RAW/SILVER/GOLD), RDS Postgres 16, Athena, SSM Parameter Store, KMS, CloudFront, WAFv2, ACM, VPC + NAT, custom MCP servers, FastAPI, React 18, TypeScript, GitLab CI/CD, GitHub Actions OIDC, FHIR / ICD-10 / RxNorm / SNOMED',
+            achievements: [
+                'Delivered end-to-end AWS + AI systems for US enterprise and startup clients across pharma AI, consumer finance, healthtech, and industrial verticals (client identities under NDA).',
+                'Multimodal clinical inference platform (pharma AI): built an event-driven pipeline (S3 -> EventBridge -> Step Functions) with 4 processing layers - multimodal normalize, FHIR encoding to ICD-10 / RxNorm / SNOMED, LLM-based patient-journey canonicalization, and a gold feature matrix - across 6 CDK stacks with governance-as-code (CDK Aspects, OIDC CI/CD, KMS CMKs, DLQs).',
+                'Achieved high-accuracy cohort extraction beating the deterministic baseline, with HIPAA/PHI compliance-by-design (Bedrock BAA, zero data retention, PHI redaction, surrogate patient keys).',
+                'Consumer-finance data platform: Terraform-based replication of multiple SQL Server databases + MongoDB to S3, exposed as a medallion architecture in Redshift (RAW via Spectrum, SILVER views, GOLD materialized tables); config-driven extraction (DynamoDB catalog) with full / incremental / change-tracking modes and per-row SHA-256 diff.',
+                'Cut heavy reporting from minutes to milliseconds (multi-thousand-x speedups) and passed the client security review with zero open findings.',
+                'Veterans-benefits conversational form-fill assistant (healthtech): multi-agent LLM system on AWS Bedrock AgentCore (Claude Sonnet) over WebSocket API Gateway + DynamoDB single-table; owned a 48-hour pre-demo hardening cycle, root-causing a WebSocket session-loss chain and shipping atomic PRs with smoke tests and zero rollbacks.',
+                'Labor-forecasting SaaS (US mechanical contractor): full-stack app (FastAPI Lambda + React SPA + RDS Postgres in a private VPC + Cognito RBAC + SOAP ERP integration + custom MCP server for natural-language scenario planning + Athena BI) across 8 CDK stacks, replacing an Excel-with-macros workbook as the single source of truth for labor forecasts and hiring.',
+                'Applied governance-as-code and least-privilege security across engagements: CDK Aspects, OIDC CI/CD without long-lived keys, KMS CMKs, DLQ + review queues, and SSM Parameter Store secret resolution at runtime.'
+            ]
+        },
+        {
             company: 'Quira',
             position: 'Founder & Technical Lead',
             startDate: '2025-12-01',

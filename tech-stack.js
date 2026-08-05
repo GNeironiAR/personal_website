@@ -23,6 +23,7 @@ const toolsData = {
         { id: "Terraform", group: 5 },
         { id: "IaC", group: 5 },
         { id: "GitHub Actions", group: 6 },
+        { id: "GitLab CI/CD", group: 6 },
         { id: "Auth0", group: 7 }
     ],
     links: [
@@ -48,6 +49,7 @@ const toolsData = {
         { source: "Infrastructure", target: "Terraform", value: 1 },
         { source: "Infrastructure", target: "IaC", value: 1 },
         { source: "CI/CD", target: "GitHub Actions", value: 1 },
+        { source: "CI/CD", target: "GitLab CI/CD", value: 1 },
         { source: "Auth", target: "Auth0", value: 1 }
     ]
 };
@@ -89,6 +91,9 @@ const programmingData = {
         { id: "SageMaker Canvas", group: 6 },
         { id: "FastAPI", group: 7 },
         { id: "Next.js", group: 7 },
+        { id: "React", group: 7 },
+        { id: "Vite", group: 7 },
+        { id: "AG Grid", group: 7 },
         { id: "Django", group: 7 }
     ],
     links: [
@@ -122,6 +127,9 @@ const programmingData = {
         { source: "Machine Learning", target: "SageMaker Canvas", value: 1 },
         { source: "Web Frameworks", target: "FastAPI", value: 1 },
         { source: "Web Frameworks", target: "Next.js", value: 1 },
+        { source: "Web Frameworks", target: "React", value: 1 },
+        { source: "Web Frameworks", target: "Vite", value: 1 },
+        { source: "Web Frameworks", target: "AG Grid", value: 1 },
         { source: "Web Frameworks", target: "Django", value: 1 },
         { source: "Languages", target: "Arduino C++", value: 1 },
         { source: "Programming", target: "Embedded", value: 1 },
@@ -220,6 +228,9 @@ const cloudData = {
         { id: "Stripe API", group: 10 },
         { id: "AWS Bedrock", group: 11 },
         { id: "Claude API", group: 11 },
+        { id: "Bedrock AgentCore", group: 11 },
+        { id: "Comprehend Medical", group: 11 },
+        { id: "Amazon Textract", group: 11 },
         { id: "LLM Gateway", group: 11 },
         { id: "MCP", group: 11 },
         { id: "Anthropic Admin API", group: 11 },
@@ -310,6 +321,9 @@ const cloudData = {
         { source: "Payment Services", target: "Stripe API", value: 1 },
         { source: "AI/ML Services", target: "AWS Bedrock", value: 1 },
         { source: "AI/ML Services", target: "Claude API", value: 1 },
+        { source: "AI/ML Services", target: "Bedrock AgentCore", value: 1 },
+        { source: "AI/ML Services", target: "Comprehend Medical", value: 1 },
+        { source: "AI/ML Services", target: "Amazon Textract", value: 1 },
         { source: "AI/ML Services", target: "LLM Gateway", value: 1 },
         { source: "AI/ML Services", target: "MCP", value: 1 },
         { source: "AI/ML Services", target: "Anthropic Admin API", value: 1 },

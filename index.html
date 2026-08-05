@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Germán Neironi — Senior AI Engineer (Forward Deployed) at Marvell, Founder of CloudPruneAI and Quira, and Solutions Architect at Argeniss. I build production cloud and AI systems, from architecture to enterprise deployment.">
-    <meta name="keywords" content="Senior AI Engineer, Forward Deployed Engineer, Enterprise AI, LLM Gateway, Cloud Engineer, AWS CDK, FinOps, CloudPruneAI, Quira, Industrial IoT, Infrastructure as Code, RAG, MCP, Claude API, Data Engineering">
+    <meta name="keywords" content="Senior AI Engineer, Forward Deployed Engineer, Enterprise AI, LLM Gateway, Cloud Engineer, AWS CDK, Terraform, FinOps, CloudPruneAI, Quira, Industrial IoT, Infrastructure as Code, RAG, MCP, Multi-Agent LLM, Bedrock AgentCore, Claude API, FHIR, Healthcare AI, Data Engineering, Redshift, Medallion Architecture">
     <meta property="og:title" content="Germán Neironi — Senior AI Engineer (FDE) | Founder @ CloudPruneAI & Quira">
     <meta property="og:description" content="Senior AI Engineer (Forward Deployed) at Marvell. Founder of CloudPruneAI and Quira. I build production cloud and AI systems where AI generates real output, not just prototypes.">
     <meta property="og:url" content="https://gneironiar.github.io/personal_website/">
@@ -162,6 +162,36 @@
                         <p>Multi-tenant industrial IoT platform for environmental monitoring (temperature, humidity), with real-time alerts, auditable PDF/CSV reports, and native Microsoft Teams integration via Power Automate. Built solo from architecture to production launch in under 4 months.</p>
                         <p><strong>Key Features:</strong> 9 CDK stacks on AWS (ECS Fargate behind ALB with WAF, Route53 + ACM, RDS PostgreSQL 15, Cognito, SQS, 6 Lambdas, SNS); FastAPI backend with 47 endpoints and 103 tests; HMAC-SHA256 + HKDF device authentication with idempotent ingestion; alert engine with severity escalation; async PDF/CSV report generation via WeasyPrint; sensor-agnostic data model and driver registry (CO2, pressure, vibration on V2 roadmap); Next.js 14 admin panel with 25 pages and full ES/EN i18n.</p>
                         <p><strong>Validation:</strong> End-to-end validated with real ESP32 + SHT31 hardware. First partner LOI signed in Colombia (aerospace warehouse pilot, ~30 devices). Production launch: April 19, 2026.</p>
+                    </div>
+                    <div class="experience-block">
+                        <h3>Multimodal Clinical Inference Platform</h3>
+                        <p><strong>AWS CDK (Python, 6 stacks) + Step Functions + Bedrock (Claude) + Comprehend Medical + Textract + FHIR</strong></p>
+                        <p>Event-driven pipeline that turns a manual, per-disease clinical-variable extraction process into an auditable, disease-agnostic "factory" — from raw medical documents to ML-ready gold feature matrices and a cohort-selection API for clinical trials.</p>
+                        <p><strong>Architecture:</strong> S3 → EventBridge → Step Functions with 4 processing layers — multimodal normalize (OCR/text/HTML/structured), FHIR encoding to ICD-10 / RxNorm / SNOMED, LLM-based patient-journey canonicalization, and a gold feature matrix + cohort API.</p>
+                        <p><strong>Key decisions:</strong> deterministic where possible / LLM only to read prose (with a deterministic production fallback); model-as-configuration validated by a controlled 4-model benchmark; governance-as-code (CDK Aspects, OIDC CI/CD, KMS CMKs, DLQs); HIPAA/PHI compliance-by-design (Bedrock BAA, zero data retention, PHI redaction, surrogate patient keys). High-accuracy cohort extraction beating the deterministic baseline.</p>
+                        <p><em>Built for: Argeniss Software (client under NDA)</em></p>
+                    </div>
+                    <div class="experience-block">
+                        <h3>Consumer-Finance Data Platform (AWS)</h3>
+                        <p><strong>Terraform + Glue (PySpark) + AWS DMS + Redshift Spectrum + S3 + Step Functions + DynamoDB</strong></p>
+                        <p>Config-driven data platform replicating multiple SQL Server databases and MongoDB into an S3 data lake, exposed as a medallion architecture in Redshift — moving analytics off production databases and giving the business row-level change auditability it never had.</p>
+                        <p><strong>Key Features:</strong> medallion layers (RAW via Spectrum → SILVER views → GOLD materialized tables with DISTKEY/SORTKEY); DynamoDB-driven extraction catalog with three modes (full_load / incremental / SQL Server change-tracking); per-row SHA-256 diff emitting an INSERT/UPDATE/DELETE changelog in Parquet; SQL Server → Redshift query translation; least-privilege IaC with SSM + KMS.</p>
+                        <p><strong>Impact:</strong> heavy reporting cut from minutes to milliseconds (multi-thousand-x speedups); onboarding a new table went from a code change to a single config item; passed the client security review with zero open findings.</p>
+                        <p><em>Built for: Argeniss Software (client under NDA)</em></p>
+                    </div>
+                    <div class="experience-block">
+                        <h3>Veterans-Benefits Conversational Form-Fill Assistant</h3>
+                        <p><strong>AWS Bedrock AgentCore (multi-agent, Claude Sonnet) + WebSocket API Gateway + DynamoDB + React</strong></p>
+                        <p>LLM-powered chat that walks veterans through complex government benefits forms end-to-end — from automatic field extraction to a fully-filled, submission-ready PDF — with an admin surface where non-technical SMEs edit forms and delivery policy without touching code.</p>
+                        <p><strong>Key Features:</strong> separate Bedrock agents for entry recommendation, form completion, PDF preprocessing, and schema extraction; WebSocket chat with keep-alive heartbeat; DynamoDB single-table design; advanced prompt engineering (persistent cross-turn flags, one-shot resume directives). Owned a 48-hour pre-demo hardening cycle — root-caused a WebSocket session-loss chain and shipped atomic PRs with per-PR smoke tests and zero rollbacks.</p>
+                        <p><em>Built for: Argeniss Software (client under NDA)</em></p>
+                    </div>
+                    <div class="experience-block">
+                        <h3>Labor Forecasting & Capacity Planning SaaS</h3>
+                        <p><strong>FastAPI (Lambda) + React SPA + RDS Postgres (VPC) + Cognito RBAC + custom MCP server + Athena</strong></p>
+                        <p>Full-stack SaaS replacing an Excel-and-macros workbook (~470 projects, 5-year horizon) as the single source of truth for labor forecasting and hiring across a US mechanical contractor's offices and trades. Built solo, end-to-end.</p>
+                        <p><strong>Key Features:</strong> monthly/quarterly forecast entry with forward-fill cascade; automatic actuals pull from a legacy ERP over SOAP with a review + approval screen; capacity-vs-demand dashboard (utilisation, gap, required headcount per office × trade); natural-language scenario planning via a custom MCP server (what-if forecasts promoted into canonical estimates); Cognito RBAC with a custom invite flow. 8 CDK stacks, delivered iteratively across dozens of PRs.</p>
+                        <p><em>Built for: Argeniss Software (client under NDA)</em></p>
                     </div>
                     <div class="experience-block">
                         <h3>Moovelix — B2B Logistics Marketplace</h3>

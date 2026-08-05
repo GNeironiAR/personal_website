@@ -84,6 +84,21 @@ Tech Stack: AWS, Cloud Architecture, Solution Design, Technical Discovery, Stack
 
 ---
 
+### Argeniss Software | Senior Cloud and AI Engineer
+January 2026 - Present | Multiple US Clients (confidential) | Remote
+
+End-to-end AWS + AI systems for US enterprise and startup clients across pharma AI, consumer finance, healthtech, and industrial verticals (client identities under NDA).
+
+- Multimodal clinical inference platform (pharma AI): event-driven pipeline (S3 -> EventBridge -> Step Functions) with 4 layers - multimodal normalize, FHIR encoding to ICD-10/RxNorm/SNOMED, LLM patient-journey canonicalization, and gold feature matrix - across 6 CDK stacks with governance-as-code (CDK Aspects, OIDC CI/CD, KMS CMKs, DLQs); HIPAA/PHI compliance-by-design (Bedrock BAA, zero data retention, PHI redaction, surrogate patient keys)
+- Consumer-finance data platform: Terraform-based replication of SQL Server + MongoDB to S3, medallion architecture in Redshift (RAW via Spectrum / SILVER views / GOLD materialized), config-driven extraction (DynamoDB catalog, full/incremental/change-tracking) with per-row SHA-256 diff; heavy reporting cut from minutes to milliseconds; passed client security review with zero open findings
+- Veterans-benefits conversational form-fill assistant (healthtech): multi-agent LLM system on AWS Bedrock AgentCore (Claude Sonnet) over WebSocket API Gateway + DynamoDB single-table; owned a 48-hour pre-demo hardening cycle with atomic PRs, smoke tests, and zero rollbacks
+- Labor-forecasting SaaS (US mechanical contractor): full-stack app (FastAPI Lambda + React SPA + RDS Postgres in a private VPC + Cognito RBAC + SOAP ERP integration + custom MCP server for natural-language scenario planning + Athena BI) across 8 CDK stacks, replacing an Excel-with-macros workbook as the single source of truth
+- Applied governance-as-code and least-privilege security across engagements: CDK Aspects, OIDC CI/CD, KMS CMKs, DLQ + review queues, SSM Parameter Store secrets
+
+Tech Stack: AWS CDK (Python), Terraform, Lambda (Docker), Step Functions, S3, EventBridge, DynamoDB, API Gateway (HTTP + WebSocket), Cognito, Bedrock AgentCore, Bedrock (Claude Sonnet), Comprehend Medical, Textract, Glue (PySpark), AWS DMS, Redshift (Spectrum, medallion), RDS Postgres, Athena, KMS, CloudFront, WAFv2, VPC + NAT, custom MCP servers, FastAPI, React 18, TypeScript, GitLab CI/CD, GitHub Actions OIDC, FHIR / ICD-10 / RxNorm / SNOMED
+
+---
+
 ### Argeniss Software | AWS Data Integration Engineer
 October 2025 - Present | Fintech Client | Remote
 
@@ -178,16 +193,19 @@ Cloud and Infrastructure:
 AWS (CDK, Lambda, Step Functions, ECS Fargate, ALB, WAF, Cognito, ACM, Route53, SNS, DMS, Bedrock, S3, Glue, Athena, Redshift, DynamoDB, SQS, KMS, EventBridge, Secrets Manager, CloudFront, SageMaker), Terraform, Azure
 
 Enterprise AI and LLMs:
-LLM Gateway Design, AWS Bedrock, Claude API (Anthropic), Anthropic Admin API, Prompt Engineering, RAG (Retrieval-Augmented Generation), MCP (Model Context Protocol) Servers, AI Agents, Generative AI Multi-model Orchestration, SageMaker Canvas, Copilot Kit
+LLM Gateway Design, AWS Bedrock, Bedrock AgentCore, Multi-Agent LLM Systems, Claude API (Anthropic), Anthropic Admin API, Prompt Engineering, RAG (Retrieval-Augmented Generation), MCP (Model Context Protocol) Servers, AI Agents, Generative AI Multi-model Orchestration, Comprehend Medical, Textract, SageMaker Canvas, Copilot Kit
 
 AI Enablement Tools (Enterprise Context):
 Glean, Databricks, PowerBI, Snowflake/BigQuery patterns, ServiceNow, Workday HRIS context
 
 Programming and Frameworks:
-Python, TypeScript, SQL (T-SQL, PL/SQL), JavaScript, FastAPI, Next.js 14, Vue.js, R, Arduino C++ (ESP32), Embedded Systems
+Python, TypeScript, SQL (T-SQL, PL/SQL), JavaScript, FastAPI, Next.js 14, React 18, Vue.js, R, Arduino C++ (ESP32), Embedded Systems
 
 Data Engineering:
-ETL/ELT, Parquet, JSON, Pandas, PySpark, Apache Spark, Data Pipeline Design
+ETL/ELT, Medallion Architecture (RAW/SILVER/GOLD), Redshift Spectrum, Parquet, JSON, Pandas, PySpark, Apache Spark, Data Pipeline Design, CDC / Change Tracking
+
+Healthcare Interoperability:
+HL7, FHIR, ICD-10, RxNorm, SNOMED, HIPAA/PHI compliance-by-design
 
 Databases:
 PostgreSQL, MySQL, SQL Server, MongoDB, Oracle, Amazon RDS, Amazon Redshift, PostGIS
@@ -210,6 +228,9 @@ Production B2B2B FinOps SaaS with 18 analyzers, 31+ optimization checks, and AI-
 
 Quira IoT Platform:
 Multi-tenant industrial IoT platform for environmental monitoring, launched April 2026. 9 CDK stacks on AWS, 47 backend endpoints, end-to-end validated with real ESP32 hardware. First partner LOI signed in Colombia (aerospace pilot).
+
+Enterprise AWS + AI Delivery (Argeniss, US clients under NDA):
+Four production engagements across pharma AI, consumer finance, healthtech, and industrial verticals: a multimodal clinical inference platform (Bedrock + FHIR/ICD-10/RxNorm/SNOMED, 6 CDK stacks, governance-as-code, HIPAA/PHI by design); a consumer-finance data platform (Terraform, medallion Redshift, config-driven extraction with per-row diff, multi-thousand-x reporting speedups, security review with zero open findings); a multi-agent LLM form-fill assistant on Bedrock AgentCore; and a full-stack labor-forecasting SaaS with a custom MCP server (8 CDK stacks).
 
 Multi-Source DMS Architecture:
 Automated replication system supporting SQL Server, MongoDB, and REST APIs with 60-70% infrastructure reusability.

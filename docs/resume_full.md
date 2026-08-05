@@ -187,6 +187,65 @@ Technical Stack: AWS, Cloud Architecture, Solution Design, Technical Discovery, 
 
 ---
 
+### Argeniss Software | Senior Cloud and AI Engineer
+January 2026 - Present | Multiple US Clients (confidential) | Remote
+
+Delivered end-to-end AWS + AI systems for US enterprise and startup clients across pharma AI, consumer finance, healthtech, and industrial verticals. Client identities are under NDA; engagements are described by sector with metrics presented at a high level.
+
+#### Engagement 1: Multimodal Clinical Inference Platform (Pharma AI startup)
+
+Turned a manual, per-disease clinical-variable extraction process into an auditable, disease-agnostic "factory" producing ML-ready tables and a cohort-selection API for clinical trials.
+
+- Built an event-driven pipeline (S3 -> EventBridge -> Step Functions) with 4 processing layers: multimodal normalize (OCR/text/HTML/structured), FHIR encoding to ICD-10 / RxNorm / SNOMED, LLM-based patient-journey canonicalization, and a gold feature matrix + cohort API
+- Kept deterministic logic where possible and used the LLM only to read prose, with a deterministic production fallback; proved via a controlled 4-model benchmark that the accuracy gap was model family, not implementation
+- Deployed 6 CDK stacks with governance-as-code: a CDK Aspect enforcing fund-attribution tags, OIDC CI/CD without long-lived keys, KMS CMKs, and DLQ + review queues
+- Implemented compliance-by-design for clinical data: Bedrock BAA, zero data retention, output guardrails, PHI redaction, and surrogate patient keys (raw identifiers never touch the data lake)
+- Delivered high-accuracy cohort extraction beating the deterministic baseline, and turned inference cost into a configurable product dial
+
+Role: Cloud Architect / Lead Engineer. Stack: AWS CDK (Python), Step Functions, Lambda, DynamoDB (Streams + GSI), EventBridge, SQS (DLQ), API Gateway, KMS, Bedrock (converse API), Comprehend Medical, Textract, FHIR / ICD-10 / RxNorm / SNOMED, SQLite, pandas, GitHub Actions (OIDC)
+
+#### Engagement 2: Consumer-Finance Data Platform (US lender)
+
+Moved analytics off production SQL Server databases onto an AWS data platform with row-level change auditability the business never had before.
+
+- Built a config-driven extraction pipeline orchestrated by Step Functions and managed entirely through a DynamoDB catalog - adding a new table is a config item, not a code change or deploy
+- Replicated multiple SQL Server databases (plus MongoDB) into an S3 data lake exposed as a medallion architecture in Redshift: RAW (external tables via Spectrum), SILVER (business-logic views), GOLD (materialized tables with DISTKEY/SORTKEY)
+- Implemented three extraction modes in one Glue/PySpark job (full_load, incremental with DynamoDB watermark, and SQL Server change_tracking) with automatic degradation to full_load
+- Added row-level change detection without CDC via per-row SHA-256 hashing and Spark joins, emitting an INSERT/UPDATE/DELETE changelog in Parquet plus diff metrics; diagnosed and fixed a composite-key join bug that had inflated a diff with false positives
+- Migrated SQL Server report logic to Redshift and passed the client security review with zero open findings (SSM + KMS secret resolution at runtime, no public Redshift, SSL-only bucket policies)
+
+Impact: heavy reporting queries went from minutes to milliseconds (multi-thousand-x speedups); hundreds of millions of rows extracted in minutes with parallelized JDBC reads.
+
+Role: Data / Cloud Engineer. Stack: Terraform, AWS Glue (PySpark), Step Functions, Lambda, AWS DMS, S3, Redshift + Redshift Spectrum, Glue Catalog + Crawlers, DynamoDB, SSM Parameter Store, KMS, CloudWatch, SQL Server (Change Tracking / CDC), MongoDB, Parquet
+
+#### Engagement 3: Conversational Form-Fill Assistant for US Veterans Benefits (Healthtech startup)
+
+LLM-powered chat that walks veterans through complex government benefits forms end-to-end - from field extraction to a filled, submission-ready PDF - with an admin surface for non-technical SMEs.
+
+- Owned a ~48-hour pre-demo hardening cycle as sole engineer, taking a set of client-reported bugs across chat, PDF generation, form editing, and infrastructure from triage through root cause, implementation, deploy, and verification
+- Worked in a multi-agent LLM system on AWS Bedrock AgentCore (separate agents for entry recommendation, form completion, PDF preprocessing, and schema extraction) with Claude Sonnet
+- Root-caused a WebSocket session-loss chain (no keepalive -> NAT-level idle disconnects -> orphaned FormInstances -> resume path picking the wrong instance) and fixed it with a ping route, heartbeat, and effect restructure keyed on session identity
+- Rewrote AcroForm PDF handling for correctness and applied advanced prompt engineering with DynamoDB persistent flags for cross-turn state signaling
+- Shipped atomic PRs (one per fix) with per-PR smoke tests, investigation-first documentation, client-facing plain-English status docs, and zero rollbacks
+
+Role: Sole engineer. Stack: AWS Bedrock AgentCore, Strands (agent SDK), Claude Sonnet, Lambda, API Gateway (HTTP + WebSocket), DynamoDB (single-table), S3, Cognito, CloudFront, Terraform, GitLab CI/CD, React 18, TypeScript, Vite, pypdf
+
+#### Engagement 4: Labor Forecasting and Capacity Planning SaaS (US mechanical contractor)
+
+Replaced an Excel-and-macros workbook (~470 projects, 5-year horizon) with a multi-user AWS-native app as the single source of truth for labor forecasting and hiring decisions.
+
+- Built full-stack, end-to-end and solo: FastAPI Lambda backend + React SPA + RDS Postgres in a private VPC + Cognito RBAC + SOAP integration to a legacy ERP + a custom MCP server for natural-language scenario planning + an Athena BI pipeline
+- Implemented monthly/quarterly forecast entry with forward-fill cascade, actuals reconciliation from the ERP with a review + approval screen, and a capacity-vs-demand dashboard (utilisation, gap, required headcount per office x trade)
+- Exposed forecast/actuals/scenario operations to the LLM chat through the custom MCP server, letting users create "what-if" forecasts as candidates and promote them into canonical estimates without direct DB access
+- Managed scope evolution from a scoped Athena pipeline into a full SaaS, pricing and shipping each expansion iteratively; built a migration-runner Lambda and a custom invite flow to bypass an inbound spam filter blocking default Cognito emails
+- Delivered across 8 CDK stacks and dozens of merged PRs, with same-day/next-day fixes during the post-launch support phase
+
+Role: Sole engineer, end-to-end. Stack: AWS CDK (Python), Lambda (Docker), API Gateway, RDS Postgres 16, Cognito, S3, Athena, CloudFront, WAFv2, ACM, VPC private subnets + NAT Gateway + VPC endpoints, custom MCP server, FastAPI, Mangum, Pydantic 2, psycopg 3, React 18, Vite, AG Grid, Recharts, GitHub flow
+
+Combined Technical Stack: AWS CDK (Python), Terraform, Lambda (Docker), Step Functions, S3, EventBridge, DynamoDB (Streams / GSI / single-table), API Gateway (HTTP + WebSocket), Cognito, Bedrock AgentCore, Bedrock (Claude Sonnet), Strands, Comprehend Medical, Textract, Glue (PySpark), AWS DMS, Redshift (Spectrum, medallion RAW/SILVER/GOLD), RDS Postgres 16, Athena, SSM Parameter Store, KMS, CloudFront, WAFv2, ACM, VPC + NAT, custom MCP servers, FastAPI, React 18, TypeScript, Vite, AG Grid, GitLab CI/CD, GitHub Actions OIDC, FHIR / ICD-10 / RxNorm / SNOMED, SQLite
+
+---
+
 ### Argeniss Software | AWS Data Integration Engineer
 October 2025 - Present | Fintech Company | Remote
 
@@ -319,7 +378,7 @@ Combined Technical Stack: AWS (CDK, Lambda Docker, API Gateway, Bedrock Claude 3
 ---
 
 ### Argeniss Software | Bedrock AI Analysis Engineer
-September 2024 - February 2025 | Innovative Client | Remote
+September 2024 - February 2025 | Confidential Client (AI / Analytics) | Remote
 
 Designed and deployed production multi-model AI consensus system for automated analysis workflows.
 
@@ -515,7 +574,7 @@ Azure: Data Factory, Databricks, Synapse Analytics, Fundamentals certified
 Containerization and Orchestration: Docker, Container-based Lambda deployments
 
 ### Enterprise AI and LLMs
-LLM Gateway Design, AWS Bedrock (Claude 3.5 Sonnet, Haiku, Nova Lite, Nova Pro), Claude API (Anthropic), Anthropic Admin API, Prompt Engineering, RAG (Retrieval-Augmented Generation), MCP (Model Context Protocol) Servers, AI Agents, Generative AI Multi-model Orchestration, SageMaker Canvas, Copilot Kit
+LLM Gateway Design, AWS Bedrock (Claude 3.5 Sonnet, Haiku, Nova Lite, Nova Pro), Bedrock AgentCore, Multi-Agent LLM Systems, Strands (agent SDK), Claude API (Anthropic), Anthropic Admin API, Prompt Engineering, RAG (Retrieval-Augmented Generation), MCP (Model Context Protocol) Servers, AI Agents, Generative AI Multi-model Orchestration, Comprehend Medical, Textract, SageMaker Canvas, Copilot Kit
 
 ### AI Enablement Tools (Enterprise Context)
 Glean, Databricks, PowerBI, Snowflake/BigQuery patterns, ServiceNow integration, Workday HRIS context, Nano Banana, OpenArt, Pictory (video generation)
@@ -526,7 +585,7 @@ Proficient: TypeScript, JavaScript, R, Scala, Arduino C++ (ESP32, Embedded Syste
 Working Knowledge: VB.NET
 
 ### Web Frameworks and APIs
-FastAPI, Next.js 14, Vue.js, REST API Design, OAuth2, Stripe API Integration
+FastAPI, Next.js 14, React 18, Vite, AG Grid, Vue.js, REST API Design, WebSocket APIs, OAuth2, Stripe API Integration
 
 ### Databases and Data Storage
 Relational: PostgreSQL, MySQL, SQL Server, Oracle, Amazon RDS, Amazon Redshift
@@ -536,8 +595,9 @@ Data Warehousing: Star/Snowflake schemas, dimensional modeling, partitioning str
 
 ### Data Engineering and ETL
 ETL/ELT Tools: AWS Glue, Azure Data Factory, Pentaho Data Integration, SSIS, Custom Python pipelines
+Data Warehousing: Medallion Architecture (RAW/SILVER/GOLD), Redshift Spectrum, config-driven extraction, per-row change detection, CDC / SQL Server Change Tracking
 Big Data: Apache Spark, PySpark, Databricks
-Data Integration: MIRTH Connect, Mule, HL7/FHIR standards
+Data Integration: MIRTH Connect, Mule, HL7/FHIR standards, ICD-10 / RxNorm / SNOMED clinical ontologies
 Stream Processing: Amazon Kinesis, SQS-based event-driven architectures
 
 ### AI/ML and Advanced Analytics
@@ -629,6 +689,22 @@ Key Achievements:
 - B2B2B revenue model with tripartite split between platform, partner, and vendor
 
 Tech Stack: AWS (CDK, ECS Fargate, ALB, WAF, Cognito, RDS PostgreSQL 15, SQS, Lambda, SNS, Route53, ACM, KMS), FastAPI, Next.js 14, Material UI, next-intl, Recharts, ESP32 (Arduino C++), SHT31, WeasyPrint, Python, TypeScript, Resend
+
+---
+
+### Enterprise AWS + AI Delivery (Argeniss, US clients under NDA)
+Role: Senior Cloud and AI Engineer | Timeline: January 2026 - Present
+
+Project Overview:
+Four production engagements delivered for US enterprise and startup clients across pharma AI, consumer finance, healthtech, and industrial verticals (client identities under NDA).
+
+Highlights:
+- Multimodal clinical inference platform: event-driven pipeline (S3 -> EventBridge -> Step Functions) with FHIR/ICD-10/RxNorm/SNOMED encoding and LLM patient-journey canonicalization; 6 CDK stacks, governance-as-code, HIPAA/PHI compliance-by-design; high-accuracy cohort extraction beating the deterministic baseline
+- Consumer-finance data platform: Terraform-based replication (SQL Server + MongoDB) into a medallion Redshift architecture with config-driven extraction and per-row SHA-256 change detection; heavy reporting cut from minutes to milliseconds; client security review passed with zero open findings
+- Veterans-benefits form-fill assistant: multi-agent LLM system on Bedrock AgentCore (Claude Sonnet) over a WebSocket API; owned a 48-hour pre-demo hardening cycle with atomic PRs and zero rollbacks
+- Labor-forecasting SaaS: full-stack app (FastAPI + React + RDS Postgres in VPC + Cognito RBAC + SOAP ERP + custom MCP server + Athena BI) across 8 CDK stacks, replacing an Excel-with-macros source of truth
+
+Tech Stack: AWS CDK (Python), Terraform, Step Functions, Lambda, DynamoDB, EventBridge, API Gateway (HTTP + WebSocket), Bedrock AgentCore, Bedrock (Claude Sonnet), Comprehend Medical, Textract, Glue (PySpark), AWS DMS, Redshift (Spectrum, medallion), RDS Postgres, Cognito, KMS, custom MCP servers, FastAPI, React 18, GitLab CI/CD, FHIR / ICD-10 / RxNorm / SNOMED
 
 ---
 
