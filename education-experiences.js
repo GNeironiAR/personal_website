@@ -5,19 +5,17 @@ document.addEventListener('DOMContentLoaded', function() {
     // Work Experience
     const workExperiences = [
         {
-            company: 'Marvell Technology',
-            position: 'Senior AI Engineer - Forward Deployed Engineer',
+            company: 'US Semiconductor Company',
+            position: 'Senior AI Engineer (Forward Deployed Engineer)',
             startDate: '2026-06-01',
             endDate: currentDate,
-            client: 'Contractor via InterEx Group',
-            technologies: 'LLM Gateway, Claude API, Anthropic Admin API, AWS Bedrock, Snowflake/BigQuery, Databricks, PowerBI, Copilot Kit, ServiceNow, Glean, Workday, MCP, RAG, Prompt Engineering',
+            client: 'Contract engagement',
+            technologies: 'LLM gateway architecture, Claude API, AWS Bedrock, MCP, RAG, Prompt Engineering, data warehouse and BI integration',
             achievements: [
-                'Enterprise AI engineer within Marvell\'s Enterprise AI team (semiconductor company, Nvidia NVLink Fusion partner - USD 2B partnership announced March 2026).',
-                'Own 5 concurrent enterprise AI verticals and engagements: Finance (dashboards and analytics), HR/People (governance-first configuration on Workday HRIS), Global Workplace Services (real estate, facilities, EHS, sustainability), Video Creators Conference Support (AI video tooling for presenter enablement), and Claude Cost Monitoring & Alerting.',
-                'Designed end-to-end solution architecture for Claude Cost Monitoring: LLM Gateway (source of truth) -> warehouse -> BI dashboards + alert engine + Copilot Kit self-service governance UI.',
-                'Author bilingual delivery documentation (ES working copy + EN VDI-ready) with vertical-specific training and templates, following a reusable playbook for onboarding new verticals.',
-                'Ship code review and peer-review docs cross-team, coordinating with Enterprise AI leadership (Lead Architect, Business Engagement Model owner) and the platform team on tooling standards (Databricks, PowerBI).',
-                'Operate under a Forward Deployed Engineering model: scoping AI enablement per role and user rather than universal tooling.'
+                'Enterprise AI enablement: LLM gateway architecture, AI cost governance and self-service tooling for internal teams.',
+                'Designed an end-to-end AI cost monitoring architecture: LLM gateway as source of truth, data warehouse, BI dashboards, alerting, and a self-service governance UI.',
+                'Scope AI enablement per role and user rather than universal tooling, under a Forward Deployed Engineering model.',
+                'Author bilingual delivery documentation and training, following a reusable playbook for onboarding new business areas.'
             ]
         },
         {
@@ -25,17 +23,14 @@ document.addEventListener('DOMContentLoaded', function() {
             position: 'Solutions Architect / Pre-Sales Engineer',
             startDate: '2026-03-01',
             endDate: currentDate,
-            client: 'Multiple Clients (Travel-tech, Healthcare)',
+            client: 'Multiple Clients',
             technologies: 'AWS, Cloud Architecture, Solution Design, Technical Discovery, Stack Selection, Healthcare Interoperability, Multi-tenant SaaS Design',
             achievements: [
-                'Technical advisor in pre-sales engagements supporting the COO during client discovery and proposal phases.',
-                'Lead technical assessments, architecture proposals, and stack recommendations for early-stage and pre-seed clients across travel tech and healthcare.',
-                'Created Technical Assessment Playbook (Discovery -> Assessment -> Proposal) standardizing the pre-sales workflow across clients.',
-                'Designed a Reviewer-of-Record engagement model for a travel-tech CRM built with AI coding agents: architecture review of critical paths + production support with severity-based SLAs.',
-                'Authored a staffing-model proposal for phased healthcare (homecare AR) ERP modernization on AWS (Postgres operational + Redshift analytical domains, Cognito + SSO, PWA-first, scheduling algorithm).',
-                'Established reusable proposal patterns: AWS-first, Cognito over custom JWT, ETL batch (Glue) vs CDC managed, dual operational/analytical domains, snapshot JSONB vs cross-schema FKs.',
-                'Generate additional engineering scope for delivery teams (PM + Architect + Engineer) by anchoring trust through technical depth.',
-                'Formalized role scope with Argeniss leadership (July 2026): pre-sales technical ownership + limited healthcare-domain advisory for delivery teams.'
+                'Technical advisor in pre-sales engagements, supporting client discovery and proposal phases.',
+                'Lead technical assessments, architecture proposals, and stack recommendations for early-stage clients.',
+                'Created a Technical Assessment Playbook (Discovery -> Assessment -> Proposal) standardizing the pre-sales workflow.',
+                'Designed a Reviewer-of-Record engagement model for products built with AI coding agents: architecture review of critical paths plus production support with severity-based SLAs.',
+                'Established reusable proposal patterns: AWS-first, managed identity over custom JWT, batch ETL vs managed CDC, and dual operational/analytical domains.'
             ]
         },
         {
@@ -43,17 +38,14 @@ document.addEventListener('DOMContentLoaded', function() {
             position: 'Senior Cloud and AI Engineer',
             startDate: '2026-01-01',
             endDate: currentDate,
-            client: 'Multiple US Clients (confidential)',
-            technologies: 'AWS CDK (Python), Terraform, Lambda (Docker), Step Functions, S3, EventBridge, DynamoDB (Streams / GSI / single-table), API Gateway (HTTP + WebSocket), Cognito, Bedrock AgentCore, Bedrock (Claude Sonnet), Strands, Comprehend Medical, Textract, Glue (PySpark), AWS DMS, Redshift (Spectrum, medallion RAW/SILVER/GOLD), RDS Postgres 16, Athena, SSM Parameter Store, KMS, CloudFront, WAFv2, ACM, VPC + NAT, custom MCP servers, FastAPI, React 18, TypeScript, GitLab CI/CD, GitHub Actions OIDC, FHIR / ICD-10 / RxNorm / SNOMED',
+            client: 'US clients under NDA',
+            technologies: 'AWS CDK (Python), Terraform, Lambda (Docker), Step Functions, S3, EventBridge, DynamoDB, API Gateway (HTTP + WebSocket), Cognito, Bedrock AgentCore, Bedrock (Claude Sonnet), Strands, Comprehend Medical, Textract, Glue (PySpark), AWS DMS, Redshift (Spectrum, medallion), RDS Postgres, Athena, KMS, CloudFront, WAF, custom MCP servers, FastAPI, React, TypeScript, GitLab CI/CD, GitHub Actions OIDC, FHIR / ICD-10 / RxNorm / SNOMED',
             achievements: [
-                'Delivered end-to-end AWS + AI systems for US enterprise and startup clients across pharma AI, consumer finance, healthtech, and industrial verticals (client identities under NDA).',
-                'Multimodal clinical inference platform (pharma AI): built an event-driven pipeline (S3 -> EventBridge -> Step Functions) with 4 processing layers - multimodal normalize, FHIR encoding to ICD-10 / RxNorm / SNOMED, LLM-based patient-journey canonicalization, and a gold feature matrix - across 6 CDK stacks with governance-as-code (CDK Aspects, OIDC CI/CD, KMS CMKs, DLQs).',
-                'Achieved high-accuracy cohort extraction beating the deterministic baseline, with HIPAA/PHI compliance-by-design (Bedrock BAA, zero data retention, PHI redaction, surrogate patient keys).',
-                'Consumer-finance data platform: Terraform-based replication of multiple SQL Server databases + MongoDB to S3, exposed as a medallion architecture in Redshift (RAW via Spectrum, SILVER views, GOLD materialized tables); config-driven extraction (DynamoDB catalog) with full / incremental / change-tracking modes and per-row SHA-256 diff.',
-                'Cut heavy reporting from minutes to milliseconds (multi-thousand-x speedups) and passed the client security review with zero open findings.',
-                'Veterans-benefits conversational form-fill assistant (healthtech): multi-agent LLM system on AWS Bedrock AgentCore (Claude Sonnet) over WebSocket API Gateway + DynamoDB single-table; owned a 48-hour pre-demo hardening cycle, root-causing a WebSocket session-loss chain and shipping atomic PRs with smoke tests and zero rollbacks.',
-                'Labor-forecasting SaaS (US mechanical contractor): full-stack app (FastAPI Lambda + React SPA + RDS Postgres in a private VPC + Cognito RBAC + SOAP ERP integration + custom MCP server for natural-language scenario planning + Athena BI) across 8 CDK stacks, replacing an Excel-with-macros workbook as the single source of truth for labor forecasts and hiring.',
-                'Applied governance-as-code and least-privilege security across engagements: CDK Aspects, OIDC CI/CD without long-lived keys, KMS CMKs, DLQ + review queues, and SSM Parameter Store secret resolution at runtime.'
+                'Delivered end-to-end AWS and AI systems for US enterprise and startup clients across pharma AI, consumer finance, healthtech, and industrial verticals.',
+                'Multimodal clinical inference: event-driven pipeline from raw medical documents to FHIR-coded data, LLM patient-journey canonicalization, and ML-ready feature matrices, with governance-as-code and HIPAA/PHI compliance by design.',
+                'Consumer-finance data platform: config-driven replication into a medallion architecture on Redshift, with row-level change auditing; heavy reports went from minutes to milliseconds, and the client security review closed with no open findings.',
+                'Veterans-benefits form-fill assistant: multi-agent LLM system on Bedrock AgentCore; owned a 48-hour pre-demo hardening cycle with atomic PRs, smoke tests, and zero rollbacks.',
+                'Labor forecasting SaaS: full-stack application with SOAP ERP integration and a custom MCP server for natural-language scenario planning, replacing an Excel-with-macros workflow as the single source of truth.'
             ]
         },
         {
@@ -61,36 +53,32 @@ document.addEventListener('DOMContentLoaded', function() {
             position: 'Founder & Technical Lead',
             startDate: '2025-12-01',
             endDate: currentDate,
-            client: 'SaaS Startup',
-            technologies: 'AWS (CDK 9 stacks, ECS Fargate, ALB, WAF, Cognito, RDS PostgreSQL 15, SQS, Lambda, SNS, Route53, ACM, KMS), FastAPI, Next.js 14, Material UI, next-intl, Recharts, ESP32 (Arduino C++), SHT31, HMAC-SHA256 + HKDF, WeasyPrint, Python, TypeScript, Resend',
+            client: 'desMondes Studio',
+            technologies: 'AWS (CDK, ECS Fargate, ALB, WAF, Cognito, RDS PostgreSQL, SQS, Lambda, SNS), FastAPI, Next.js, Recharts, ESP32 (Arduino C++), SHT31, HMAC-SHA256 + HKDF, Python, TypeScript',
             achievements: [
-                'Founded multi-tenant industrial IoT platform for environmental monitoring (temperature, humidity), with real-time alerts, auditable PDF/CSV reports, and native Microsoft Teams integration via Power Automate.',
-                'Designed and deployed full production stack on AWS via 9 CDK stacks: ECS Fargate behind ALB with WAF, Route53 + ACM, RDS PostgreSQL 15, Cognito, SQS, 6 Lambdas, and SNS.',
-                'Built FastAPI backend with 47 endpoints and 103 tests; HMAC-SHA256 + HKDF device authentication with idempotent client-side deduplication; alert engine with severity escalation; async report generation via WeasyPrint workers (PDF/CSV).',
-                'Designed sensor-agnostic data model and driver registry to support multi-sensor expansion (CO2, pressure, vibration on V2 roadmap) without schema changes.',
-                'Developed Next.js 14 admin panel with 25 pages, 6-section sidebar, full ES/EN i18n via next-intl, and Recharts-based reading visualizations.',
+                'Founded a multi-tenant industrial IoT platform for environmental monitoring, with real-time alerts, auditable PDF/CSV reports, and Microsoft Teams integration.',
+                'Designed and deployed the full production stack on AWS with Infrastructure as Code.',
+                'Built device authentication (HMAC-SHA256 + HKDF), idempotent ingestion, and an alert engine with severity escalation.',
+                'Designed a sensor-agnostic data model and driver registry to add new sensor types without schema changes.',
                 'Validated end-to-end with real ESP32 + SHT31 hardware: device readings reach the platform, trigger alerts, and render in production charts.',
-                'Designed B2B2B revenue model with tripartite split between platform, partner, and vendor; first partner LOI signed in Colombia (aerospace warehouse pilot, ~30 devices).',
-                'Production launch: April 19, 2026.'
+                'Available for licensing to operators.'
             ]
         },
         {
-            company: 'CloudPrune AI',
+            company: 'CloudPruneAI',
             position: 'Founder & Technical Lead',
             startDate: '2025-11-01',
             endDate: currentDate,
-            client: 'SaaS Startup',
-            technologies: 'AWS (CDK, Lambda, ECS Fargate, RDS PostgreSQL async, API Gateway, S3, SQS, Cost Explorer, EventBridge, KMS), FastAPI, Mangum, Next.js 14, Material UI, PostgreSQL, Stripe, Auth0, Resend, Claude API, MCP, Python, TypeScript, Docker, Turbo, GitHub Actions OIDC',
+            client: 'desMondes Studio',
+            technologies: 'AWS (CDK, Lambda, ECS Fargate, RDS PostgreSQL, API Gateway, S3, SQS, Cost Explorer, EventBridge, KMS), FastAPI, Next.js, Stripe, Auth0, Claude API, MCP, Python, TypeScript, Docker, GitHub Actions OIDC',
             achievements: [
-                'Founded production B2B2B FinOps SaaS platform that analyzes AWS accounts and auto-generates Infrastructure-as-Code in 3 formats (CDK Python, Terraform HCL, CloudFormation YAML) for cost optimization (app.cloudpruneai.com).',
-                'Built and deployed 18 resource analyzers covering 31+ optimization checks across compute, storage, networking, databases, commitments, extended support, and AI/ML services.',
-                'Shipped a production real-time anomaly detection engine (Q3 2026): 3-sigma against a trailing 30-day baseline, EventBridge daily cron, Lambda worker, and alert delivery via Slack and Teams webhooks with per-account settings + history UI.',
-                'Added an AI cost tracking module for Bedrock, OpenAI, and Anthropic spend visibility (token-level tracking on the Q3+ roadmap).',
-                'Architected hybrid serverless platform: FastAPI on AWS Lambda + Mangum (API), ECS Fargate (scan workers), async RDS PostgreSQL, 271-test suite with CI/CD via GitHub Actions OIDC (no long-lived credentials).',
-                'Implemented AI-powered IaC code generation using Claude API (Anthropic) with multi-format output and business context enrichment via Claude Haiku.',
-                'Designed B2B2B partner-led GTM model with tiered pricing (Free / Assist EUR 4,900 one-time / Operate EUR 590/month): white-label PDF reports, gainshare (10% / 7.5% at scale) plus recurring subscriptions.',
-                'Onboarded 4 active partners across Argentina, Spain, and Uruguay; first real scan with a consulting partner detected USD 5,260/year in waste across a client AWS account.',
-                'GDPR-compliant architecture (Privacy Policy, DPA, ROPA, Security Posture Document, DELETE /users/me). USPTO trademark registration in progress (Serial: 99585602; certificate expected August 2026).'
+                'Founded a white-label FinOps platform for cloud consultancies: read-only AWS and Azure scans that find waste and generate the code to fix it. Available on AWS Marketplace.',
+                'Implemented AI-powered Infrastructure-as-Code generation using the Claude API.',
+                'Shipped a production anomaly detection engine: statistical baseline, scheduled workers, and alert delivery via Slack and Teams.',
+                'Added AI cost tracking for Bedrock, OpenAI, and Anthropic spend.',
+                'Architected a hybrid serverless platform with automated tests and CI/CD via GitHub Actions OIDC (no long-lived credentials).',
+                'Pricing: $0 for the first account, $49/month for each additional account.',
+                'GDPR-aligned documentation and data handling. CloudPruneAI is a registered trademark.'
             ]
         },
         {

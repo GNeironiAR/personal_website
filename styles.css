@@ -843,3 +843,31 @@ footer {
     padding: 0.5rem;
   }
 }
+
+/* Text testimonials */
+.testimonial-quote {
+  aspect-ratio: auto;
+  margin: 0;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.testimonial-quote blockquote {
+  margin: 0;
+  line-height: 1.6;
+  color: #e5e7eb;
+}
+
+.testimonial-quote figcaption {
+  font-size: 0.875rem;
+  color: #ff9900;
+}
+
+/* Section titles span the whole card grid */
+.experience-blocks > h2 {
+  grid-column: 1 / -1;
+  align-self: start;
+}
